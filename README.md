@@ -1,5 +1,9 @@
 # Milestone 2 - Tourism Map - by Kevin Bourke
-This project is 
+This project is map of Dublin for visitors to recommend places to visit and show them locations on a map. There would be a separate listing of Activities (tourist - Castles, Galleries, Games like escape rooms, wall climbing), Events, Restaurants, Bars, Hotels. Different Icons would be used for different category of markers and I want users to be able to toggle map markers by category. The map will also show the Users current location (once they allow it), and I would like to be able to give directions from their location to a selected marker.
+
+There will be a small weather widget which gives the current weather and Users can also search for other cities weather.
+
+There will be a pull-out notepad for the user to save ideas of places to visit. They would be placed into a list and they can re-arrange them by dragging and dropping. I would like the possibility for the user to email this information to themselves as there is no database connected to store this information. 
 
 ## UX
 
@@ -12,6 +16,9 @@ This project is
 ### Structure
 
 ### Skeleton
+
+This formed the basis of my wireframes, which were created in Balsamiq:
+- [Home page on desktop wireframe](assets/wireframes/homepage.png)
 
 ### Surface
 
@@ -34,6 +41,9 @@ Where possible, I tried to use classes that are built into a technology such as 
 ### Existing Features
 
 ### Features to consider implementing in the future
+
+1. Ideally the user could click on a button from an info window to store the location to the list or type their own text.
+2. Have areas drawn on the map for shopping areas or socialising areas.
 
 ## Testing
 
