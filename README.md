@@ -52,7 +52,6 @@ Where possible, I tried to use classes that are built into a technology such as 
 #### HTML
 I validated the HTML with the [W3 Validation Service](https://validator.w3.org/). 
 
-The forms' option fields reported as an error (even though it worked) at first because the select field is required, yet has an initial value from the first option field. If an option is initially selected due to the attribute, then the select control always has a value. Unless that value is set to the empty string there is no point in using the attribute required. So the fix is to add an empty value to the first option.
 
 
 #### CSS
