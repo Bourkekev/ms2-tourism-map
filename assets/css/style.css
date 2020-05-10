@@ -1,0 +1,51 @@
+/* -------------------- Set Defaults --------*/
+html {
+    scroll-behavior: smooth;
+  }
+body {
+    font-family: 'Libre Baskerville', serif;
+    color: #333;
+}
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+      font-family: 'Libre Baskerville', cursive;
+      letter-spacing: 1px;
+  }
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+  a {
+      color: #008c7e;
+  }
+  a:hover {
+      color: #41d9c9;
+      text-decoration: none;
+  }
+  
+/* -------------------- END Defaults --------*/
+/* -------------------- HEADER -------------*/
+.full-width-header {
+    background-color: #fff;
+    -webkit-box-shadow: rgba(0, 0, 0, .5) 0 2px 5px 0px;
+            box-shadow: rgba(0, 0, 0, .5) 0 2px 5px 0px;
+}
+.screen-reader-link:focus {
+    clip: auto !important;
+    height: auto;
+    width: auto;
+    display: block;
+    font-weight: bold;
+    padding: 15px 25px 15px;
+    color: #333;
+    background: #fff;
+    z-index: 100000;
+    text-decoration: none;
+    -webkit-box-shadow: 0 0 2px 2px rgba(0,0,0,.5);
+            box-shadow: 0 0 2px 2px rgba(0,0,0,.5);
+}
+/* Logo */
+.navbar-brand {
+    font-family: 'Kalam', cursive;
+    font-size: 1.4rem;
+}   

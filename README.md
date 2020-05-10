@@ -22,6 +22,10 @@ This formed the basis of my wireframes, which were created in Balsamiq:
 
 ### Surface
 
+The Dublin flag colours are #000080 and #88B8FD
+
+Font Families - For Libre Baskervill Reference https://www.canva.com/learn/the-ultimate-guide-to-font-pairing/
+
 ## Technologies Used
 
 1. HTML
