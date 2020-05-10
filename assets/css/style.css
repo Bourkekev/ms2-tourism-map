@@ -9,7 +9,6 @@ body {
   /* Headings */
   h1, h2, h3, h4, h5, h6 {
       font-family: 'Libre Baskerville', cursive;
-      letter-spacing: 1px;
   }
   img {
       max-width: 100%;
@@ -48,4 +47,36 @@ body {
 .navbar-brand {
     font-family: 'Kalam', cursive;
     font-size: 1.4rem;
-}   
+}
+/* Jumbotron */
+.jumbotron {
+    background-image: url(../images/ha-penny-bridge-in-dublin-ireland.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    padding: 6rem 1rem;
+    position: relative;
+}
+.jumbotron::before {
+    content: "";
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.jumbotron > .container {
+    position: relative;
+    z-index: 2;
+}
+.display-4 {
+    font-size: 2.5rem;
+}
+/* ---------------------------------- MEDIA SIZES --------------------*/
+@media screen and (min-width: 768px) {
+    .display-4 {
+        font-size: 3.5rem;
+    }
+}
