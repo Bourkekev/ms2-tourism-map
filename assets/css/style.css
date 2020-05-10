@@ -74,6 +74,12 @@ body {
 .display-4 {
     font-size: 2.5rem;
 }
+
+/* MAP */
+#map {
+    min-height: 500px;
+    width: 100%;
+}
 /* ---------------------------------- MEDIA SIZES --------------------*/
 @media screen and (min-width: 768px) {
     .display-4 {

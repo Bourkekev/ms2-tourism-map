@@ -24,7 +24,7 @@ This formed the basis of my wireframes, which were created in Balsamiq:
 
 The Dublin flag colours are #000080 and #88B8FD
 
-Font Families - For Libre Baskervill Reference https://www.canva.com/learn/the-ultimate-guide-to-font-pairing/
+Font Families - Finding fonts like Libre Baskerville that have style variants is a clever way to create nuance without overcomplicating your designs. This typeface is a classic serif that is beautifully applied as a heading and easy-to-read body copy. Reference https://www.canva.com/learn/the-ultimate-guide-to-font-pairing/
 
 ## Technologies Used
 
