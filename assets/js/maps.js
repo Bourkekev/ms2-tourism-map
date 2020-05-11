@@ -27,16 +27,25 @@ function initMap() {
         infoWindow.open(map, marker)
     });
     */
-    addMarker({coords:{lat: 53.4246, lng: -6.1210 }});
-    addMarker({coords:{lat: 53.4509, lng: -6.1501 }});
-    addMarker({coords:{lat: 53.3786, lng: -6.0570 }});
+    addMarker({
+        coords:{lat: 53.4246, lng: -6.1210 },
+        iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    });
+    addMarker({
+        coords:{lat: 53.4509, lng: -6.1501 },
+        iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    });
+    addMarker({
+        coords:{lat: 53.3786, lng: -6.0570 },
+        iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    });
 
     // Add Marker function
     function addMarker(props){
         let marker = new google.maps.Marker({
             position: props.coords,
             map: map,
-            icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
+            icon: props.iconImage
         });
     }
 }
