@@ -37,7 +37,7 @@ function initMap() {
     });
     addMarker({
         coords:{lat: 53.3786, lng: -6.0570 },
-        iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        
     });
 
     // Add Marker function
@@ -45,7 +45,12 @@ function initMap() {
         let marker = new google.maps.Marker({
             position: props.coords,
             map: map,
-            icon: props.iconImage
         });
+
+        // Test for custom icon image
+        if(props.iconImage){
+            // set icon image
+            marker.setIcon(props.iconImage);
+        }
     }
 }
