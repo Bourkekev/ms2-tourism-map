@@ -1,5 +1,5 @@
 //Need to delare these first for Geolocating as a function happens outside of initMap
-let map, infoWindow;
+let map, myInfoWindow, infoWindow;
 
 function initMap() {
     //map options
@@ -59,13 +59,13 @@ function initMap() {
         // Test for info window content. Test if true otherwise get info window with no info
         if(props.content){
             //info window
-            let infoWindow = new google.maps.InfoWindow({
+            myInfoWindow = new google.maps.InfoWindow({
                 content: props.content
             });
 
             // need to add listener to listen for that info window
             marker.addListener('click', function(){
-                infoWindow.open(map, marker)
+                myInfoWindow.open(map, marker)
             });
         }
     }
