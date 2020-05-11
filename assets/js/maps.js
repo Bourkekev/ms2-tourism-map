@@ -59,7 +59,7 @@ function initMap() {
         // Test for info window content. Test if true otherwise get info window with no info
         if(props.content){
             //info window
-            infoWindow = new google.maps.InfoWindow({
+            let infoWindow = new google.maps.InfoWindow({
                 content: props.content
             });
 
@@ -96,7 +96,7 @@ function initMap() {
         // sets and overrides the map centering location
         map.setCenter(pos);
         }, function() {
-        handleLocationError(true, infoWindow, map.getCenter());
+            handleLocationError(true, infoWindow, map.getCenter());
         });
     } else {
         // Browser doesn't support Geolocation
