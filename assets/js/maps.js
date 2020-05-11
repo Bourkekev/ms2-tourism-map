@@ -1,3 +1,6 @@
+//Need to delare these first for Geolocating as a function happens outside of initMap
+let map, infoWindow;
+
 function initMap() {
     //map options
     let options = {
@@ -7,7 +10,9 @@ function initMap() {
             lng: -6.1016
         }
     }
-    let map = new google.maps.Map(document.getElementById("map"), options);
+    //assign these variables values here
+    map = new google.maps.Map(document.getElementById("map"), options);
+    infoWindow = new google.maps.InfoWindow;
 
     // Put infoWindow content into variable
     let portoContent = `
