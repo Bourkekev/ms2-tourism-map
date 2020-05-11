@@ -30,6 +30,7 @@ function initMap() {
     addMarker({
         coords:{lat: 53.4246, lng: -6.1210 },
         iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        content: '<h2>Velvet Strand</h2><p>Portmarnock</p><h3>Hi!</h3>'
     });
     addMarker({
         coords:{lat: 53.4509, lng: -6.1501 },
@@ -51,6 +52,19 @@ function initMap() {
         if(props.iconImage){
             // set icon image
             marker.setIcon(props.iconImage);
+        }
+
+        // Test for info window content
+        if(props.content){
+            //info window
+            let infoWindow = new google.maps.InfoWindow({
+                content: props.content
+            });
+
+            // need to add listener to listen for that info window
+            marker.addListener('click', function(){
+                infoWindow.open(map, marker)
+            });
         }
     }
 }
