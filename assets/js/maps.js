@@ -9,7 +9,8 @@ function initMap() {
     }
     let map = new google.maps.Map(document.getElementById("map"), options);
 
-    /* SINGLE MAP MARKER */
+    /*
+    // SINGLE MAP MARKER 
     let marker = new google.maps.Marker({
         position:  { lat: 53.4246, lng: -6.1210 },
         map: map,
@@ -25,4 +26,15 @@ function initMap() {
     marker.addListener('click', function(){
         infoWindow.open(map, marker)
     });
+    */
+    addMarker({lat: 53.4246, lng: -6.1210});
+
+    // Add Marker function
+    function addMarker(coords){
+        let marker = new google.maps.Marker({
+            position: coords,
+            map: map,
+            icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
+        });
+    }
 }
