@@ -9,25 +9,6 @@ function initMap() {
     }
     let map = new google.maps.Map(document.getElementById("map"), options);
 
-    /*
-    // SINGLE MAP MARKER 
-    let marker = new google.maps.Marker({
-        position:  { lat: 53.4246, lng: -6.1210 },
-        map: map,
-        icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
-    });
-
-    //info window
-    let infoWindow = new google.maps.InfoWindow({
-        content: '<h2>Velvet Strand</h2><p>Portmarnock</p><h3>Hi!</h3>'
-    });
-
-    // need to add listener to listen for that info window
-    marker.addListener('click', function(){
-        infoWindow.open(map, marker)
-    });
-    */
-
     // Put infoWindow content into variable
     let portoContent = `
         <h2>Velvet Strand</h2>
@@ -56,23 +37,6 @@ function initMap() {
     for(let i = 0; i < markers.length; i++){
         addMarker(markers[i]);
     }
-
-
-    // addMarker({
-    //     coords:{lat: 53.4246, lng: -6.1210 },
-    //     iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
-    //     content: '<h2>Velvet Strand</h2><p>Portmarnock</p><h3>Hi!</h3>'
-    // });
-    // addMarker({
-    //     coords:{lat: 53.4509, lng: -6.1501 },
-    //     iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
-    //     content: '<h2>Party Village</h2><p>Malahide</p>'
-    // });
-    // addMarker({
-    //     coords:{lat: 53.3786, lng: -6.0570 },
-    //     content: '<h2>Fishing Village</h2><p>Howth</p>'
-        
-    // });
 
     // Add Marker function
     function addMarker(props){
