@@ -59,7 +59,7 @@ function initMap() {
         // Test for info window content
         if(props.content){
             //info window
-            let infoWindow = new google.maps.InfoWindow({
+                infoWindow = new google.maps.InfoWindow({
                 content: props.content
             });
 
@@ -78,8 +78,16 @@ function initMap() {
             lng: position.coords.longitude
         };
 
+        //add marker to your location. POS variable from right above
+        let geoMarker = new google.maps.Marker({
+            position: pos,
+            map: map,
+            //icon: props.iconImage,
+            //content: props.content
+        });
+        
         infoWindow.setPosition(pos);
-        infoWindow.setContent('Location found.');
+        infoWindow.setContent('You are here.');
         infoWindow.open(map);
         map.setCenter(pos);
         }, function() {
