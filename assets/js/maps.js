@@ -102,6 +102,37 @@ function initMap() {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
     }
+
+    // TEST OUT POLYLINE
+    let myTrip = [
+        { lat: 53.350621, lng: -6.254402 },
+        { lat: 53.350805, lng: -6.254516 },
+        { lat: 53.349973, lng: -6.259895 },
+        { lat: 53.352647, lng: -6.261170 },
+        { lat: 53.350991, lng: -6.264752 },
+        { lat: 53.349644, lng: -6.269237 },
+        { lat: 53.347236, lng: -6.268296 },
+        { lat: 53.348286, lng: -6.259702 },
+        { lat: 53.349765, lng: -6.259890 },
+    ];
+    shoppingArea = new google.maps.Polygon({
+        path: myTrip,
+        strokeColor:"#0000FF",
+        strokeOpacity:0.8,
+        strokeWeight:1
+    });
+    // To use a POLYGON just use .Polygon in above example
+    // call function to add line
+    addLine();
+}
+
+function addLine() {
+    // set the map to put polyline on
+    shoppingArea.setMap(map);
+  }
+
+function removeLine() {
+    shoppingArea.setMap(null);
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {

@@ -13,7 +13,7 @@
     <a href="#maincontent" class="screen-reader-link sr-only">Skip to main content</a>
     <header class="full-width-header">
         <div class="container">
-            <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <nav class="navbar navbar-expand-md navbar-light bg-white">
                 <a class="navbar-brand" href="#">Visiting Dublin</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMainMenu" aria-controls="navbarMainMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -58,7 +58,13 @@
                 <p class="lead">Use our map to find your way around dublin and use the notes to save your preferred locations.</p>
             </div>
         </section>
-        <section id="map"></section>
+        <section id="map-outer">
+            <div id="floating-panel">
+                <input onclick="removeLine();" type=button value="Remove line">
+                <input onclick="addLine();" type=button value="Restore line">
+            </div>
+            <div id="map"></div>
+        </section>
     
     </main><!-- /.container -->
     <footer>
