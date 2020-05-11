@@ -56,10 +56,10 @@ function initMap() {
             marker.setIcon(props.iconImage);
         }
 
-        // Test for info window content
+        // Test for info window content. Test if true otherwise get info window with no info
         if(props.content){
             //info window
-                infoWindow = new google.maps.InfoWindow({
+            infoWindow = new google.maps.InfoWindow({
                 content: props.content
             });
 
@@ -89,6 +89,11 @@ function initMap() {
         infoWindow.setPosition(pos);
         infoWindow.setContent('You are here.');
         infoWindow.open(map);
+        // open your location info window again on click marker
+        geoMarker.addListener('click', function(){
+            infoWindow.open(map, geoMarker)
+        });
+        // sets and overrides the map centering location
         map.setCenter(pos);
         }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
