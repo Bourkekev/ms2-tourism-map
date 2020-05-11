@@ -28,6 +28,8 @@ function initMap() {
     });
     */
     addMarker({lat: 53.4246, lng: -6.1210});
+    addMarker({lat: 53.4509, lng: -6.1501});
+    addMarker({lat: 53.3786, lng: -6.0570});
 
     // Add Marker function
     function addMarker(coords){
