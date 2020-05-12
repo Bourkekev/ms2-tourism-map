@@ -72,15 +72,15 @@
                     <div class="col">
                         <h2>My To-See List</h2>
                         <p>Add notes to this list</p>
-                        <input type="text" class="note-input" placeholder="Type note here...">
-                        <button id="submit-note"></i>+ Add note <i class="fas fa-pencil-alt"></i></button>
+                        <input type="text" id="note-input" placeholder="Type note here...">
+                        <button type=button id="submit-note" onclick="addToLIst()"></i>+ Add note <i class="fas fa-pencil-alt"></i></button>
                     </div>
                 </div>
                 <div class="row pt-3 pb-3">
                     <div class="col">
                         <!-- list here -->
                         <h3>Your Notes</h3>
-                        <ul class="notes-list"></ul>
+                        <ul id="notes-list"></ul>
                     </div>
                 </div>
             </div>
