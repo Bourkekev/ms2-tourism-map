@@ -80,6 +80,15 @@ body {
     min-height: 600px;
     width: 100%;
 }
+/* ----------------------------------  NOTE TAKING ---------------*/
+li.note-item {
+    background: #88B8FD;
+    color:#000080;
+    border: 1px solid #000080;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
 /* ---------------------------------- MEDIA SIZES --------------------*/
 @media screen and (min-width: 768px) {
     .display-4 {

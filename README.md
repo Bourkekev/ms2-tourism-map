@@ -33,7 +33,9 @@ Font Families - Finding fonts like Libre Baskerville that have style variants is
 3. Bootstrap CSS Framework
 4. Font Awesome
 5. Google Fonts
-6. Javascript - Minor uses of Javascript for enhancing the user experience.
+6. Javascript 
+7. Google Maps API
+8. OpenWeather Map API
 7. TinyPNG - To keep transparent png sizes to a minimum I used the online png compressing service [TinyPNG](https://tinypng.com/).
 8. [JQuery](https://jquery.com) - The project uses **JQuery** to simplify DOM manipulation. I used a very small jQuery script (global.js) to close the navbar when a sub menu item is clicked, because the sub menu items are only used for links to anchor points in the homepage.
 9. I used Photoshop and Illustrator for image and svg manipulation.
