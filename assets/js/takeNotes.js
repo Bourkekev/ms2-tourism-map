@@ -9,7 +9,11 @@ function addToLIst(){
         console.log("Input is empty");
     }
     else {
-        list.innerHTML = "<p>Item is " + newItemValue + "</p>";
+        //create li element
+        let newItem = document.createElement("li");
+        let newItemContent = document.createTextNode(newItemValue);
+        newItem.appendChild(newItemContent);
+        list.appendChild(newItem);
         //clear user input field
         userInput.value = "";
     }
