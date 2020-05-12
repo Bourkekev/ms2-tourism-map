@@ -16,5 +16,16 @@ function addToLIst(){
         list.appendChild(newItem);
         //clear user input field
         userInput.value = "";
+
+        // set currentCounter variable to the contents of "counter" or 0 if "counter" doesn't exist yet
+        let currentCounter = localStorage.getItem("counter") || 0;
+        localStorage.setItem("counter", ++currentCounter);
+    }
+}
+function clearList() {
+    if(confirm("This will clear your notes list. Are you sure?")) {
+        let currentCounter = localStorage.removeItem("counter");
+    } else {
+        console.log("do not delete storage")
     }
 }
