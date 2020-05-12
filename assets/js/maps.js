@@ -1,13 +1,13 @@
 //Need to delare these first for Geolocating as a function happens outside of initMap
-let map, myInfoWindow, infoWindow;
+//let map, myInfoWindow, infoWindow;
 
 function initMap() {
     //map options
     let options = {
-        zoom: 12,
+        zoom: 14,
         center: {
-            lat: 53.4256,
-            lng: -6.1016
+            lat: 53.347293,
+            lng: -6.258970
         }
     }
     //assign these variables values here
@@ -59,7 +59,7 @@ function initMap() {
         // Test for info window content. Test if true otherwise get info window with no info
         if(props.content){
             //info window
-            myInfoWindow = new google.maps.InfoWindow({
+            let myInfoWindow = new google.maps.InfoWindow({
                 content: props.content
             });
 
@@ -69,7 +69,40 @@ function initMap() {
             });
         }
     }
+    
 
+    // TEST OUT POLYGON
+    let shopArea = [
+        { lat: 53.350621, lng: -6.254402 },
+        { lat: 53.350805, lng: -6.254516 },
+        { lat: 53.349973, lng: -6.259895 },
+        { lat: 53.352647, lng: -6.261170 },
+        { lat: 53.350991, lng: -6.264752 },
+        { lat: 53.349644, lng: -6.269237 },
+        { lat: 53.347236, lng: -6.268296 },
+        { lat: 53.348286, lng: -6.259702 },
+        { lat: 53.349765, lng: -6.259890 },
+    ];
+    shoppingAreaNorth = new google.maps.Polygon({
+        path: shopArea,
+        strokeColor:"#0000FF",
+        strokeOpacity:0.8,
+        strokeWeight:1
+    });
+    // To use a POLYGON just use .Polygon in above example
+    // call function to add line
+    addLine();
+    
+}
+function addLine() {
+    // set the map to put polyline on
+    shoppingAreaNorth.setMap(map);
+}
+
+function removeLine() {
+    shoppingAreaNorth.setMap(null);
+}
+function whereAmI(){
     // Try HTML5 geolocation. From Google documentation - https://developers.google.com/maps/documentation/javascript/geolocation
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -85,60 +118,30 @@ function initMap() {
             //icon: props.iconImage,
             //content: props.content
         });
-        
-        infoWindow.setPosition(pos);
-        infoWindow.setContent('You are here.');
-        infoWindow.open(map);
+        let geoInfoWindow = new google.maps.InfoWindow;
+        geoInfoWindow.setPosition(pos);
+        geoInfoWindow.setContent('You are here.');
+        geoInfoWindow.open(map);
         // open your location info window again on click marker
         geoMarker.addListener('click', function(){
-            infoWindow.open(map, geoMarker)
+            geoInfoWindow.open(map, geoMarker)
         });
         // sets and overrides the map centering location
         map.setCenter(pos);
+        map.setZoom(12);
         }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
+            handleLocationError(true, geoInfoWindow, map.getCenter());
         });
     } else {
         // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
+        handleLocationError(false, geoInfoWindow, map.getCenter());
     }
-
-    // TEST OUT POLYLINE
-    let myTrip = [
-        { lat: 53.350621, lng: -6.254402 },
-        { lat: 53.350805, lng: -6.254516 },
-        { lat: 53.349973, lng: -6.259895 },
-        { lat: 53.352647, lng: -6.261170 },
-        { lat: 53.350991, lng: -6.264752 },
-        { lat: 53.349644, lng: -6.269237 },
-        { lat: 53.347236, lng: -6.268296 },
-        { lat: 53.348286, lng: -6.259702 },
-        { lat: 53.349765, lng: -6.259890 },
-    ];
-    shoppingArea = new google.maps.Polygon({
-        path: myTrip,
-        strokeColor:"#0000FF",
-        strokeOpacity:0.8,
-        strokeWeight:1
-    });
-    // To use a POLYGON just use .Polygon in above example
-    // call function to add line
-    addLine();
 }
 
-function addLine() {
-    // set the map to put polyline on
-    shoppingArea.setMap(map);
-  }
-
-function removeLine() {
-    shoppingArea.setMap(null);
-}
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
+function handleLocationError(browserHasGeolocation, geoInfoWindow, pos) {
+    geoInfoWindow.setPosition(pos);
+    geoInfoWindow.setContent(browserHasGeolocation ?
                           'Error: The Geolocation service failed.' :
                           'Error: Your browser doesn\'t support geolocation.');
-    infoWindow.open(map);
+    geoInfoWindow.open(map);
 }
