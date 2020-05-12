@@ -104,7 +104,7 @@ I created a robots.txt file in my domain root and added `Disallow: /ms1-music-sc
 
 ### Local Storage only storing data as strings
 
-I had to decide to either store my list as a single string containing html or as an object, which would require serialising the object to text first and de-serialising it after.
+I struggled initially to get the list items stored as it was trying to store objects. I had to decide to either store my list as a single string containing html or as an object, which would require serialising the object to text first and de-serialising it after. The easiest way was to just store the innerHTML of the List UL as a string. This got updated and overrode the existing stored value each time a new item was added.
 
 ## Credits
 

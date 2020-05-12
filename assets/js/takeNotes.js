@@ -32,22 +32,18 @@ function addToLIst(){
         let currentCounter = localStorage.getItem("counter") || 0;
         localStorage.setItem("counter", ++currentCounter);
         
-        let sampleList = "<ul><li>Item 1</li><li>Item 2</li></ul>";
-        // let listSerialised = JSON.stringify(list);
-        // console.log("Serial" + listSerialised);
+        console.log("Lis inner HTML" + list.innerHTML);
+        //let sampleList = "<li>Item 1</li><li>Item 2</li>";
 
-        // let currentList = localStorage.getItem("sampleList");
-        // if (currentList){
-        //     list.innerHTML = currentList;
-        // }
-        localStorage.setItem("listItem", sampleList);
+        localStorage.setItem("listItem", list.innerHTML);
         console.log("local" + localStorage);
     }
 }
+//Get stored list items if they exist on page load
 let currentList = localStorage.getItem("listItem");
-        if (currentList){
-            list.innerHTML = currentList;
-        }
+if (currentList){
+    list.innerHTML = currentList;
+}
 
 function clearList() {
     if(confirm("This will clear your notes list. Are you sure?")) {
