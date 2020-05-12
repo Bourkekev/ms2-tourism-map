@@ -15,7 +15,7 @@ userInput.addEventListener("keydown", function(event) {
 
 function addToLIst(){
     let newItemValue = document.getElementById("note-input").value;
-    console.log(newItemValue);
+    //.log(newItemValue);
     if(newItemValue == null || newItemValue == ""){
         console.log("Input is empty");
     }
@@ -31,15 +31,29 @@ function addToLIst(){
         // set currentCounter variable to the contents of "counter" or 0 if "counter" doesn't exist yet
         let currentCounter = localStorage.getItem("counter") || 0;
         localStorage.setItem("counter", ++currentCounter);
+        
+        // let listSerialised = JSON.stringify(newItemContent);
+        // console.log("Serial" + listSerialised);
+
+        let currentList = localStorage.getItem("listItem") || 0;
+        localStorage.setItem("listItem", newItemValue);
+        console.log("local" + localStorage);
     }
 }
 function clearList() {
     if(confirm("This will clear your notes list. Are you sure?")) {
         let currentCounter = localStorage.removeItem("counter");
+        //remove firts child nodes while there are some
         while(list.hasChildNodes()){
             list.removeChild(list.childNodes[0]);
         }
     } else {
         console.log("do not delete storage")
     }
+}
+function showCounter() {
+    // set currentCounter variable to the contents of "counter" or 0 if "counter" doesn't exist yet
+    let currentCounter = localStorage.getItem("counter") || 0;
+    // display the current count in an alert
+    alert("You clicked the button: " + currentCounter + " times.");
 }
