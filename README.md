@@ -102,6 +102,10 @@ I created a robots.txt file in my domain root and added `Disallow: /ms1-music-sc
 
 ## Issues I had to overcome
 
+### Local Storage only storing data as strings
+
+I had to decide to either store my list as a single string containing html or as an object, which would require serialising the object to text first and de-serialising it after.
+
 ## Credits
 
 ### Design and Research

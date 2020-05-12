@@ -32,18 +32,28 @@ function addToLIst(){
         let currentCounter = localStorage.getItem("counter") || 0;
         localStorage.setItem("counter", ++currentCounter);
         
-        // let listSerialised = JSON.stringify(newItemContent);
+        let sampleList = "<ul><li>Item 1</li><li>Item 2</li></ul>";
+        // let listSerialised = JSON.stringify(list);
         // console.log("Serial" + listSerialised);
 
-        let currentList = localStorage.getItem("listItem") || 0;
-        localStorage.setItem("listItem", newItemValue);
+        // let currentList = localStorage.getItem("sampleList");
+        // if (currentList){
+        //     list.innerHTML = currentList;
+        // }
+        localStorage.setItem("listItem", sampleList);
         console.log("local" + localStorage);
     }
 }
+let currentList = localStorage.getItem("listItem");
+        if (currentList){
+            list.innerHTML = currentList;
+        }
+
 function clearList() {
     if(confirm("This will clear your notes list. Are you sure?")) {
         let currentCounter = localStorage.removeItem("counter");
-        //remove firts child nodes while there are some
+        let currentList = localStorage.removeItem("listItem");
+        //remove first child nodes while there are some
         while(list.hasChildNodes()){
             list.removeChild(list.childNodes[0]);
         }
