@@ -66,9 +66,27 @@
             </div>
             <div id="map"></div>
         </section>
-    
+        <section id="take-notes">
+            <div class="container p-3">
+                <div class="row pt-3 pb-3">
+                    <div class="col">
+                        <h2>My To-See List</h2>
+                        <p>Add notes to this list</p>
+                        <input type="text" class="note-input" placeholder="Type note here...">
+                        <button id="submit-note"></i>+ Add note <i class="fas fa-pencil-alt"></i></button>
+                    </div>
+                </div>
+                <div class="row pt-3 pb-3">
+                    <div class="col">
+                        <!-- list here -->
+                        <h3>Your Notes</h3>
+                        <ul class="notes-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main><!-- /.container -->
-    <footer>
+    <footer class="container-fluid mt-4 pt-3 pb-3">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
@@ -88,5 +106,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzIGV-yMFW2sZbKjho3bgFebj1ZbzZ7AI&callback=initMap"></script>
     <script src="assets/js/maps.js"></script>
+    <script src="assets/js/takeNotes.js"></script>
 </body>
 </html>

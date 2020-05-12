@@ -127,7 +127,7 @@ function whereAmI(){
             geoInfoWindow.open(map, geoMarker)
         });
         // sets and overrides the map centering location
-        map.setCenter(pos);
+        map.panTo(pos);
         map.setZoom(12);
         }, function() {
             handleLocationError(true, geoInfoWindow, map.getCenter());
