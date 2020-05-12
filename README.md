@@ -108,6 +108,10 @@ I created a robots.txt file in my domain root and added `Disallow: /ms1-music-sc
 
 I struggled initially to get the list items stored as it was trying to store objects. I had to decide to either store my list as a single string containing html or as an object, which would require serialising the object to text first and de-serialising it after. The easiest way was to just store the innerHTML of the List UL as a string. This got updated and overrode the existing stored value each time a new item was added.
 
+### Selecting and deleting the list item when X button is clicked.
+
+It sounds like an easy thing to do, but I had trouble getting an event listener onto all the delete buttons on the Note List. The elements were selected with getElementsByClassName. I wanted to do this using plain JavaScript and not repy on jQuery. Then any additional notes added would not take the eventlistener.
+
 ## Credits
 
 ### Design and Research
