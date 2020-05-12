@@ -107,7 +107,7 @@ I created a robots.txt file in my domain root and added `Disallow: /ms1-music-sc
 ### Design and Research
 
 ### Technical
-
+ - For general references for Javascript methods I used my Code Institue notes, [MDN web docs](https://developer.mozilla.org/en-US/) and [w3schools](https://www.w3schools.com/js/default.asp).
 ### Content
 
 ### Media

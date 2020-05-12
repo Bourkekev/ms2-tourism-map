@@ -2,6 +2,17 @@ let submitButton = document.getElementById("submit-note");
 let userInput = document.getElementById("note-input");
 let list = document.getElementById("notes-list");
 
+// Simulate button click on enter
+userInput.addEventListener("keydown", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      submitButton.click();
+    }
+  });
+
 function addToLIst(){
     let newItemValue = document.getElementById("note-input").value;
     console.log(newItemValue);
@@ -25,6 +36,7 @@ function addToLIst(){
 function clearList() {
     if(confirm("This will clear your notes list. Are you sure?")) {
         let currentCounter = localStorage.removeItem("counter");
+        list.removeChild(list.childNodes[]); 
     } else {
         console.log("do not delete storage")
     }
