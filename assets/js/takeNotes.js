@@ -36,7 +36,9 @@ function addToLIst(){
 function clearList() {
     if(confirm("This will clear your notes list. Are you sure?")) {
         let currentCounter = localStorage.removeItem("counter");
-        list.removeChild(list.childNodes[]); 
+        while(list.hasChildNodes()){
+            list.removeChild(list.childNodes[0]);
+        }
     } else {
         console.log("do not delete storage")
     }
