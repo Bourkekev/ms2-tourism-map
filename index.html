@@ -89,6 +89,17 @@
                         <button type=button id="clear-list" onclick="clearList()"></i>- Delete notes <i class="fas fa-trash-alt"></i></button>
                     </div>
                 </div>
+                <div class="row pt-3 pb-3">
+                    <div class="col">
+                        <h3>Email these notes to yourself</h3>
+                        <p>For safe keeping you can email this list to your email address.</p>
+                        <form onsubmit="return sendMail(this);">
+                            <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Type your email here..." required />
+                            <textarea rows="5" name="projectsummary" id="projectsummary" class="form-control" placeholder="Project description" required></textarea>
+                            <button type="submit" id="submit-notes" class="btn btn-secondary">Send by email <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
     </main><!-- /.container -->
@@ -113,5 +124,16 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzIGV-yMFW2sZbKjho3bgFebj1ZbzZ7AI&callback=initMap"></script>
     <script src="assets/js/maps.js"></script>
     <script src="assets/js/takeNotes.js"></script>
+    <!-- email js -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("user_upu5oN7qoaZd5LQpk8rYy");
+
+        })();
+    </script>
+    <script src="assets/js/sendEmail.js"></script>
 </body>
 </html>
