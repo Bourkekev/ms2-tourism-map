@@ -25,12 +25,12 @@ function addToLIst(){
         newItem.className="note-item";
         let newItemContent = document.createTextNode(newItemValue);
         // delete button
-        let deleteItem = document.createElement("button");
-        deleteItem.innerText="X";
-        deleteItem.className="del-btn";
+        let deleteBtn = document.createElement("button");
+        deleteBtn.innerText="X";
+        deleteBtn.className="del-btn";
         // Append text and elements inside li
         newItem.appendChild(newItemContent);
-        newItem.appendChild(deleteItem);
+        newItem.appendChild(deleteBtn);
         list.appendChild(newItem);
         // console.log(list);
         
@@ -54,25 +54,15 @@ if (currentList){
 }
 
 //Delete individual item
-
-let delBtns = document.getElementsByClassName("del-btn");
-console.log(delBtns);
-console.log(delBtns.length);
-for (var i = 0, len = delBtns.length; i < len; i++){
-    delBtns[i].addEventListener('click', function() {
-        this.style.backgroundColor = "red";
-   });
-}
-// function myFunction(item, index) {
-//     item.addEventListener('click', function() {
-//          this.style.backgroundColor = "red";
-//     });
-// }
-// delBtns.forEach(function(currentBtn){
-//     currentBtn.addEventListener('click', function() {
-//         this.style.backgroundColor = "red";
-//   })
-// });
+document.querySelector('body').addEventListener('click', function(event) {
+    if(event.target.className === 'del-btn') {
+        //console.log(event.target.parentNode);
+        //delete parent node(the li)
+        event.target.parentNode.remove();
+        //update the local storage with new list
+        localStorage.setItem("listItem", list.innerHTML);
+    }
+});
 
 
 function clearList() {

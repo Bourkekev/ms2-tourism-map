@@ -110,7 +110,8 @@ I struggled initially to get the list items stored as it was trying to store obj
 
 ### Selecting and deleting the list item when X button is clicked.
 
-It sounds like an easy thing to do, but I had trouble getting an event listener onto all the delete buttons on the Note List. The elements were selected with getElementsByClassName. I wanted to do this using plain JavaScript and not repy on jQuery. Then any additional notes added would not take the eventlistener.
+It sounds like an easy thing to do, but I had trouble getting an event listener to work with all the delete buttons on the Note List. I wanted to do this using plain JavaScript and not rely on jQuery. As there were multiple buttons, the buttons were selected with getElementsByClassName and I tried looping through the buttons to add the eventListener to each. I ran into problems where it seemed the eventListener was not added to all buttons. It seems the problem was like the issue mentioned [here](https://www.nickang.com/add-event-listener-for-loop-problem-in-javascript/). Eventually I got that working but it would not work for newly created list item buttons.
+In the end I added the eventListener to the body and if a click event's target has the delete button classname then it will delete that button's parent node (the li). The idea for the solution to this came from this [Stackoverflow question](https://stackoverflow.com/questions/14258787/add-event-listener-on-elements-created-dynamically). I modified this idea for my own
 
 ## Credits
 
@@ -118,6 +119,7 @@ It sounds like an easy thing to do, but I had trouble getting an event listener 
 
 ### Technical
  - For general references for Javascript methods I used my Code Institue notes, [MDN web docs](https://developer.mozilla.org/en-US/) and [w3schools](https://www.w3schools.com/js/default.asp).
+ - For selecting and delete note list item i referenced this [Stackoverflow question](https://stackoverflow.com/questions/14258787/add-event-listener-on-elements-created-dynamically).
 ### Content
 
 ### Media
