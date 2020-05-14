@@ -1,10 +1,14 @@
 //let city = 2964574;
 let city = "Dublin";
 let countryCode = "IE";
+let cityCountry = "Dublin, IE"
 const apiKey = "4adecede8cc646766529fd7932ba0555";
 let tempUnits = "units=metric";
 const baseURLByID = `http://api.openweathermap.org/data/2.5/weather?id=${city}&${tempUnits}&appid=${apiKey}`;
-const baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&${tempUnits}&appid=${apiKey}`;
+//const baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&${tempUnits}&appid=${apiKey}`;
+const baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${cityCountry}&${tempUnits}&appid=${apiKey}`;
+
+let input;
 
 // without type
 function getData(callBack) {
@@ -30,6 +34,10 @@ function writeToDocument() {
             //document.getElementById("weather-data").innerHTML = "Weather for " + city + item.sys.country + ": " + item.main;
 
         });
+        //set cityCountry to the inputted value
+        //= document.getElementById("city").select();
+        cityCountry = document.getElementById("city").select();
+
         document.getElementById("weather-data").innerHTML = "<p>Weather for " + data.name + ", " + data.sys.country + ": " + data.weather[0].main + "</p>";
         document.getElementById("weather-data").innerHTML += "<p>Temperature is: " + data.main.temp + " Celcius</p>";
         
