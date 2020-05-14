@@ -41,6 +41,14 @@
                     </ul>
                 </div>
             </nav>
+            <div id="weather-widget">
+                <p>Type in a city to get the weather there. You can also add a comma and country code after to specify the country (e.g. Dublin, IE)</p>
+                <form>
+                    <input id="city" value="Dublin, IE">
+                    <button type="button" id="get-weather" onclick="writeToDocument()">Current Weather</button>
+                </form>
+                <div id="weather-data"></div>
+            </div>
         </div>
     </header>
     
@@ -122,6 +130,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzIGV-yMFW2sZbKjho3bgFebj1ZbzZ7AI&callback=initMap"></script>
+    <script src="assets/js/weather.js"></script>
     <script src="assets/js/maps.js"></script>
     <script src="assets/js/takeNotes.js"></script>
     <!-- email js -->
