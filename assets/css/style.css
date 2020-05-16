@@ -46,12 +46,21 @@ body {
 /* Top bar */
 .topbar {
     color: #000080;
+    font-size: .75rem;
     padding: 5px 0;
     background-color: #C4E0F9;
 }
+.topbar .container {
+    display: flex;
+}
+/* Topbar Weather */
+#dublin-weather-data {
+    width: 66.666667%;
+}
 #current-date {
     text-align: right;
-    font-size: .75rem;
+    
+    width: 33.333332%;
 }
 /* Navbar */
 .navbar {
@@ -76,10 +85,7 @@ body {
 .logo-part2 {
     transform: rotate(-15deg) translate(-1em, -.1em);
 }
-/* Navbar Weather */
-#dublin-weather-data {
-    width: 110px;
-}
+
 /* Navbar toggle */
 .navbar-toggler {
     padding: .25rem .5rem;

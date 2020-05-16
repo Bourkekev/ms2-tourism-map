@@ -7,8 +7,8 @@ let tempUnits = "units=metric";
 let cityInput = document.getElementById("city");
 //set cityCountry to the inputted value
 let cityCountry = document.getElementById("city").value;
-
-const baseURLByID = `http://api.openweathermap.org/data/2.5/weather?id=${city}&${tempUnits}&appid=${apiKey}`;
+// API url for Dublin by ID
+const baseURLByID = `http://api.openweathermap.org/data/2.5/weather?id=${dublinCity}&${tempUnits}&appid=${apiKey}`;
 //const baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&${tempUnits}&appid=${apiKey}`;
 let baseURL;
 
@@ -59,16 +59,26 @@ function writeToDocument() {
     });
 }
 
-// Get Dublin weather on page load
+// Get date and Dublin weather on page load
 document.addEventListener("DOMContentLoaded", function() {
     displayDubWeath();
     displayDate();
  });
   
  function displayDubWeath() {
-    let el = document.getElementById("dublin-weather-data");
-    let now = new Date();
-    el.innerText = now;
+    let dubEl = document.getElementById("dublin-weather-data");
+    //Set api url to city by ID
+    baseURL = baseURLByID;
+    getData( function(data) {
+        
+        let dubName = data.name;
+        let dubWeath = data.weather[0].main;
+        let dubTemp = Math.round(data.main.temp);
+        dubEl.innerHTML = `<div>Weather for ${dubName}</div>
+                                <div>${dubWeath}</div>
+                                <div>${dubTemp}&#8451;</div>`
+        console.dir(data);
+    });
  }
  // get and format current date
  function displayDate(){
