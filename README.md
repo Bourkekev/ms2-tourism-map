@@ -89,6 +89,7 @@ Font Families - Finding fonts like Libre Baskerville that have style variants is
 
 1. Ideally the user could click on a button from an info window to store the location to the list or type their own text.
 2. Have areas drawn on the map for shopping areas or socialising areas.
+3. You could incorporate a blog into the site with updates about an author or users' experiences of certain places of interest. This would add more genuineness and authority to the site.
 
 ## Testing
 

@@ -43,10 +43,46 @@ body {
     -webkit-box-shadow: 0 0 2px 2px rgba(0,0,0,.5);
             box-shadow: 0 0 2px 2px rgba(0,0,0,.5);
 }
+/* Top bar */
+.topbar {
+    color: #000080;
+    padding: 5px 0;
+    background-color: #C4E0F9;
+}
+#current-date {
+    text-align: right;
+    font-size: .75rem;
+}
+/* Navbar */
+.navbar {
+    padding: .5rem 0rem;
+}
 /* Logo */
 .navbar-brand {
     font-family: 'Kalam', cursive;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    margin-right: 0;
+    border: 1px solid;
+}
+.logo-part1,
+.logo-part2 {
+    display: inline-block;
+}
+.logo-part1 {
+    transform: rotate(-15deg) translate(.2em, -.7em);
+    font-size: .6em;
+    margin-right: 10px;
+}
+.logo-part2 {
+    transform: rotate(-15deg) translate(-1em, -.1em);
+}
+/* Navbar Weather */
+#dublin-weather-data {
+    width: 110px;
+}
+/* Navbar toggle */
+.navbar-toggler {
+    padding: .25rem .5rem;
 }
 /* Jumbotron */
 .jumbotron {
@@ -91,6 +127,9 @@ li.note-item {
 }
 /* ---------------------------------- MEDIA SIZES --------------------*/
 @media screen and (min-width: 768px) {
+    .navbar-brand {
+        font-size: 3rem;
+    }
     .display-4 {
         font-size: 3.5rem;
     }

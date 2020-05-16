@@ -1,4 +1,4 @@
-//let city = 2964574;
+let dublinCity = 2964574;
 let city = "Dublin";
 let countryCode = "IE";
 //let cityCountry = "Dublin, IE";
@@ -38,7 +38,7 @@ function getData(callBack) {
     xhr.send();
 }
 
-// Write to DOM (without type)
+// Write to DOM on click
 function writeToDocument() {
     cityCountry = document.getElementById("city").value;
     baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${cityCountry}&${tempUnits}&appid=${apiKey}`;
@@ -51,10 +51,31 @@ function writeToDocument() {
 
         });
         
-        document.getElementById("weather-data").innerHTML = "<p>Weather for " + data.name + ", " + data.sys.country + ": " + data.weather[0].main + "</p>";
-        document.getElementById("weather-data").innerHTML += "<p>Temperature is: " + data.main.temp + " Celcius</p>";
+        document.getElementById("dynamic-weather-data").innerHTML = "<p>Weather for " + data.name + ", " + data.sys.country + ": " + data.weather[0].main + "</p>";
+        document.getElementById("dynamic-weather-data").innerHTML += "<p>Temperature is: " + data.main.temp + " Celcius</p>";
         
         //document.getElementById("weather-data").innerHTML = "Temperature is: " + data.main.temp;
         console.dir(data);
     });
 }
+
+// Get Dublin weather on page load
+document.addEventListener("DOMContentLoaded", function() {
+    displayDubWeath();
+    displayDate();
+ });
+  
+ function displayDubWeath() {
+    let el = document.getElementById("dublin-weather-data");
+    let now = new Date();
+    el.innerText = now;
+ }
+ // get and format current date
+ function displayDate(){
+    const months = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let dateEl = document.getElementById("current-date");
+    let now = new Date();
+    let formatted_date = now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();
+    dateEl.innerText = formatted_date;
+ }
+ 
