@@ -15,10 +15,10 @@ body {
       height: auto;
   }
   a {
-      color: #008c7e;
+      color: #904365;
   }
   a:hover {
-      color: #41d9c9;
+      color: #b95f89;
       text-decoration: none;
   }
   
@@ -54,13 +54,28 @@ body {
     display: flex;
 }
 /* Topbar Weather */
-#dublin-weather-data {
+.dublin-weather-outer {
+    position: relative;
+    text-align: right;
     width: 66.666667%;
 }
 #current-date {
-    text-align: right;
-    
+    text-align: left;
     width: 33.333332%;
+}
+.more-weather-link,
+.less-weather-link {
+    cursor: pointer;
+    padding: 10px 0;
+}
+/* More weather drop down */
+#more-weather {
+    background: aliceblue;
+    display: none;
+    padding: 15px;
+    position: absolute;
+    text-align: left;
+    z-index: 999;
 }
 /* Navbar */
 .navbar {
@@ -71,7 +86,6 @@ body {
     font-family: 'Kalam', cursive;
     font-size: 1.5rem;
     margin-right: 0;
-    border: 1px solid;
 }
 .logo-part1,
 .logo-part2 {

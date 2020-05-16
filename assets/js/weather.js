@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         let dubName = data.name;
         let dubWeath = data.weather[0].main;
+        //let dubIcon = data.weather[0].icon;
         let dubTemp = Math.round(data.main.temp);
         dubEl.innerHTML = `<div>Weather for ${dubName}</div>
                                 <div>${dubWeath}</div>
@@ -88,4 +89,13 @@ document.addEventListener("DOMContentLoaded", function() {
     let formatted_date = now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();
     dateEl.innerText = formatted_date;
  }
- 
+// show more weather options
+ function showMoreWeather(){
+    let moreBtn = document.getElementById("more-weather");
+    moreBtn.classList.toggle('d-block');
+ }
+ // show more weather options
+ function showLessWeather(){
+    let lessBtn = document.getElementById("more-weather");
+    lessBtn.classList.toggle('d-block');
+ }

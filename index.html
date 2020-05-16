@@ -14,8 +14,22 @@
     <header class="full-width-header">
         <div class="topbar">
             <div class="container">
-                <div id="dublin-weather-data"></div>
                 <div id="current-date"></div>
+                <div class="dublin-weather-outer">
+                    <div id="dublin-weather-data"></div>
+                    <div id="more-weather">
+                        <div id="weather-widget">
+                            <p>Check the weather in your city. You can also add a comma and country code after to specify the country (e.g. Dublin, IE)</p>
+                            <form>
+                                <input id="city" value="Dublin, IE">
+                                <button type="button" id="get-weather" onclick="writeToDocument()">Current Weather</button>
+                            </form>
+                            <div id="dynamic-weather-data"></div>
+                        </div>
+                        <div id="see-less-weather"><a class="less-weather-link" onclick="showLessWeather()">View less</a></div>
+                    </div>
+                    <div id="see-more-weather"><a class="more-weather-link" onclick="showMoreWeather()">View more</a></div>
+                </div>
             </div>
         </div>
         <div class="container">
@@ -31,30 +45,17 @@
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="#">Our Recommendations</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            <a class="nav-link" href="#">Getting around</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown01">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Your Notes</a>
                         </li>
                     </ul>
                 </div>
             </nav>
-            <div id="weather-widget">
-                <p>Check the weather in your city. You can also add a comma and country code after to specify the country (e.g. Dublin, IE)</p>
-                <form>
-                    <input id="city" value="Dublin, IE">
-                    <button type="button" id="get-weather" onclick="writeToDocument()">Current Weather</button>
-                </form>
-                <div id="dynamic-weather-data"></div>
-            </div>
         </div>
     </header>
     
