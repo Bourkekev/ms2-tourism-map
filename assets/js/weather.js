@@ -54,12 +54,16 @@ function writeToDocument() {
     cityCountry = document.getElementById("city").value;
     const numbers = /^[0-9]+$/;
     if (cityCountry.match(numbers)){
-        console.log("Is only numbers")
+        console.log("Is only numbers");
+        cityCountry = Number(cityCountry);
     } else {
         console.log(typeof(cityCountry));
     }
     
-    if(typeof(cityCountry)=="string"){
+    if(cityCountry == ""){
+        alert("Nothing submitted");
+    }
+    else if(typeof(cityCountry)=="string"){
         baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${cityCountry}&${tempUnits}&appid=${apiKey}`;
         getData( function(data) {
 
