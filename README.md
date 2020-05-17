@@ -93,6 +93,8 @@ Font Families - Finding fonts like Libre Baskerville that have style variants is
 
 ## Testing
 
+I wanted to test my input field for the weather widget to make sure a string was entered, as a number would break my weather API call. I want to make sure to expect the unexpected input.
+
 ### Validation
 
 #### HTML
