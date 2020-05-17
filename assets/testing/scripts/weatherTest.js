@@ -3,8 +3,9 @@
 function weatherInputOf(cityCountry){
     if(typeof(cityCountry)=="string"){
         return cityCountry;
-    } else {
-        return "Error";
+    } else if (typeof(cityCountry)=="number"){
+        return "Error, that is a number";
+    } else if (typeof(cityCountry)=="undefined"){
+       alert("Nothing submitted"); 
     }
-    
 }

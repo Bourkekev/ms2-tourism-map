@@ -7,14 +7,60 @@
 
 </head>
 <body>
-
+    <header class="full-width-header">
+        <div class="topbar">
+            <div class="container">
+                <div id="current-date"></div>
+                <div class="dublin-weather-outer">
+                    <div id="dublin-weather-data"></div>
+                    <div id="more-weather" class="hidden">
+                        <div id="weather-widget">
+                            <p>Check the weather in your city. You can also add a comma and country code after to specify the country (e.g. Dublin, IE)</p>
+                            <form>
+                                <input id="city" value="Dublin, IE">
+                                <button type="button" id="get-weather" onclick="writeToDocument()">Current Weather</button>
+                            </form>
+                            <div id="dynamic-weather-data"></div>
+                        </div>
+                        <div id="see-less-weather"><a class="less-weather-link" onclick="showLessWeather()">View less</a></div>
+                    </div>
+                    <div id="see-more-weather"><a class="more-weather-link" onclick="showMoreWeather()">View more</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light bg-white">
+                <a class="navbar-brand" href="#"><span class="logo-part1">Visiting </span><span class="logo-part2">Dublin</span></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMainMenu" aria-controls="navbarMainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarMainMenu">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Our Recommendations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Getting around</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Your Notes</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
     <!-- Jasmine JS files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine-html.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/boot.js"></script>
 
     <!-- Your Source Code (this must come before the tests!) -->
-    <script src="scripts/weatherTest.js"></script>
+    <script src="../js/weather.js"></script>
 
     <!-- Specifications (this must come after the source code!) -->
     <script src="spec/weatherSpec.js"></script>

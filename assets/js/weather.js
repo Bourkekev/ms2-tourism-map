@@ -1,7 +1,7 @@
 let dublinCity = 2964574;
 let city = "Dublin";
 let countryCode = "IE";
-//let cityCountry = "Dublin, IE";
+
 const apiKey = "4adecede8cc646766529fd7932ba0555";
 let tempUnits = "units=metric";
 let cityInput = document.getElementById("city");
@@ -9,7 +9,7 @@ let cityInput = document.getElementById("city");
 let cityCountry = document.getElementById("city").value;
 // API url for Dublin by ID
 const baseURLByID = `http://api.openweathermap.org/data/2.5/weather?id=${dublinCity}&${tempUnits}&appid=${apiKey}`;
-//const baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&${tempUnits}&appid=${apiKey}`;
+
 let baseURL;
 
 // Simulate button click on enter
@@ -38,25 +38,48 @@ function getData(callBack) {
     xhr.send();
 }
 
+// Test inputted value
+function weatherInputOf(cityCountry){
+    if(typeof(cityCountry)=="string"){
+        return cityCountry;
+    } else if (typeof(cityCountry)=="number"){
+        alert("Error, that is a number");
+    } else if (typeof(cityCountry)=="undefined"){
+       alert("Nothing submitted"); 
+    }
+}
+
 // Write to DOM on click
 function writeToDocument() {
     cityCountry = document.getElementById("city").value;
-    baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${cityCountry}&${tempUnits}&appid=${apiKey}`;
-    console.log(cityCountry);
-    getData( function(data) {
+    const numbers = /^[0-9]+$/;
+    if (cityCountry.match(numbers)){
+        console.log("Is only numbers")
+    } else {
+        console.log(typeof(cityCountry));
+    }
+    
+    if(typeof(cityCountry)=="string"){
+        baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${cityCountry}&${tempUnits}&appid=${apiKey}`;
+        getData( function(data) {
 
-        let weather = data.weather;
-        weather.forEach(function(item){
-            //document.getElementById("weather-data").innerHTML = "Weather for " + city + item.sys.country + ": " + item.main;
+            let weather = data.weather;
+            weather.forEach(function(item){
+                //document.getElementById("weather-data").innerHTML = "Weather for " + city + item.sys.country + ": " + item.main;
 
+            });
+            
+            document.getElementById("dynamic-weather-data").innerHTML = "<p>Weather for " + data.name + ", " + data.sys.country + ": " + data.weather[0].main + "</p>";
+            document.getElementById("dynamic-weather-data").innerHTML += "<p>Temperature is: " + data.main.temp + " Celcius</p>";
+            
+            //document.getElementById("weather-data").innerHTML = "Temperature is: " + data.main.temp;
+            console.dir(data);
         });
-        
-        document.getElementById("dynamic-weather-data").innerHTML = "<p>Weather for " + data.name + ", " + data.sys.country + ": " + data.weather[0].main + "</p>";
-        document.getElementById("dynamic-weather-data").innerHTML += "<p>Temperature is: " + data.main.temp + " Celcius</p>";
-        
-        //document.getElementById("weather-data").innerHTML = "Temperature is: " + data.main.temp;
-        console.dir(data);
-    });
+    } else if (typeof(cityCountry)=="number"){
+        alert("Error, that is a number");
+    } else if (typeof(cityCountry)=="undefined"){
+       alert("Nothing submitted"); 
+    }
 }
 
 // Get date and Dublin weather on page load
@@ -78,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function() {
         dubEl.innerHTML = `<div>Weather for ${dubName}</div>
                                 <div>${dubWeath}</div>
                                 <div>${dubTemp}&#8451;</div>`
-        console.dir(data);
     });
  }
  // get and format current date

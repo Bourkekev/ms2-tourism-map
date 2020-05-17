@@ -4,7 +4,14 @@ describe("Weather city input", function(){
             expect(weatherInputOf("dublin")).toBe("dublin");
         });
         it("should return an error if the input is a has numbers", function(){
-            expect(weatherInputOf(6)).toBe("Error");
+            spyOn(window, "alert");
+            weatherInputOf(6);
+            expect(window.alert).toHaveBeenCalledWith("Error, that is a number");
+        });
+        it("should return an Alert error if the input is empty", function(){
+            spyOn(window, "alert");
+            weatherInputOf();
+            expect(window.alert).toHaveBeenCalledWith("Nothing submitted");
         });
     });
 });
