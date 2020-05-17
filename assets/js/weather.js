@@ -92,10 +92,12 @@ document.addEventListener("DOMContentLoaded", function() {
 // show more weather options
  function showMoreWeather(){
     let moreBtn = document.getElementById("more-weather");
-    moreBtn.classList.toggle('d-block');
+    moreBtn.classList.toggle('hidden');
+    moreBtn.classList.toggle('shown');
  }
  // show more weather options
  function showLessWeather(){
     let lessBtn = document.getElementById("more-weather");
-    lessBtn.classList.toggle('d-block');
+    lessBtn.classList.toggle('hidden');
+    lessBtn.classList.toggle('shown');
  }

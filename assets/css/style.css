@@ -71,11 +71,27 @@ body {
 /* More weather drop down */
 #more-weather {
     background: aliceblue;
-    display: none;
-    padding: 15px;
     position: absolute;
+    overflow: hidden;
     text-align: left;
     z-index: 999;
+    transition: all .5s;
+}
+#weather-widget,
+#see-less-weather {
+    padding: 15px;
+}
+.hidden {
+    height: 0;
+    opacity: 0;
+    transition: all .5s;
+}
+.shown {
+    opacity: 1;
+    transition: all .5s;
+}
+#more-weather.shown {
+    height: 160px;
 }
 /* Navbar */
 .navbar {
