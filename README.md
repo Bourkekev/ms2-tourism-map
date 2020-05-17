@@ -95,6 +95,8 @@ Font Families - Finding fonts like Libre Baskerville that have style variants is
 
 I wanted to test my input field for the weather widget to make sure a string was entered, as a number would break my weather API call. I want to make sure to expect the unexpected input.
 
+I only then discovered that the input field will return a string regardless of what is input. But I still wanted to check for a number, so found a simple regex expression to check if the string is all numbers. (reference - https://www.w3resource.com/javascript/form/all-numbers.php)
+
 ### Validation
 
 #### HTML
@@ -163,6 +165,7 @@ This would have been a lot simpiler to use jQuery's on('click') but it helped me
 ### Technical
  - For general references for Javascript methods I used my Code Institue notes, [MDN web docs](https://developer.mozilla.org/en-US/) and [w3schools](https://www.w3schools.com/js/default.asp).
  - For selecting and delete note list item i referenced this [Stackoverflow question](https://stackoverflow.com/questions/14258787/add-event-listener-on-elements-created-dynamically).
+ - To check if input is all numbers I used this reference - https://www.w3resource.com/javascript/form/all-numbers.php
 ### Content
 
 ### Media

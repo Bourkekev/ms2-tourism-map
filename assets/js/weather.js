@@ -52,6 +52,7 @@ function weatherInputOf(cityCountry){
 // Write to DOM on click
 function writeToDocument() {
     cityCountry = document.getElementById("city").value;
+    // got the following regex from https://www.w3resource.com/javascript/form/all-numbers.php
     const numbers = /^[0-9]+$/;
     if (cityCountry.match(numbers)){
         console.log("Is only numbers");
