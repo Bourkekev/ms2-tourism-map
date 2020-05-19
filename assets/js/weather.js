@@ -66,7 +66,7 @@ function writeToDocument() {
             console.dir(data);
         });
     } else if (typeof(cityCountry)=="number"){
-        alert("Error, that is a number");
+        alert("That is a number, please type a city");
     } else if (typeof(cityCountry)=="undefined"){
        alert("Nothing submitted"); 
     }

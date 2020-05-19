@@ -93,6 +93,7 @@ Font Families - Finding fonts like Libre Baskerville that have style variants is
 
 ## Testing
 
+### Weather Input
 I wanted to test my input field for the weather widget to make sure a string was entered, as a number would break my weather API call. I want to make sure to expect the unexpected input.
 
 I tried to use Jasmine to automate some of the testing on the function writeToDocument() in the weather.js file which will check if the value is a number, blank or a string and give feedback to the user. I feel I do not really have knowledge yet to do proper Jasmine testing so limited it just to this function. For example, I am not sure that Jasmine testing scripts should be left on the production code. Also as the writeToDocument function gets the user input from the input field, I had to change my writeToDocument function to accept an argument (I called testValue), which would be what Jasmine passed in. Because of this I copied my weather.js code to the /assets/testing/scripts/weatherTest.js and the html file the test runs on is /assets/testing/spec/weather-test.html
