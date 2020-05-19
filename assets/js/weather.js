@@ -1,4 +1,4 @@
-let dublinCity = 2964574;
+const dublinCity = 2964574;
 let city = "Dublin";
 let countryCode = "IE";
 
@@ -38,29 +38,14 @@ function getData(callBack) {
     xhr.send();
 }
 
-// Test inputted value
-function weatherInputOf(cityCountry){
-    if(typeof(cityCountry)=="string"){
-        return cityCountry;
-    } else if (typeof(cityCountry)=="number"){
-        alert("Error, that is a number");
-    } else if (typeof(cityCountry)=="undefined"){
-       alert("Nothing submitted"); 
-    }
-}
-
 // Write to DOM on click
 function writeToDocument() {
     cityCountry = document.getElementById("city").value;
-    // got the following regex from https://www.w3resource.com/javascript/form/all-numbers.php
+    // got the following regex to check if all numbers from https://www.w3resource.com/javascript/form/all-numbers.php
     const numbers = /^[0-9]+$/;
     if (cityCountry.match(numbers)){
-        console.log("Is only numbers");
         cityCountry = Number(cityCountry);
-    } else {
-        console.log(typeof(cityCountry));
     }
-    
     if(cityCountry == ""){
         alert("Nothing submitted");
     }
