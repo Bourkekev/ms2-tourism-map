@@ -111,6 +111,12 @@ div#dublin-forecast-data {
 #dublin-forecast-data .col-6 {
     padding: 5px;
 }
+#dublin-forecast-data .forecast-icon {
+    padding: 0;
+}
+.col-2.forecast-icon img {
+    margin-top: -5px;
+}
 #weather-widget,
 #see-less-weather {
     padding: 15px;
