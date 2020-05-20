@@ -98,6 +98,18 @@ body {
     text-align: left;
     z-index: 999;
     transition: all .5s;
+    right:0;
+    min-width: 0;
+}
+div#dublin-forecast-data {
+    font-size: .6rem;
+}
+#dublin-forecast-data .col-1,
+#dublin-forecast-data .col-2,
+#dublin-forecast-data .col-3,
+#dublin-forecast-data .col-4,
+#dublin-forecast-data .col-6 {
+    padding: 5px;
 }
 #weather-widget,
 #see-less-weather {
@@ -113,7 +125,8 @@ body {
     transition: all .5s;
 }
 #more-weather.shown {
-    height: 160px;  
+    height: 160px;
+    min-width: 250px; 
 }
 /* Navbar */
 .navbar {

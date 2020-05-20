@@ -107,23 +107,51 @@ document.addEventListener("DOMContentLoaded", function() {
                                     </div>
                                 </div>
                             </div>`
-    });
-    //Forecast data
-        let forecastWeath = forecastData.weather[0].main;
-        //let forecastIcon = forecastData.weather[0].icon;
-        let forecastTemp = Math.round(forecastData.main.temp);
+    //Forecast data 1 day. Need to skip over [0] as is also today
+        let forecastWeath = data.daily[1].weather[0].main;
+        let forecastIcon = data.daily[1].weather[0].icon;
+        let forecastTemp = Math.round(data.daily[1].temp.day);
+        //2 days
+        let forecastWeath2 = data.daily[2].weather[0].main;
+        let forecastIcon2 = data.daily[2].weather[0].icon;
+        let forecastTemp2 = Math.round(data.daily[2].temp.day);
+        //convert unix time to readable - reference https://coderrocketfuel.com/article/convert-a-unix-timestamp-to-a-date-in-vanilla-javascript
+        const unixTimestamp = data.daily[2].dt;
+        const milliseconds = unixTimestamp * 1000;
+        const dateObject = new Date(milliseconds);
+        const humanDateFormat = dateObject.toLocaleString("en-US", {weekday: "long"});
+
         dubElFore.innerHTML = `<div class="container">
                                 <div class="row">
-                                    <div class="col-5 weather-icon">
-                                        <img src="http://openweathermap.org/img/wn/${forecastIcon}@2x.png" alt="weather icon" />
-                                        <div class="weather-text">${forecastWeath}</div>
+                                    <div class="col-4 forecast">
+                                        <span>Tomorrow</span>
                                     </div>
-                                    <div class="col-7">
-                                        <div class="temp">${forecastTemp}&#8451;</div>
+                                    <div class="col-2 forecast-icon">
+                                        <img src="http://openweathermap.org/img/wn/${forecastIcon}@2x.png" alt="weather icon" />
+                                    </div>
+                                    <div class="col-4 weather-text forecast">
+                                        ${forecastWeath}
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="temp-forcast">${forecastTemp}&#8451;</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 forecast">
+                                        <span>${humanDateFormat}</span>
+                                    </div>
+                                    <div class="col-2 forecast-icon">
+                                        <img src="http://openweathermap.org/img/wn/${forecastIcon2}@2x.png" alt="weather icon" />
+                                    </div>
+                                    <div class="col-4 weather-text forecast">
+                                        ${forecastWeath2}
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="temp-forcast">${forecastTemp2}&#8451;</div>
                                     </div>
                                 </div>
                             </div>`
-
+    });
  }
  // get and format current date
  function displayDate(){
