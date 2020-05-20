@@ -50,29 +50,51 @@ body {
     padding: 5px 0;
     background-color: #C4E0F9;
 }
-.topbar .container {
+/* .topbar .container {
     display: flex;
-}
-/* Topbar Weather */
+} */
+/* -------------------------------- Topbar Weather ----------- */
 .dublin-weather-outer {
     position: relative;
-    text-align: right;
-    width: 66.666667%;
+    border: 1px solid;
+    padding: 5px;
+    max-width: 215px;
+    margin-right: 0;
+    margin-left: auto;
 }
 #current-date {
     text-align: left;
-    width: 33.333332%;
+}
+.city-name {
+    text-align: center;
+}
+.weather-icon {
+    text-align: right;
+    padding-right: 5px;
+}
+.temp-wrap {
+    padding-left: 5px;
+}
+.temp {
+    font-size: 2rem;
+    height: 50px;
+}
+.weather-icon img {
+    width: 50px;
+    height: auto;
 }
 .more-weather-link,
 .less-weather-link {
     cursor: pointer;
-    padding: 10px 0;
+    display: block;
+    padding: 10px 0 0;
+    text-align: center;
 }
 /* More weather drop down */
 #more-weather {
     background: aliceblue;
     position: absolute;
-    overflow: hidden;
+    overflow: scroll;
     text-align: left;
     z-index: 999;
     transition: all .5s;
@@ -91,7 +113,7 @@ body {
     transition: all .5s;
 }
 #more-weather.shown {
-    height: 160px;
+    height: 160px;  
 }
 /* Navbar */
 .navbar {

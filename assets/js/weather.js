@@ -86,11 +86,24 @@ document.addEventListener("DOMContentLoaded", function() {
         
         let dubName = data.name;
         let dubWeath = data.weather[0].main;
-        //let dubIcon = data.weather[0].icon;
+        let dubIcon = data.weather[0].icon;
         let dubTemp = Math.round(data.main.temp);
-        dubEl.innerHTML = `<div>Weather for ${dubName}</div>
-                                <div>${dubWeath}</div>
-                                <div>${dubTemp}&#8451;</div>`
+        let feelsTemp = Math.round(data.main.feels_like);
+        dubEl.innerHTML = `<div class="container">
+                                <div class="row">
+                                    <div class="col city-name">Weather for ${dubName}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-5 weather-icon">
+                                        <img src="http://openweathermap.org/img/wn/${dubIcon}@2x.png" alt="weather icon" />
+                                        <div class="weather-text">${dubWeath}</div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="temp">${dubTemp}&#8451;</div>
+                                        <div class="feels-like">Feels like ${feelsTemp}&#8451;</div>
+                                    </div>
+                                </div>
+                            </div>`
     });
  }
  // get and format current date
@@ -113,3 +126,8 @@ document.addEventListener("DOMContentLoaded", function() {
     lessBtn.classList.toggle('hidden');
     lessBtn.classList.toggle('shown');
  }
+ /* jQuery */
+ $(document).ready(function() {
+      /* BS tooltip */
+    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+});

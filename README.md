@@ -106,11 +106,11 @@ I only then discovered that the input field will return a string regardless of w
 #### HTML
 I validated the HTML with the [W3 Validation Service](https://validator.w3.org/). 
 
-
-
 #### CSS
 
 I validated the CSS with the [W3 CSS Validation Service](http://www.css-validator.org/) for CSS Level 3 and...
+
+#### Javascript
 
 ### Testing on Browsers, Screen sizes and Devices
 I tested the website on the following browsers and devices:
