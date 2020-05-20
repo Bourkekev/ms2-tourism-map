@@ -173,7 +173,7 @@ So I decided to just use the jQuery show, hide or toggle methods. This nearly ca
 
 ### Technical
  - For general references for Javascript methods I used my Code Institue notes, [MDN web docs](https://developer.mozilla.org/en-US/) and [w3schools](https://www.w3schools.com/js/default.asp).
- - For selecting and delete note list item i referenced this [Stackoverflow question](https://stackoverflow.com/questions/14258787/add-event-listener-on-elements-created-dynamically).
+ - For selecting and delete note list item I referenced this [Stackoverflow question](https://stackoverflow.com/questions/14258787/add-event-listener-on-elements-created-dynamically).
  - To check if input is all numbers I used this reference - https://www.w3resource.com/javascript/form/all-numbers.php
  - To convert unix timestap I referenced this article - https://coderrocketfuel.com/article/convert-a-unix-timestamp-to-a-date-in-vanilla-javascript
 ### Content

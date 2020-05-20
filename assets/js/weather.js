@@ -35,7 +35,6 @@ function getData(callBack) {
         }
     };
 
-    //xhr.open("GET", baseURL + type + "/");
     xhr.open("GET", baseURL);
     xhr.send();
 }
@@ -54,18 +53,29 @@ function writeToDocument() {
     else if(typeof(cityCountry)=="string"){
         baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${cityCountry}&${tempUnits}&appid=${apiKey}`;
         getData( function(data) {
-
-            let weather = data.weather;
-            weather.forEach(function(item){
-                //document.getElementById("weather-data").innerHTML = "Weather for " + city + item.sys.country + ": " + item.main;
-
-            });
+            //console.dir(data);
             
-            document.getElementById("dynamic-weather-data").innerHTML = "<p>Weather for " + data.name + ", " + data.sys.country + ": " + data.weather[0].main + "</p>";
-            document.getElementById("dynamic-weather-data").innerHTML += "<p>Temperature is: " + data.main.temp + " Celcius</p>";
-            
-            //document.getElementById("weather-data").innerHTML = "Temperature is: " + data.main.temp;
-            console.dir(data);
+            let cityEl = document.getElementById("dynamic-weather-data");
+            let cityName = data.name;
+            let cityWeath = data.weather[0].main;
+            let weathIcon = data.weather[0].icon;
+            let weathTemp = Math.round(data.main.temp);
+            let feelsTemp = Math.round(data.main.feels_like);
+            cityEl.innerHTML = `<div class="container">
+                                    <div class="row">
+                                        <div class="col city-name">Weather for ${cityName}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5 weather-icon">
+                                            <img src="http://openweathermap.org/img/wn/${weathIcon}@2x.png" alt="weather icon" />
+                                            <div class="weather-text">${cityWeath}</div>
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="temp">${weathTemp}&#8451;</div>
+                                            <div class="feels-like">Feels like ${feelsTemp}&#8451;</div>
+                                        </div>
+                                    </div>
+                                </div>`
         });
     } else if (typeof(cityCountry)=="number"){
         alert("That is a number, please type a city");
@@ -107,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                     </div>
                                 </div>
                             </div>`
-    //Forecast data 1 day. Need to skip over [0] as is also today
+        //Forecast data 1 day. Need to skip over [0] as is also today
         let forecastWeath = data.daily[1].weather[0].main;
         let forecastIcon = data.daily[1].weather[0].icon;
         let forecastTemp = Math.round(data.daily[1].temp.day);
@@ -161,18 +171,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let formatted_date = now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();
     dateEl.innerText = formatted_date;
  }
-// show more weather options
-//  function showMoreWeather(){
-//     let moreBtn = document.getElementById("more-weather");
-//     moreBtn.classList.toggle('hidden');
-//     moreBtn.classList.toggle('shown');
-//  }
- // show more weather options
-//  function showLessWeather(){
-//     let lessBtn = document.getElementById("more-weather");
-//     lessBtn.classList.toggle('hidden');
-//     lessBtn.classList.toggle('shown');
-//  }
+
  /* jQuery */
  $(document).ready(function() {
       /* BS tooltip */

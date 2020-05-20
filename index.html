@@ -26,11 +26,11 @@
                                 <div id="weather-widget">
                                     <div id="dublin-forecast-data"></div>
                                     <p>Check the weather in your city</p>
-                                    <p data-toggle="tooltip" data-html="true" title="Optionally, zdd a comma and country code after to specify the country (e.g. Dublin, IE)">
+                                    <p data-toggle="tooltip" data-html="true" title="Optionally, add a comma and country code after to specify the country (e.g. Dublin, IE)">
                                         Tip
                                     </p>
                                     <form>
-                                        <input id="city" value="Dublin, IE">
+                                        <input id="city" autocomplete="off" value="Dublin, IE">
                                         <button type="button" class="btn btn-primary" id="get-weather" onclick="writeToDocument()">Current Weather</button>
                                     </form>
                                     <div id="dynamic-weather-data"></div>
