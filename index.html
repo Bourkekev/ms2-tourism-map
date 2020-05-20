@@ -21,22 +21,21 @@
                     <div class="col-8 col-sm-6 col-md-4 col-lg-3">
                         <div class="dublin-weather-outer">
                             <div id="dublin-weather-data"></div>
-                            <div id="see-more-weather"><a class="more-weather-link" onclick="showMoreWeather()">View more</a></div>
-                            <div id="more-weather" class="hidden">
+                            <div id="see-more-weather"><a class="more-weather-link">View more</a></div>
+                            <div id="more-weather">
                                 <div id="weather-widget">
                                     <div id="dublin-forecast-data"></div>
-                                    <h4>Check the weather in your city</h4>
+                                    <p>Check the weather in your city</p>
                                     <p data-toggle="tooltip" data-html="true" title="Optionally, zdd a comma and country code after to specify the country (e.g. Dublin, IE)">
                                         Tip
                                     </p>
-                                    <p></p>
                                     <form>
                                         <input id="city" value="Dublin, IE">
                                         <button type="button" class="btn btn-primary" id="get-weather" onclick="writeToDocument()">Current Weather</button>
                                     </form>
                                     <div id="dynamic-weather-data"></div>
                                 </div>
-                                <div id="see-less-weather"><a class="less-weather-link" onclick="showLessWeather()">View less</a></div>
+                                <div id="see-less-weather"><a class="less-weather-link">View less</a></div>
                             </div>
                         </div>
                     </div>
@@ -144,7 +143,7 @@
             </div>
         </div> 
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzIGV-yMFW2sZbKjho3bgFebj1ZbzZ7AI&callback=initMap"></script>

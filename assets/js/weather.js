@@ -162,19 +162,26 @@ document.addEventListener("DOMContentLoaded", function() {
     dateEl.innerText = formatted_date;
  }
 // show more weather options
- function showMoreWeather(){
-    let moreBtn = document.getElementById("more-weather");
-    moreBtn.classList.toggle('hidden');
-    moreBtn.classList.toggle('shown');
- }
+//  function showMoreWeather(){
+//     let moreBtn = document.getElementById("more-weather");
+//     moreBtn.classList.toggle('hidden');
+//     moreBtn.classList.toggle('shown');
+//  }
  // show more weather options
- function showLessWeather(){
-    let lessBtn = document.getElementById("more-weather");
-    lessBtn.classList.toggle('hidden');
-    lessBtn.classList.toggle('shown');
- }
+//  function showLessWeather(){
+//     let lessBtn = document.getElementById("more-weather");
+//     lessBtn.classList.toggle('hidden');
+//     lessBtn.classList.toggle('shown');
+//  }
  /* jQuery */
  $(document).ready(function() {
       /* BS tooltip */
     $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+    //show more weather widget
+    $(".more-weather-link").click(function() {
+        $("#more-weather").toggle(500);
+    });
+    $(".less-weather-link").click(function() {
+        $("#more-weather").toggle(500);
+    });
 });

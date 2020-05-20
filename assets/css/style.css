@@ -93,13 +93,11 @@ body {
 /* More weather drop down */
 #more-weather {
     background: aliceblue;
+    display: none;
     position: absolute;
-    overflow: scroll;
     text-align: left;
     z-index: 999;
-    transition: all .5s;
     right:0;
-    min-width: 0;
 }
 div#dublin-forecast-data {
     font-size: .6rem;
@@ -121,19 +119,11 @@ div#dublin-forecast-data {
 #see-less-weather {
     padding: 15px;
 }
-.hidden {
-    height: 0;
-    opacity: 0;
-    transition: all .5s;
-}
-.shown {
-    opacity: 1;
-    transition: all .5s;
-}
-#more-weather.shown {
-    height: 160px;
-    min-width: 250px; 
-}
+/* hidden */
+/* .hidden {
+    display: none;
+} */
+
 /* Navbar */
 .navbar {
     padding: .5rem 0rem;
