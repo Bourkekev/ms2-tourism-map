@@ -8,7 +8,9 @@ let cityInput = document.getElementById("city");
 //set cityCountry to the inputted value
 let cityCountry = document.getElementById("city").value;
 // API url for Dublin by ID
-const baseURLByID = `http://api.openweathermap.org/data/2.5/weather?id=${dublinCity}&${tempUnits}&appid=${apiKey}`;
+// const baseURLByID = `http://api.openweathermap.org/data/2.5/weather?id=${dublinCity}&${tempUnits}&appid=${apiKey}`;
+//API url forecast for Dublin by coordinates
+const baseURLByCoords = `https://api.openweathermap.org/data/2.5/onecall?lat=53.350140&lon=-6.264155&${tempUnits}&exclude=minutely,hourly&appid=4adecede8cc646766529fd7932ba0555`;
 
 let baseURL;
 
@@ -80,15 +82,16 @@ document.addEventListener("DOMContentLoaded", function() {
   
  function displayDubWeath() {
     let dubEl = document.getElementById("dublin-weather-data");
-    //Set api url to city by ID
-    baseURL = baseURLByID;
+    let dubElFore = document.getElementById("dublin-forecast-data");
+    //Set api url to city by coords
+    baseURL = baseURLByCoords;
     getData( function(data) {
         
-        let dubName = data.name;
-        let dubWeath = data.weather[0].main;
-        let dubIcon = data.weather[0].icon;
-        let dubTemp = Math.round(data.main.temp);
-        let feelsTemp = Math.round(data.main.feels_like);
+        let dubName = "Dublin";
+        let dubWeath = data.current.weather[0].main;
+        let dubIcon = data.current.weather[0].icon;
+        let dubTemp = Math.round(data.current.temp);
+        let feelsTemp = Math.round(data.current.feels_like);
         dubEl.innerHTML = `<div class="container">
                                 <div class="row">
                                     <div class="col city-name">Weather for ${dubName}</div>
@@ -105,6 +108,22 @@ document.addEventListener("DOMContentLoaded", function() {
                                 </div>
                             </div>`
     });
+    //Forecast data
+        let forecastWeath = forecastData.weather[0].main;
+        //let forecastIcon = forecastData.weather[0].icon;
+        let forecastTemp = Math.round(forecastData.main.temp);
+        dubElFore.innerHTML = `<div class="container">
+                                <div class="row">
+                                    <div class="col-5 weather-icon">
+                                        <img src="http://openweathermap.org/img/wn/${forecastIcon}@2x.png" alt="weather icon" />
+                                        <div class="weather-text">${forecastWeath}</div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="temp">${forecastTemp}&#8451;</div>
+                                    </div>
+                                </div>
+                            </div>`
+
  }
  // get and format current date
  function displayDate(){
