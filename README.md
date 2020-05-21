@@ -102,7 +102,7 @@ I only then discovered that the input field will return a string regardless of w
 
 ### Testing the note sending
 
-I was having an issue where the notes being sent by email were sometimes different than the note list on screen. I could just compare the email received with the notes on the website but it was a bit awkward and slow as it relied on receiving the email from EmailJS. This could take a few minutes for the email to come through, so I knew I could just prevent the email and output the list to be emailed back to the DOM and compare with the original list. This way I was able to quickly visually compare the note list, with the list that was about to be sent and spot the differences. I temporarily commented out the emailjs.send function and created a new div below the 'Send Email' button, and inserted the list to be emailed into this div. The fix was easy enought then, I just had to make sure to update the list from the local storage within the sendMail function.
+I was having an issue where the notes being sent by email were sometimes different than the note list on screen. I could just compare the email received with the notes on the website but it was a bit awkward and slow as it relied on receiving the email from EmailJS. This could take a few minutes for the email to come through, so I knew I could just prevent the email and output the list to be emailed back to the DOM and compare with the original list. This way I was able to quickly visually compare the note list, with the list that was about to be sent and spot the differences. I temporarily commented out the emailjs.send function and created a new div below the 'Send Email' button, and inserted the list to be emailed into this div. The fix was easy enought then, I just had to make sure to update the list from the local storage within the sendMail function. I also used this for testing removing the html delete button from the lists for sending.
 
 ### Validation
 
@@ -169,12 +169,16 @@ This would have been a lot simpiler to use jQuery's on('click') but it helped me
 
 The note being emailed was sometimes different than what was received in the email. It turned out I needed to make sure to get the local storage again before emailing within the sendMail function. See more detail about this in the testing section above.
 
+### Removing the html delete button from the emailed notes
+
+Initially when emailing the notes, the html delete button I appended to each list item was also being sent. I did not want this. But because the local storage was saving the lists as a string of html, this was what was being retrieved and sent. I tried to find a way to not store the buttons as part of the lists html but this proved quite tricky, and having thought again it seemed it would be easier to remove the button html from the string. I knew the replace method would replace text in a string, but forgot only the first instance of the value will be replaced. The (W3Schools reference)[https://www.w3schools.com/jsref/jsref_replace.asp] explained how to perform a global search, but I was getting an error. The problem was the formatting of the Regular Expression I was trying to find, in particular the html character such as the forward slash in `</button>`. I used a (regex generator)[http://regex.larsolavtorvik.com/] to find the correct format. Turned out I was only missing the escape on the html forward slash.
+
 ### Showing and hiding the weather widget
 
 At first I wanted to just use Javascript to add and remove a class to show and hide the weather widget by using CSS animations to animate the height. But my weather widget is dynamic in height but you must set an explicit height in order to animate with CSS. You cannot use the height of the content (or auto). I researched this to be sure and found this (CSS Tricks article)[https://css-tricks.com/using-css-transitions-auto-dimensions/] about it.
 So I decided to just use the jQuery show, hide or toggle methods. This nearly caught me out though because I was initially only loading jQuery Slim at this point, which actually does not include certain effects and animations. So I had to update my jQuery to load the full version.
 
-## Credits
+## Credits and References
 
 ### Design and Research
 
@@ -183,6 +187,9 @@ So I decided to just use the jQuery show, hide or toggle methods. This nearly ca
  - For selecting and delete note list item I referenced this [Stackoverflow question](https://stackoverflow.com/questions/14258787/add-event-listener-on-elements-created-dynamically).
  - To check if input is all numbers I used this reference - https://www.w3resource.com/javascript/form/all-numbers.php
  - To convert unix timestap I referenced this article - https://coderrocketfuel.com/article/convert-a-unix-timestamp-to-a-date-in-vanilla-javascript
+ - Regex generator to remove html from a string - Removing the html delete button from the emailed notes - http://regex.larsolavtorvik.com/
+
+
 ### Content
 
 ### Media

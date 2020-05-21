@@ -7,10 +7,10 @@ function sendMail(notesForm){
     
 
     if (currentList){
-        //remove buttons
-        let currentListNoBtn = currentList.replace(/<button class="del-btn">X</button>/g, 'hel');
+        //remove buttons from lists. Got regex from this generator http://regex.larsolavtorvik.com/
+        let currentListNoBtn = currentList.replace(/<button class="del-btn">X<\/button>/gi, '');
         sendList += currentListNoBtn;
-        sendList += "<ul>";
+        sendList += "</ul>";
     }
     console.log("LIST TO BE SENT: " + sendList);
     let templateParams = {
@@ -19,16 +19,16 @@ function sendMail(notesForm){
     };
     
     // debug : send list back to DOM
-    let debugEl = document.getElementById("note-send-debug");
-    if (sendList){
-        debugEl.innerHTML = sendList;
-    }
+    // let debugEl = document.getElementById("note-send-debug");
+    // if (sendList){
+    //     debugEl.innerHTML = sendList;
+    // }
 
-    // emailjs.send('gmail', 'template_tourism_notes', templateParams)
-    //     .then(function(response) {
-    //        console.log('SUCCESS!', response.status, response.text);
-    //     }, function(error) {
-    //        console.log('FAILED...', error);
-    //     });
+    emailjs.send('gmail', 'template_tourism_notes', templateParams)
+        .then(function(response) {
+           console.log('SUCCESS!', response.status, response.text);
+        }, function(error) {
+           console.log('FAILED...', error);
+        });
     return false;
 }
