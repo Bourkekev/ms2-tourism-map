@@ -185,9 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     $('#open-notes').on('click', function(){
-        $('#take-notes').addClass('opened');
+        $('#take-notes').toggleClass('opened');
     });
-    // $('.customizer_button').on('click', function(){
-    //     $('#take-notes').removeClass('opened');
-    // });
+    
 });

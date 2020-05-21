@@ -6,8 +6,8 @@ html {
   }
 body {
     font-family: 'Libre Baskerville', serif;
-    font-size: 16px;
-    font-size: 1.6rem;
+    font-size: 14px;
+    font-size: 1.4rem;
     color: #333;
 }
 /* Headings */
@@ -192,7 +192,7 @@ div#dublin-forecast-data {
     font-size: 2.5rem;
 }
 .lead {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 /* Form Elements */
 .form-control {
@@ -238,37 +238,54 @@ div#dublin-forecast-data {
     width: 100%;
 }
 /* ----------------------------------  NOTE TAKING ---------------*/
-#take-notes {
+#take-notes,
+.take-notes-wrapper {
     position: fixed;
     background: #fff;
     border: 1px solid #407dbf;
     border-radius: 4px 0 0 4px;
     box-shadow: -3px 0px 3px 1px rgba(0, 0, 0, 0.3);
     top: 10vh;
-    /* right: 0; */
+    right: -75%;
     z-index: 9999;
     width: 100%;
+    transition: all 0.3s ease-in-out;
 }
 /* Open the notes tab */
-div#open-notes {
+#open-notes {
+    font-size: 1.2rem;
     width: 20%;
     padding: .5rem;
     text-align: center;
+}
+#open-notes::before {
+    display: block;
+    content: " ";
+    background: white;
+    box-shadow: -10px 0px 3px 0px rgba(0, 0, 0, 0.3);
+    width: 20px;
+    height: 15px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 #take-notes p {
     font-size: 1.4rem;
 }
 .take-notes-wrapper {
-    position: fixed;
     background: #E9FFFF;
     border: 1px solid #407dbf;
-    border-radius: 4px 0 0 4px;
-    box-shadow: -3px 0px 3px 1px rgba(0, 0, 0, 0.3);
-    top: 10vh;
-    right: 0;
     width: 80%;
     max-height: 80vh;
     overflow: scroll;
+}
+/* When take notes section opened */
+#take-notes.opened {
+    right: 0;
+}
+#take-notes.opened .take-notes-wrapper {
+    right: 0;
 }
 li.note-item {
     background: #88B8FD;
