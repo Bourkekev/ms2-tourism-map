@@ -119,10 +119,6 @@ div#dublin-forecast-data {
 #see-less-weather {
     padding: 15px;
 }
-/* hidden */
-/* .hidden {
-    display: none;
-} */
 
 /* Navbar */
 .navbar {
@@ -191,6 +187,9 @@ li.note-item {
     padding: 5px 10px;
     border-radius: 4px;
     margin-bottom: 10px;
+}
+button.del-btn {
+    margin-left: 10px;
 }
 /* ---------------------------------- MEDIA SIZES --------------------*/
 @media screen and (min-width: 768px) {

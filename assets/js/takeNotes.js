@@ -13,11 +13,22 @@ userInput.addEventListener("keydown", function(event) {
     }
   });
 
-function addToLIst(){
+function addToList(){
     let newItemValue = document.getElementById("note-input").value;
-    //.log(newItemValue);
+    //check for required field message
+    let requiredMsg = document.querySelector("#note-item-required");
+
+    // if there is nothing in input
     if(newItemValue == null || newItemValue == ""){
-        console.log("Input is empty");
+        //if required field message is already there
+        if(requiredMsg==null) {
+            requiredMsg = document.createElement("div");
+            requiredMsg.id="note-item-required";
+            requiredMsg.innerText="The input is empty.";
+            
+            let reqWrapper = document.getElementById("note-input-wrapper");
+            reqWrapper.appendChild(requiredMsg);
+        }
     }
     else {
         //create li element
@@ -32,17 +43,13 @@ function addToLIst(){
         newItem.appendChild(newItemContent);
         newItem.appendChild(deleteBtn);
         list.appendChild(newItem);
-        // console.log(list);
-        
-        
 
-        //clear user input field
+        //clear user input field and remove required message
         userInput.value = "";
-
-        // set currentCounter variable to the contents of "counter" or 0 if "counter" doesn't exist yet
-        let currentCounter = localStorage.getItem("counter") || 0;
-        localStorage.setItem("counter", ++currentCounter);
-
+        if(requiredMsg) {
+            requiredMsg.remove();
+        }
+        //save list in local storage
         localStorage.setItem("listItem", list.innerHTML);
 
     }
@@ -67,7 +74,6 @@ document.querySelector('body').addEventListener('click', function(event) {
 
 function clearList() {
     if(confirm("This will clear your notes list. Are you sure?")) {
-        let currentCounter = localStorage.removeItem("counter");
         let currentList = localStorage.removeItem("listItem");
         //remove first child nodes while there are some
         while(list.hasChildNodes()){

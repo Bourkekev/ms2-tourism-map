@@ -24,11 +24,14 @@ function sendMail(notesForm){
     //     debugEl.innerHTML = sendList;
     // }
 
+    let responseEl = document.querySelector('#response');
     emailjs.send('gmail', 'template_tourism_notes', templateParams)
         .then(function(response) {
            console.log('SUCCESS!', response.status, response.text);
+           responseEl.innerText = "Notes emailed successfully.";
         }, function(error) {
            console.log('FAILED...', error);
+           responseEl.innerText = "Note sending failed.";
         });
     return false;
 }

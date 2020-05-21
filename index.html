@@ -99,8 +99,10 @@
                     <div class="col">
                         <h2>My To-See List</h2>
                         <p>Add notes to this list</p>
-                        <input type="text" id="note-input" placeholder="Type note here...">
-                        <button type=button id="submit-note" class="btn btn-primary" onclick="addToLIst()"></i>+ Add note <i class="fas fa-pencil-alt"></i></button>
+                        <div id="note-input-wrapper">
+                            <input type="text" id="note-input" placeholder="Type note here...">
+                        </div>
+                        <button type=button id="submit-note" class="btn btn-primary" onclick="addToList()"></i>+ Add note <i class="fas fa-pencil-alt"></i></button>
                     </div>
                 </div>
                 <div class="row pt-3 pb-3">
@@ -123,6 +125,8 @@
                             <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Type your email here..." required />
                             <button type="submit" id="submit-notes" class="btn btn-secondary">Send by email <i class="fas fa-paper-plane"></i></button>
                         </form>
+                        <!-- this will show spinner -->
+                        <div id="response"></div>
                         <div id="note-send-debug"></div>
                     </div>
                 </div>
