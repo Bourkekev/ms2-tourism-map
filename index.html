@@ -25,15 +25,17 @@
                             <div id="more-weather">
                                 <div id="weather-widget">
                                     <div id="dublin-forecast-data"></div>
-                                    <p>Check the weather in your city</p>
-                                    <p data-toggle="tooltip" data-html="true" title="Optionally, add a comma and country code after to specify the country (e.g. Dublin, IE)">
-                                        Tip
-                                    </p>
-                                    <form>
-                                        <input id="city" autocomplete="off" value="Dublin, IE">
-                                        <button type="button" class="btn btn-primary" id="get-weather" onclick="writeToDocument()">Current Weather</button>
-                                    </form>
-                                    <div id="dynamic-weather-data"></div>
+                                    <div class="other-city">
+                                        <p>Check the weather in your city</p>
+                                        <p data-toggle="tooltip" data-html="true" title="Optionally, add a comma and country code after to specify the country (e.g. Dublin, IE)">
+                                            Tip
+                                        </p>
+                                        <form>
+                                            <input id="city" autocomplete="off" value="Dublin, IE">
+                                            <button type="button" class="btn btn-primary" id="get-weather" onclick="writeToDocument()">Get Weather</button>
+                                        </form>
+                                        <div id="dynamic-weather-data"></div>
+                                    </div>
                                 </div>
                                 <div id="see-less-weather"><a class="less-weather-link">View less</a></div>
                             </div>
@@ -110,7 +112,6 @@
                 </div>
                 <div class="row pt-3 pb-3">
                     <div class="col">
-                        <button onclick="showCounter()">How many items</button>
                         <button type=button id="clear-list" class="btn btn-primary" onclick="clearList()"></i>- Delete notes <i class="fas fa-trash-alt"></i></button>
                     </div>
                 </div>
@@ -120,9 +121,9 @@
                         <p>For safe keeping you can email this list to your email address.</p>
                         <form onsubmit="return sendMail(this);">
                             <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Type your email here..." required />
-                            <textarea rows="5" name="notessummary" id="notessummary" class="form-control" placeholder="Project description"></textarea>
                             <button type="submit" id="submit-notes" class="btn btn-secondary">Send by email <i class="fas fa-paper-plane"></i></button>
                         </form>
+                        <div id="note-send-debug"></div>
                     </div>
                 </div>
             </div>

@@ -162,6 +162,10 @@ It sounds like an easy thing to do, but I had trouble getting an event listener 
 In the end I added the eventListener to the body and if a click event's target has the delete button classname then it will delete that button's parent node (the li). The idea for the solution to this came from this [Stackoverflow question](https://stackoverflow.com/questions/14258787/add-event-listener-on-elements-created-dynamically). I modified this idea to fit my own website needs. 
 This would have been a lot simpiler to use jQuery's on('click') but it helped me learn about delegated event handlers and that they can process events from descendant elements that are added to the document at a later time. 
 
+### Emailed note was sometimes different than the list
+
+The note being emailed was sometimes different than what was received in the email. It turned out I needed to make sure to get the local storage again before emailing within the sendMail function.
+
 ### Showing and hiding the weather widget
 
 At first I wanted to just use Javascript to add and remove a class to show and hide the weather widget by using CSS animations to animate the height. But my weather widget is dynamic in height but you must set an explicit height in order to animate with CSS. You cannot use the height of the content (or auto). I researched this to be sure and found this (CSS Tricks article)[https://css-tricks.com/using-css-transitions-auto-dimensions/] about it.

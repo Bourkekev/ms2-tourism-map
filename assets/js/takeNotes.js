@@ -77,9 +77,3 @@ function clearList() {
         console.log("do not delete storage")
     }
 }
-function showCounter() {
-    // set currentCounter variable to the contents of "counter" or 0 if "counter" doesn't exist yet
-    let currentCounter = localStorage.getItem("counter") || 0;
-    // display the current count in an alert
-    alert("You clicked the button: " + currentCounter + " times.");
-}
