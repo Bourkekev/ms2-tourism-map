@@ -183,4 +183,11 @@ document.addEventListener("DOMContentLoaded", function() {
     $(".less-weather-link").click(function() {
         $("#more-weather").toggle(500);
     });
+
+    $('#open-notes').on('click', function(){
+        $('#take-notes').addClass('opened');
+    });
+    // $('.customizer_button').on('click', function(){
+    //     $('#take-notes').removeClass('opened');
+    // });
 });

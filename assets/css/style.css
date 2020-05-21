@@ -1,15 +1,25 @@
 /* -------------------- Set Defaults --------*/
 html {
     scroll-behavior: smooth;
+    /* make rem easier to use and not prevent scaling font */
+    font-size: 62.5%;
   }
 body {
     font-family: 'Libre Baskerville', serif;
+    font-size: 16px;
+    font-size: 1.6rem;
     color: #333;
 }
-  /* Headings */
-  h1, h2, h3, h4, h5, h6 {
-      font-family: 'Libre Baskerville', cursive;
-  }
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Libre Baskerville', cursive;
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 1.6rem;
+}
   img {
       max-width: 100%;
       height: auto;
@@ -127,7 +137,7 @@ div#dublin-forecast-data {
 /* Logo */
 .navbar-brand {
     font-family: 'Kalam', cursive;
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     margin-right: 0;
 }
 .logo-part1,
@@ -136,7 +146,7 @@ div#dublin-forecast-data {
 }
 .logo-part1 {
     transform: rotate(-15deg) translate(.2em, -.7em);
-    font-size: .6em;
+    font-size: 1.4rem;
     margin-right: 10px;
 }
 .logo-part2 {
@@ -145,7 +155,8 @@ div#dublin-forecast-data {
 
 /* Navbar toggle */
 .navbar-toggler {
-    padding: .25rem .5rem;
+    padding: .4rem .8rem;
+    font-size: 2rem;
 }
 /* Jumbotron */
 .jumbotron {
@@ -170,8 +181,12 @@ div#dublin-forecast-data {
     position: relative;
     z-index: 2;
 }
+/* Text styles */
 .display-4 {
     font-size: 2.5rem;
+}
+.lead {
+    font-size: 2rem;
 }
 
 /* MAP */
@@ -180,6 +195,29 @@ div#dublin-forecast-data {
     width: 100%;
 }
 /* ----------------------------------  NOTE TAKING ---------------*/
+section#take-notes {
+    position: fixed;
+    background: #fff;
+    border: 1px solid #407dbf;
+    border-radius: 4px 0 0 4px;
+    box-shadow: -3px 0px 3px 1px rgba(0, 0, 0, 0.3);
+    top: 10vh;
+    /* right: 0; */
+    z-index: 9999;
+    width: 80%;
+}
+.take-notes-wrapper {
+    position: fixed;
+    background: #E9FFFF;
+    border: 1px solid #407dbf;
+    border-radius: 4px 0 0 4px;
+    box-shadow: -3px 0px 3px 1px rgba(0, 0, 0, 0.3);
+    top: 10vh;
+    right: 0;
+    width: 80%;
+    max-height: 80vh;
+    overflow: scroll;
+}
 li.note-item {
     background: #88B8FD;
     color:#000080;
@@ -190,6 +228,11 @@ li.note-item {
 }
 button.del-btn {
     margin-left: 10px;
+}
+/* Note required and response */
+#response {
+    padding: 5px 0;
+    margin: 10px 0;
 }
 /* ---------------------------------- MEDIA SIZES --------------------*/
 @media screen and (min-width: 768px) {
