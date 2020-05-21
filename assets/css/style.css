@@ -150,6 +150,9 @@ div#dublin-forecast-data {
     font-size: 2.4rem;
     margin-right: 0;
 }
+.navbar-light .navbar-brand {
+    color: #000080;
+}
 .logo-part1,
 .logo-part2 {
     display: inline-block;
@@ -196,7 +199,7 @@ div#dublin-forecast-data {
     font-size: 2.5rem;
 }
 .lead {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 /* Form Elements */
 .form-control {
@@ -345,7 +348,7 @@ button.del-btn {
     background: #00041B;
     color:#fff;
     padding: 10px;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .social-icons-list {
     list-style: none;
