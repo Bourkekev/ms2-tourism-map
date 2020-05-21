@@ -100,6 +100,9 @@ I tried to use Jasmine to automate some of the testing on the function writeToDo
 
 I only then discovered that the input field will return a string regardless of what is input. But I still wanted to check for a number, so found a simple regex expression to check if the string is all numbers. (reference - https://www.w3resource.com/javascript/form/all-numbers.php)
 
+### Testing the note sending
+
+I was having an issue where the notes being sent by email were sometimes different than the note list on screen. I could just compare the email received with the notes on the website but it was a bit awkward and slow as it relied on receiving the email from EmailJS. This could take a few minutes for the email to come through, so I knew I could just prevent the email and output the list to be emailed back to the DOM and compare with the original list. This way I was able to quickly visually compare the note list, with the list that was about to be sent and spot the differences. I temporarily commented out the emailjs.send function and created a new div below the 'Send Email' button, and inserted the list to be emailed into this div. The fix was easy enought then, I just had to make sure to update the list from the local storage within the sendMail function.
 
 ### Validation
 
@@ -164,7 +167,7 @@ This would have been a lot simpiler to use jQuery's on('click') but it helped me
 
 ### Emailed note was sometimes different than the list
 
-The note being emailed was sometimes different than what was received in the email. It turned out I needed to make sure to get the local storage again before emailing within the sendMail function.
+The note being emailed was sometimes different than what was received in the email. It turned out I needed to make sure to get the local storage again before emailing within the sendMail function. See more detail about this in the testing section above.
 
 ### Showing and hiding the weather widget
 
