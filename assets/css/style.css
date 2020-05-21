@@ -14,23 +14,29 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Libre Baskerville', cursive;
 }
-h1 {
+.h1, h1 {
     font-size: 4rem;
 }
-h2 {
-    font-size: 1.6rem;
+.h2, h2 {
+    font-size: 2.8rem;
+    color: #97476B;
 }
-  img {
-      max-width: 100%;
-      height: auto;
-  }
-  a {
-      color: #904365;
-  }
-  a:hover {
-      color: #b95f89;
-      text-decoration: none;
-  }
+.h3, h3 {
+    font-size: 2rem;
+    color: #97476B;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+a {
+    color: #904365;
+}
+a:hover {
+    color: #b95f89;
+    text-decoration: none;
+}
   
 /* -------------------- END Defaults --------*/
 /* -------------------- HEADER -------------*/
@@ -56,7 +62,7 @@ h2 {
 /* Top bar */
 .topbar {
     color: #000080;
-    font-size: .75rem;
+    font-size: 1.1rem;
     padding: 5px 0;
     background-color: #C4E0F9;
 }
@@ -188,14 +194,51 @@ div#dublin-forecast-data {
 .lead {
     font-size: 2rem;
 }
-
+/* Form Elements */
+.form-control {
+    height: calc(2.5em + .75rem + 2px);
+    padding: .4rem .8rem;
+    font-size: 1.4rem;
+}
+/* Buttons */
+.btn {
+    padding: .6rem 1rem;
+    font-size: 1.4rem;
+    margin-top: 15px;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.btn:hover {
+    -webkit-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    transform: scale(1.03);
+}
+.btn-primary {
+    color: #fff;
+    background-color: #97476B;
+    border-color: #75304D;
+}
+.btn-secondary {
+    color: #000080;
+    background-color: #2EC0F9;
+    border-color: #2EC0F9;
+}
+.btn i {
+    margin: 0 10px;
+}
 /* MAP */
 #map {
     min-height: 600px;
     width: 100%;
 }
 /* ----------------------------------  NOTE TAKING ---------------*/
-section#take-notes {
+#take-notes {
     position: fixed;
     background: #fff;
     border: 1px solid #407dbf;
@@ -204,7 +247,16 @@ section#take-notes {
     top: 10vh;
     /* right: 0; */
     z-index: 9999;
-    width: 80%;
+    width: 100%;
+}
+/* Open the notes tab */
+div#open-notes {
+    width: 20%;
+    padding: .5rem;
+    text-align: center;
+}
+#take-notes p {
+    font-size: 1.4rem;
 }
 .take-notes-wrapper {
     position: fixed;
@@ -227,12 +279,70 @@ li.note-item {
     margin-bottom: 10px;
 }
 button.del-btn {
+    font-family: Arial, Helvetica, sans-serif;
+    background: none;
+    border: none;
+    float: right;
+    color: #F92C2C;
+    font-weight: 800;
     margin-left: 10px;
 }
+.divider-b {
+    border-bottom: 5px solid;
+    -o-border-image: -o-linear-gradient(left, transparent 0%, #000080 50%, transparent 100%);
+    border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #000080), to(transparent));
+    border-image: linear-gradient(to right, transparent 0%, #000080 50%, transparent 100%);
+    border-image-slice: 1;
+    border-width: 1px;
+}
 /* Note required and response */
+#note-item-required,
 #response {
-    padding: 5px 0;
-    margin: 10px 0;
+    border:1px solid;
+    padding: .5rem;
+    margin: 1rem 0;
+}
+#note-item-required {
+    color: #F92C2C;
+    border-color: #F92C2C;
+}
+#response {
+    color: #007F0F;
+    border: none;
+}
+/* ----- FOOTER ----- */
+.footer {
+    background-color: #192037;
+    color:#fff;
+}
+.full-width-copyright {
+    background: #00041B;
+    color:#fff;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+.social-icons-list {
+    list-style: none;
+    padding: 0;
+}
+.social-icons-list li {
+    display: inline-block;
+    font-size: 18px;
+    margin: 5px 5px 0 0;
+}
+.social-icons-list li a {
+    color: #fff;
+    background: #B95F89;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 24px;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
 }
 /* ---------------------------------- MEDIA SIZES --------------------*/
 @media screen and (min-width: 768px) {

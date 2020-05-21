@@ -196,5 +196,7 @@ So I decided to just use the jQuery show, hide or toggle methods. This nearly ca
 ### Media
 - The photos and vectors (except logo) used in this site were obtained from:
 
+ - Fictional Ireland Fáilte logo was designed on https://www.freelogodesign.org/
+
 ### Acknowledgements
 
