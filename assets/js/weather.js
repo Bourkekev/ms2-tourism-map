@@ -174,18 +174,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
  /* jQuery */
  $(document).ready(function() {
+    /* Close navbar on click sub-menu */
+    $('.navbar-nav .sub-nav-link').on('click', function(){
+        $('.navbar-collapse').collapse('hide');
+    });
       /* BS tooltip */
     $("body").tooltip({ selector: '[data-toggle=tooltip]' });
     //show more weather widget
     $(".more-weather-link").click(function() {
-        $("#more-weather").toggle(500);
+        $("#more-weather").slideToggle(300);
     });
     $(".less-weather-link").click(function() {
-        $("#more-weather").toggle(500);
+        $("#more-weather").slideToggle(300);
     });
-
-    $('#open-notes').on('click', function(){
+    /**
+     * @description opens the take notes section and changes text depending on text
+     */
+    $('.open-notes').on('click', function(){
         $('#take-notes').toggleClass('opened');
+        if($(this).text() == 'Open notes'){
+            console.log( $(this).text() );
+            $(this).text('Close notes');
+        } else {
+            $(this).text('Open notes');
+        }
     });
     
 });

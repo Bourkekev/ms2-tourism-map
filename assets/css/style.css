@@ -71,6 +71,7 @@ a:hover {
 } */
 /* -------------------------------- Topbar Weather ----------- */
 .dublin-weather-outer {
+    background: #2fc0f9;
     position: relative;
     border: 1px solid;
     padding: 5px;
@@ -108,9 +109,12 @@ a:hover {
 }
 /* More weather drop down */
 #more-weather {
-    background: aliceblue;
+    background: #2EC0F9;
+    border: 1px solid;
+    border-top: none;
     display: none;
     position: absolute;
+    left: -1px;
     text-align: left;
     z-index: 999;
     right:0;
@@ -252,13 +256,13 @@ div#dublin-forecast-data {
     transition: all 0.3s ease-in-out;
 }
 /* Open the notes tab */
-#open-notes {
+.open-notes {
     font-size: 1.2rem;
     width: 20%;
     padding: .5rem;
     text-align: center;
 }
-#open-notes::before {
+.open-notes::before {
     display: block;
     content: " ";
     background: white;
