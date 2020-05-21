@@ -245,22 +245,25 @@ div#dublin-forecast-data {
 #take-notes,
 .take-notes-wrapper {
     position: fixed;
-    background: #fff;
-    border: 1px solid #407dbf;
-    border-radius: 4px 0 0 4px;
-    box-shadow: -3px 0px 3px 1px rgba(0, 0, 0, 0.3);
     top: 10vh;
     right: -75%;
     z-index: 9999;
     width: 100%;
     transition: all 0.3s ease-in-out;
 }
+
 /* Open the notes tab */
 .open-notes {
+    background: #fff;
+    border: 1px solid #407dbf;
+    border-radius: 4px 0 0 4px;
+    box-shadow: -3px 0px 3px 1px rgba(0, 0, 0, 0.3);
     font-size: 1.2rem;
     width: 20%;
     padding: .5rem;
     text-align: center;
+    top: 30vh;
+    position: relative;
 }
 .open-notes::before {
     display: block;
@@ -280,6 +283,8 @@ div#dublin-forecast-data {
 .take-notes-wrapper {
     background: #E9FFFF;
     border: 1px solid #407dbf;
+    border-radius: 4px 0 0 4px;
+    box-shadow: -3px 0px 3px 1px rgba(0, 0, 0, 0.3);
     width: 80%;
     max-height: 80vh;
     overflow: scroll;
