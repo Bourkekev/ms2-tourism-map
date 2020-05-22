@@ -204,7 +204,12 @@ document.addEventListener("DOMContentLoaded", function() {
      * @description moves the weather widget when reach 992px wide
      */
     console.log( $(window).width() );
-    if ($( window ).width() > 991) {
-        $('.topbar').css('background-color', 'red');
-    }
+    $( window ).resize(function(){
+        if ($( window ).width() > 991) {
+            $('.topbar').css('background-color', 'red');
+        } else {
+            $('.topbar').css('background-color', 'blue');
+        }
+    });
+    
 });
