@@ -286,6 +286,21 @@ div#dublin-forecast-data {
     min-height: 600px;
     width: 100%;
 }
+#legend {
+    color: #88B8FD;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 13px;
+    padding: 25px;
+    margin: 25px;
+    border: 1px solid #88B8FD;
+  }
+  #legend h3 {
+    color: #88B8FD;
+  }
+  #legend img {
+    vertical-align: middle;
+    margin: 0 10px;
+  }
 /* ----------------------------------  NOTE TAKING ---------------*/
 #take-notes,
 .take-notes-wrapper {

@@ -394,10 +394,13 @@ function sendMail(notesForm) {
  *  MAPPING FUNCTIONS
  */
 
+ //store markers here
+let markers = [];
+
 function initMap() {
     //map options
     let options = {
-        zoom: 14,
+        zoom: 11,
         center: {
             lat: 53.347293,
             lng: -6.25897,
@@ -407,53 +410,79 @@ function initMap() {
     map = new google.maps.Map(document.getElementById("map"), options);
     infoWindow = new google.maps.InfoWindow();
 
+    // Category Icons
+        let categories = {
+          outdoors: {
+            name: 'Outdoors',
+            icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+          },
+          bars: {
+            name: 'Bars',
+            icon: 'http://maps.google.com/mapfiles/kml/pal2/icon27.png'
+          },
+          entertain: {
+            name: 'Entertainment',
+            icon: 'http://maps.google.com/mapfiles/ms/micons/fishing.png'
+          },
+          cultural: {
+            name: 'Cultural',
+            icon: 'assets/images/markers/castle-blue-marker.png'
+          }
+        };
+
     // Put infoWindow content into variable
     let portoContent = `
         <h2>Velvet Strand</h2>
         <p>Portmarnock</p>
         <p><a href="https://www.visitdublin.com/see-do/details/portmarnock-the-velvet-strand-blue-flag-beach-2019" target="_blank">See more here</a></p>`;
+    
     // Put all addMarkers called into array instead of individual addMarker calls
-    let markers = [
+    let locations = [
         {
             coords: { lat: 53.4246, lng: -6.121 },
-            iconImage:
-                "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
             content: portoContent,
+            type: 'outdoors'
         },
         {
             coords: { lat: 53.4509, lng: -6.1501 },
-            iconImage: "http://maps.google.com/mapfiles/kml/pal2/icon27.png",
             content: "<h3>Party Village</h3><p>Malahide</p>",
+            type: 'bars'
         },
         {
             coords: { lat: 53.3786, lng: -6.057 },
-            iconImage: "http://maps.google.com/mapfiles/ms/micons/fishing.png",
             content: "<h3>Fishing Village</h3><p>Howth</p>",
+            type: 'entertain'
         },
         {
             coords: { lat: 53.343225, lng: -6.267848 },
-            iconImage: "assets/images/markers/castle-blue-marker.png",
             content: "<h3>Dublin Castle</h3><p>Founded in 13th century, Dublin Castle is located off Dame Street.</p>",
+            type: 'cultural'
+        },
+        {
+            coords: { lat: 53.444904, lng: -6.164135 },
+            content: "<h3>Malahide Castle</h3><p>Founded in 13th century, Malahide Castle is located off Dame Street.</p>",
+            type: 'cultural'
         },
     ];
 
-    //loop through markers
-    for (let i = 0; i < markers.length; i++) {
-        addMarker(markers[i]);
+    //loop through locations
+    for (let i = 0; i < locations.length; i++) {
+        addMarker(locations[i]);
     }
-
+    
     // Add Marker function
     function addMarker(props) {
         let marker = new google.maps.Marker({
             position: props.coords,
             map: map,
+            icon: categories[props.type].icon,
         });
 
         // Test for custom icon image
-        if (props.iconImage) {
-            // set icon image
-            marker.setIcon(props.iconImage);
-        }
+        // if (props.iconImage) {
+        //     // set icon image
+        //     marker.setIcon(props.iconImage);
+        // }
 
         // Test for info window content. Test if true otherwise get info window with no info
         if (props.content) {
@@ -468,7 +497,26 @@ function initMap() {
                 myInfoWindow.open(map, marker);
             });
         }
+        // push to array
+        markers.push({
+            marker: marker,
+            type: props.type
+        });
     }
+
+    // Create the legend with categories, names and icons
+    let legend = document.getElementById('legend');
+        let i = 0;
+        for (let key in categories) {
+            let type = categories[key];
+            let name = type.name;
+            let icon = type.icon;
+            let div = document.createElement('div');
+            div.innerHTML = '<input checked="checked" type="checkbox" onchange="toggleType(this, event, \'' + locations[i].type + '\')"><img src="' + icon + '"> ' + name;
+            legend.appendChild(div);
+            i++;
+        }
+        map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
 
     // TEST OUT POLYGON
     let shopArea = [
@@ -491,7 +539,21 @@ function initMap() {
     // To use a POLYGON just use .Polygon in above example
     // call function to add line
     addLine();
+
 }
+
+/** @description toggles the type of map category
+ * 
+ */
+function toggleType(elm, event, type) {
+    let on = elm.checked;
+    for (let i = 0; i < markers.length; i++) {
+      if (markers[i].type == type) {
+            markers[i].marker.setMap(on ? map : null);
+        }
+    }
+}
+
 function addLine() {
     // set the map to put polyline on
     shoppingAreaNorth.setMap(map);
