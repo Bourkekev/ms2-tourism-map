@@ -200,5 +200,11 @@ document.addEventListener("DOMContentLoaded", function() {
             $(this).text('Open notes');
         }
     });
-    
+    /** 
+     * @description moves the weather widget when reach 992px wide
+     */
+    console.log( $(window).width() );
+    if ($( window ).width() > 991) {
+        $('.topbar').css('background-color', 'red');
+    }
 });
