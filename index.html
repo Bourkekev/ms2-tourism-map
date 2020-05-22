@@ -34,19 +34,19 @@
                             <div id="more-weather">
                                 <div id="weather-widget">
                                     <div id="dublin-forecast-data"></div>
-                                    <div class="other-city">
-                                        <p>Check the weather in your city</p>
-                                        <p data-toggle="tooltip" data-html="true" title="Optionally, add a comma and country code after to specify the country (e.g. Dublin, IE)">
-                                            Tip
+                                    <div class="other-city divider-t mt-3 pt-3">
+                                        <h4 class="text-center pb-2">Check the weather in your city</h4>
+                                        <p class="tip" data-toggle="tooltip" data-html="true" title="Optionally, add a comma and country code after to specify the country (e.g. Dublin, IE)">
+                                            Search Tip ?
                                         </p>
                                         <form>
                                             <input id="city" class="form-control" autocomplete="off" value="London">
-                                            <button type="button" class="btn btn-primary" id="get-weather" onclick="writeToDocument()">Get Weather</button>
+                                            <button type="button" class="btn btn-primary w-100" id="get-weather" onclick="writeToDocument()">Get Weather</button>
                                         </form>
-                                        <div id="dynamic-weather-data"></div>
+                                        <div id="dynamic-weather-data" class="pt-3"></div>
                                     </div>
                                 </div>
-                                <div id="see-less-weather"><a class="less-weather-link">View less &#9652;&#9652;&#9652;</a></div>
+                                <div id="see-less-weather"><a class="less-weather-link pt-0">View less &#9652;&#9652;&#9652;</a></div>
                             </div>
                         </div>
                     </div>

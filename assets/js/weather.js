@@ -64,7 +64,7 @@ function writeToDocument() {
                                     <div class="row">
                                         <div class="col city-name">Weather for ${cityName}</div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row divider-b pb-2">
                                         <div class="col-5 weather-icon">
                                             <img src="http://openweathermap.org/img/wn/${weathIcon}@2x.png" alt="weather icon" />
                                             <div class="weather-text">${cityWeath}</div>
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <div class="row">
                                     <div class="col city-name">Weather for ${dubName}</div>
                                 </div>
-                                <div class="row">
+                                <div class="row divider-b pb-2">
                                     <div class="col-5 weather-icon">
                                         <img src="http://openweathermap.org/img/wn/${dubIcon}@2x.png" alt="weather icon" />
                                         <div class="weather-text">${dubWeath}</div>
@@ -192,7 +192,6 @@ document.addEventListener("DOMContentLoaded", function() {
     $('.open-notes').on('click', function(){
         $('#take-notes').toggleClass('opened');
         if($(this).text() == 'Open notes'){
-            console.log( $(this).text() );
             $(this).text('Close notes');
         } else {
             $(this).text('Open notes');
