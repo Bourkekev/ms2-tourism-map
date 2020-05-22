@@ -50,7 +50,7 @@ function writeToDocument() {
         alert("Nothing submitted");
     }
     else if(typeof(cityCountry)=="string"){
-        baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${cityCountry}&${tempUnits}&appid=${apiKey}`;
+        baseURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityCountry}&${tempUnits}&appid=${apiKey}`;
         getData( function(data) {
             //console.dir(data);
             
