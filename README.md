@@ -13,12 +13,24 @@ There will be a pull-out notepad for the user to save ideas of places to visit. 
 
 This section provides insight into the UX process, focusing on who this website is for, what it is that they want to achieve and how this project is the best way to help them achieve these things.  
 
+#### As a User
+
  - As a User who is either a visitor in Dublin or thinking of visiting Dublin, I want a website which shows some of the top recommended places to visit.
  - As a visitor I would also want a map to help locate places of interest and show my location and how to get to a place of interest from my location.
  - As a User who lives in Dublin, I may want to have a look in my local area for places of interest that I may not have realised were there, or did not know how to locate them.
  - As a visitor to Dublin, I may want to see what the weather is like, which would be important if I was walking or the place of interest was outdoors.
  - A a visitor to Dublin, I would like to see the weather forecast for the next couple of days, to help me determine a plan of action.
  - As a visitor to or user who lives in Dublin, it would be useful to be able to make a list of places of interest I would like to see, and arrange them in order of priority. Event thought the website will store the list it would be useful to be able to email this list to myself, so I could access this should I have no internet connection or the website is offline.
+
+#### As a developer
+
+I include this here as a way of explaining my mix of JavaScript and jQuery, and what I as a developer wanted to get out of this project. I only began using jQuery on this project for the animation tasks, such as the sliding panels.
+
+I wanted to use as much native JavaScript as possible:
+ - to enhance my knowledge and showcase my skills to potential employers.
+ - to be able to not have to rely on JavaScript libraries like jQuery, which also provides more weight to a webpage.
+ - because the continued development of JavaScript might lead to a point where the likes of jQuery may not be needed, as some of jQuery's best features are now natively available, such as better DOM selection with querySelector.
+ - as I wanted a project that is not completed at this point, and could yet have many features added, especially with regard to Google Maps APIs.
 
 ### Strategy
 

@@ -203,12 +203,17 @@ document.addEventListener("DOMContentLoaded", function() {
     /** 
      * @description moves the weather widget when reach 992px wide
      */
-    console.log( $(window).width() );
+    let weatherWidget = $('.dublin-weather-outer');
+    // on page load
+    if( $(window).width() > 991 ){
+        $(weatherWidget).appendTo('.navbar');
+    } 
+    // on window resize
     $( window ).resize(function(){
         if ($( window ).width() > 991) {
-            $('.topbar').css('background-color', 'red');
+            $(weatherWidget).appendTo('.navbar');
         } else {
-            $('.topbar').css('background-color', 'blue');
+            $(weatherWidget).prependTo('.topbar .row > .col-9');
         }
     });
     
