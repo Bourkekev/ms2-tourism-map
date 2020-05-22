@@ -395,7 +395,7 @@ button.del-btn {
     border: none;
 }
 /* ----- Full width sections ----- */
-#recommendations {
+.bg-light-blue {
     background: #c4e1f9;
 }
 /* ------ BS Cards ------*/

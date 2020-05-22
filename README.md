@@ -239,5 +239,7 @@ So I decided to just use the jQuery show, hide or toggle methods. This nearly ca
 
  - The favicons were generated at https://realfavicongenerator.net/
 
+ - Castle vectors - by <a href="https://www.vecteezy.com/free-vector/castle">Castle Vectors by Vecteezy</a>
+ 
 ### Acknowledgements
 

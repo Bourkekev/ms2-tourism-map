@@ -1,46 +1,45 @@
 /* jQuery -----------------------------------------------------------*/
-$(document).ready(function() {
+$(document).ready(function () {
     /* Close navbar on click sub-menu */
-    $('.navbar-nav .nav-link').on('click', function(){
-        $('.navbar-collapse').collapse('hide');
+    $(".navbar-nav .nav-link").on("click", function () {
+        $(".navbar-collapse").collapse("hide");
     });
-      /* BS tooltip */
-    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+    /* BS tooltip */
+    $("body").tooltip({ selector: "[data-toggle=tooltip]" });
     //show more weather widget
-    $(".more-weather-link").click(function() {
+    $(".more-weather-link").click(function () {
         $("#more-weather").slideToggle(300);
     });
-    $(".less-weather-link").click(function() {
+    $(".less-weather-link").click(function () {
         $("#more-weather").slideToggle(300);
     });
     /**
      * Ppens the take notes section and changes text depending on text
      */
-    $('.open-notes').on('click', function(){
-        $('#take-notes').toggleClass('opened');
-        if($(this).text() == 'Open notes'){
-            $(this).text('Close notes');
+    $(".open-notes").on("click", function () {
+        $("#take-notes").toggleClass("opened");
+        if ($(this).text() == "Open notes") {
+            $(this).text("Close notes");
         } else {
-            $(this).text('Open notes');
+            $(this).text("Open notes");
         }
     });
-    /** 
+    /**
      * Moves the weather widget when reach 992px wide
      */
-    let weatherWidget = $('.dublin-weather-outer');
+    let weatherWidget = $(".dublin-weather-outer");
     // on page load
-    if( $(window).width() > 991 ){
-        $(weatherWidget).appendTo('.navbar');
-    } 
+    if ($(window).width() > 991) {
+        $(weatherWidget).appendTo(".navbar");
+    }
     // on window resize
-    $( window ).resize(function(){
-        if ($( window ).width() > 991) {
-            $(weatherWidget).appendTo('.navbar');
+    $(window).resize(function () {
+        if ($(window).width() > 991) {
+            $(weatherWidget).appendTo(".navbar");
         } else {
-            $(weatherWidget).prependTo('.topbar .row > .col-9');
+            $(weatherWidget).prependTo(".topbar .row > .col-9");
         }
     });
-    
 });
 /** END JQUERY */
 
@@ -60,21 +59,21 @@ const baseURLByCoords = `https://api.openweathermap.org/data/2.5/onecall?lat=53.
 let baseURL;
 
 // Simulate button click on enter
-cityInput.addEventListener("keydown", function(event) {
+cityInput.addEventListener("keydown", function (event) {
     // Number 13 is the "Enter" key on the keyboard
     if (event.keyCode === 13) {
-      // Cancel the default action, if needed
-      event.preventDefault();
-      // Trigger the button element with a click
-      document.getElementById("get-weather").click();
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("get-weather").click();
     }
-  });
+});
 
 // without type
 function getData(callBack) {
     let xhr = new XMLHttpRequest();
-    
-    xhr.onreadystatechange = function() {
+
+    xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             callBack(JSON.parse(this.responseText));
         }
@@ -89,17 +88,16 @@ function writeToDocument() {
     cityCountry = document.getElementById("city").value;
     // got the following regex to check if all numbers from https://www.w3resource.com/javascript/form/all-numbers.php
     const numbers = /^[0-9]+$/;
-    if (cityCountry.match(numbers)){
+    if (cityCountry.match(numbers)) {
         cityCountry = Number(cityCountry);
     }
-    if(cityCountry == ""){
+    if (cityCountry == "") {
         alert("Nothing submitted");
-    }
-    else if(typeof(cityCountry)=="string"){
+    } else if (typeof cityCountry == "string") {
         baseURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityCountry}&${tempUnits}&appid=${apiKey}`;
-        getData( function(data) {
+        getData(function (data) {
             //console.dir(data);
-            
+
             let cityEl = document.getElementById("dynamic-weather-data");
             let cityName = data.name;
             let cityWeath = data.weather[0].main;
@@ -120,28 +118,28 @@ function writeToDocument() {
                                             <div class="feels-like">Feels like ${feelsTemp}&#8451;</div>
                                         </div>
                                     </div>
-                                </div>`
+                                </div>`;
         });
-    } else if (typeof(cityCountry)=="number"){
+    } else if (typeof cityCountry == "number") {
         alert("That is a number, please type a city");
-    } else if (typeof(cityCountry)=="undefined"){
-       alert("Nothing submitted"); 
+    } else if (typeof cityCountry == "undefined") {
+        alert("Nothing submitted");
     }
 }
 
 // Get date and Dublin weather on page load
-document.addEventListener("DOMContentLoaded", function() {
-    displayDubWeath();
+document.addEventListener("DOMContentLoaded", function () {
+    //Comment out displayDubWeath function to disable api calls on page load
+    //displayDubWeath();
     displayDate();
- });
-  
- function displayDubWeath() {
+});
+
+function displayDubWeath() {
     let dubEl = document.getElementById("dublin-weather-data");
     let dubElFore = document.getElementById("dublin-forecast-data");
     //Set api url to city by coords
     baseURL = baseURLByCoords;
-    getData( function(data) {
-        
+    getData(function (data) {
         let dubName = "Dublin";
         let dubWeath = data.current.weather[0].main;
         let dubIcon = data.current.weather[0].icon;
@@ -164,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                         <div class="feels-like d-none d-sm-block">Feels like ${feelsTemp}&#8451;</div>
                                     </div>
                                 </div>
-                            </div>`
+                            </div>`;
         //Forecast data 1 day. Need to skip over [0] as is also today
         let forecastWeath = data.daily[1].weather[0].main;
         let forecastIcon = data.daily[1].weather[0].icon;
@@ -177,7 +175,9 @@ document.addEventListener("DOMContentLoaded", function() {
         const unixTimestamp = data.daily[2].dt;
         const milliseconds = unixTimestamp * 1000;
         const dateObject = new Date(milliseconds);
-        const humanDateFormat = dateObject.toLocaleString("en-US", {weekday: "long"});
+        const humanDateFormat = dateObject.toLocaleString("en-US", {
+            weekday: "long",
+        });
 
         dubElFore.innerHTML = `<div class="container">
                                 <div class="row">
@@ -208,22 +208,41 @@ document.addEventListener("DOMContentLoaded", function() {
                                         <div class="temp-forcast">${forecastTemp2}&#8451;</div>
                                     </div>
                                 </div>
-                            </div>`
+                            </div>`;
     });
- }
- // get and format current date
- function displayDate(){
-    const months = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+}
+// get and format current date
+function displayDate() {
+    const months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+    ];
     let dateEl = document.getElementById("current-date");
     let now = new Date();
-    let formatted_date = now.getDate() + ' ' + months[now.getMonth()] + ' <span class="d-none d-sm-inline">' + now.getFullYear() + '</span>';
+    let formatted_date =
+        now.getDate() +
+        " " +
+        months[now.getMonth()] +
+        ' <span class="d-none d-sm-inline">' +
+        now.getFullYear() +
+        "</span>";
     dateEl.innerHTML = formatted_date;
- }
+}
 /**
  * END WEATHER API FUNCTIONS
  */
 
- /** -----------------------------------------------------------
+/** -----------------------------------------------------------
  *  NOTE TAKING FUNCTIONS
  */
 
@@ -232,8 +251,9 @@ let userInput = document.getElementById("note-input");
 let list = document.getElementById("notes-list");
 /**
  *  Simulates button click on enter
- */ 
-userInput.addEventListener("keydown", function(event) {
+ */
+
+userInput.addEventListener("keydown", function (event) {
     // Number 13 is the "Enter" key on the keyboard
     if (event.keyCode === 13) {
         event.preventDefault();
@@ -246,39 +266,38 @@ userInput.addEventListener("keydown", function(event) {
  * Get stored list items if they exist on page load
  */
 let currentList = localStorage.getItem("listItem");
-if (currentList){
+if (currentList) {
     list.innerHTML = currentList;
 }
 
 /**
- *  @description gets the input value from notes input, saves it as a new list item and saves the list to Local Storage 
+ *  @description gets the input value from notes input, saves it as a new list item and saves the list to Local Storage
  */
-function addToList(){
+function addToList() {
     let newItemValue = document.getElementById("note-input").value;
     //check for required field message
     let requiredMsg = document.querySelector("#note-item-required");
 
     // if there is nothing in input
-    if(newItemValue == null || newItemValue == ""){
+    if (newItemValue == null || newItemValue == "") {
         //if required field message is already there
-        if(requiredMsg==null) {
+        if (requiredMsg == null) {
             requiredMsg = document.createElement("div");
-            requiredMsg.id="note-item-required";
-            requiredMsg.innerText="The input is empty.";
-            
+            requiredMsg.id = "note-item-required";
+            requiredMsg.innerText = "The input is empty.";
+
             let reqWrapper = document.getElementById("note-input-wrapper");
             reqWrapper.appendChild(requiredMsg);
         }
-    }
-    else {
+    } else {
         //create li element
         let newItem = document.createElement("li");
-        newItem.className="note-item";
+        newItem.className = "note-item";
         let newItemContent = document.createTextNode(newItemValue);
         // delete button
         let deleteBtn = document.createElement("button");
-        deleteBtn.innerText="X";
-        deleteBtn.className="del-btn";
+        deleteBtn.innerText = "X";
+        deleteBtn.className = "del-btn";
         // Append text and elements inside li
         newItem.appendChild(newItemContent);
         newItem.appendChild(deleteBtn);
@@ -286,20 +305,19 @@ function addToList(){
 
         //clear user input field and remove required message
         userInput.value = "";
-        if(requiredMsg) {
+        if (requiredMsg) {
             requiredMsg.remove();
         }
         //save list in local storage
         localStorage.setItem("listItem", list.innerHTML);
-
     }
 }
 
 /** Deletes individual list item
- * 
+ *
  */
-document.querySelector('body').addEventListener('click', function(event) {
-    if(event.target.className === 'del-btn') {
+document.querySelector("body").addEventListener("click", function (event) {
+    if (event.target.className === "del-btn") {
         //console.log(event.target.parentNode);
         //delete parent node(the li)
         event.target.parentNode.remove();
@@ -312,63 +330,67 @@ document.querySelector('body').addEventListener('click', function(event) {
  * @description Clears all notes from the list
  */
 function clearList() {
-    if(confirm("This will clear your notes list. Are you sure?")) {
+    if (confirm("This will clear your notes list. Are you sure?")) {
         let currentList = localStorage.removeItem("listItem");
         //remove first child nodes while there are some
-        while(list.hasChildNodes()){
+        while (list.hasChildNodes()) {
             list.removeChild(list.childNodes[0]);
         }
     } else {
-        console.log("do not delete storage")
+        console.log("do not delete storage");
     }
 }
 /** @description sends the stored notes to the inputted email
  *  @param takes the submitted form date from the Notes list
  *  @returns false, to prevent default form submission
- * 
+ *
  */
-function sendMail(notesForm){
+function sendMail(notesForm) {
     //get local stored list
     currentList = localStorage.getItem("listItem");
-    console.log(typeof(currentList)+currentList);
+    console.log(typeof currentList + currentList);
     let sendList = "<ul>";
-    console.log( "Current LIST: " + sendList + currentList);
-    
+    console.log("Current LIST: " + sendList + currentList);
 
-    if (currentList){
+    if (currentList) {
         //remove buttons from lists. Got regex from this generator http://regex.larsolavtorvik.com/
-        let currentListNoBtn = currentList.replace(/<button class="del-btn">X<\/button>/gi, '');
+        let currentListNoBtn = currentList.replace(
+            /<button class="del-btn">X<\/button>/gi,
+            ""
+        );
         sendList += currentListNoBtn;
         sendList += "</ul>";
     }
     console.log("LIST TO BE SENT: " + sendList);
     let templateParams = {
-        "from_email": notesForm.email.value,
-        "notes_summary": sendList
+        from_email: notesForm.email.value,
+        notes_summary: sendList,
     };
-    
+
     // debug : send list back to DOM
     // let debugEl = document.getElementById("note-send-debug");
     // if (sendList){
     //     debugEl.innerHTML = sendList;
     // }
 
-    let responseEl = document.querySelector('#response');
-    emailjs.send('gmail', 'template_tourism_notes', templateParams)
-        .then(function(response) {
-           console.log('SUCCESS!', response.status, response.text);
-           responseEl.innerText = "Notes emailed successfully.";
-        }, function(error) {
-           console.log('FAILED...', error);
-           responseEl.innerText = "Note sending failed.";
-        });
+    let responseEl = document.querySelector("#response");
+    emailjs.send("gmail", "template_tourism_notes", templateParams).then(
+        function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+            responseEl.innerText = "Notes emailed successfully.";
+        },
+        function (error) {
+            console.log("FAILED...", error);
+            responseEl.innerText = "Note sending failed.";
+        }
+    );
     return false;
 }
 /**
  *  END NOTE TAKING FUNCTIONS
  */
 
- /** -----------------------------------------------------------
+/** -----------------------------------------------------------
  *  MAPPING FUNCTIONS
  */
 
@@ -378,92 +400,97 @@ function initMap() {
         zoom: 14,
         center: {
             lat: 53.347293,
-            lng: -6.258970
-        }
-    }
+            lng: -6.25897,
+        },
+    };
     //assign these variables values here
     map = new google.maps.Map(document.getElementById("map"), options);
-    infoWindow = new google.maps.InfoWindow;
+    infoWindow = new google.maps.InfoWindow();
 
     // Put infoWindow content into variable
     let portoContent = `
         <h2>Velvet Strand</h2>
         <p>Portmarnock</p>
-        <p><a href="https://www.visitdublin.com/see-do/details/portmarnock-the-velvet-strand-blue-flag-beach-2019" target="_blank">See more here</a></p>`
+        <p><a href="https://www.visitdublin.com/see-do/details/portmarnock-the-velvet-strand-blue-flag-beach-2019" target="_blank">See more here</a></p>`;
     // Put all addMarkers called into array instead of individual addMarker calls
     let markers = [
         {
-            coords:{lat: 53.4246, lng: -6.1210 },
-            iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
-            content: portoContent
+            coords: { lat: 53.4246, lng: -6.121 },
+            iconImage:
+                "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+            content: portoContent,
         },
         {
-            coords:{lat: 53.4509, lng: -6.1501 },
+            coords: { lat: 53.4509, lng: -6.1501 },
             iconImage: "http://maps.google.com/mapfiles/kml/pal2/icon27.png",
-            content: '<h2>Party Village</h2><p>Malahide</p>'
+            content: "<h3>Party Village</h3><p>Malahide</p>",
         },
         {
-            coords:{lat: 53.3786, lng: -6.0570 },
+            coords: { lat: 53.3786, lng: -6.057 },
             iconImage: "http://maps.google.com/mapfiles/ms/micons/fishing.png",
-            content: '<h2>Fishing Village</h2><p>Howth</p>'
-        }
+            content: "<h3>Fishing Village</h3><p>Howth</p>",
+        },
+        {
+            coords: { lat: 53.343225, lng: -6.267848 },
+            iconImage: "assets/images/markers/castle-blue-marker.png",
+            content: "<h3>Dublin Castle</h3><p>Founded in 13th century, Dublin Castle is located off Dame Street.</p>",
+        },
     ];
 
     //loop through markers
-    for(let i = 0; i < markers.length; i++){
+    for (let i = 0; i < markers.length; i++) {
         addMarker(markers[i]);
     }
 
     // Add Marker function
-    function addMarker(props){
+    function addMarker(props) {
         let marker = new google.maps.Marker({
             position: props.coords,
             map: map,
         });
 
         // Test for custom icon image
-        if(props.iconImage){
+        if (props.iconImage) {
             // set icon image
             marker.setIcon(props.iconImage);
         }
 
         // Test for info window content. Test if true otherwise get info window with no info
-        if(props.content){
+        if (props.content) {
             //info window
             let myInfoWindow = new google.maps.InfoWindow({
-                content: props.content
+                content: props.content,
+                maxWidth: 200
             });
 
             // need to add listener to listen for that info window
-            marker.addListener('click', function(){
-                myInfoWindow.open(map, marker)
+            marker.addListener("click", function () {
+                myInfoWindow.open(map, marker);
             });
         }
     }
-    
 
     // TEST OUT POLYGON
     let shopArea = [
         { lat: 53.350621, lng: -6.254402 },
         { lat: 53.350805, lng: -6.254516 },
         { lat: 53.349973, lng: -6.259895 },
-        { lat: 53.352647, lng: -6.261170 },
+        { lat: 53.352647, lng: -6.26117 },
         { lat: 53.350991, lng: -6.264752 },
         { lat: 53.349644, lng: -6.269237 },
         { lat: 53.347236, lng: -6.268296 },
         { lat: 53.348286, lng: -6.259702 },
-        { lat: 53.349765, lng: -6.259890 },
+        { lat: 53.349765, lng: -6.25989 },
     ];
     shoppingAreaNorth = new google.maps.Polygon({
         path: shopArea,
-        strokeColor:"#0000FF",
-        strokeOpacity:0.8,
-        strokeWeight:1
+        strokeColor: "#0000FF",
+        strokeOpacity: 0.8,
+        strokeWeight: 1,
     });
     // To use a POLYGON just use .Polygon in above example
     // call function to add line
     addLine();
-    
 }
 function addLine() {
     // set the map to put polyline on
@@ -473,36 +500,39 @@ function addLine() {
 function removeLine() {
     shoppingAreaNorth.setMap(null);
 }
-function whereAmI(){
+function whereAmI() {
     // Try HTML5 geolocation. From Google documentation - https://developers.google.com/maps/documentation/javascript/geolocation
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-        let pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-        };
+        navigator.geolocation.getCurrentPosition(
+            function (position) {
+                let pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                };
 
-        //add marker to your location. POS variable from right above
-        let geoMarker = new google.maps.Marker({
-            position: pos,
-            map: map,
-            //icon: props.iconImage,
-            //content: props.content
-        });
-        let geoInfoWindow = new google.maps.InfoWindow;
-        geoInfoWindow.setPosition(pos);
-        geoInfoWindow.setContent('You are here.');
-        geoInfoWindow.open(map);
-        // open your location info window again on click marker
-        geoMarker.addListener('click', function(){
-            geoInfoWindow.open(map, geoMarker)
-        });
-        // sets and overrides the map centering location
-        map.panTo(pos);
-        map.setZoom(12);
-        }, function() {
-            handleLocationError(true, geoInfoWindow, map.getCenter());
-        });
+                //add marker to your location. POS variable from right above
+                let geoMarker = new google.maps.Marker({
+                    position: pos,
+                    map: map,
+                    //icon: props.iconImage,
+                    //content: props.content
+                });
+                let geoInfoWindow = new google.maps.InfoWindow();
+                geoInfoWindow.setPosition(pos);
+                geoInfoWindow.setContent("You are here.");
+                geoInfoWindow.open(map);
+                // open your location info window again on click marker
+                geoMarker.addListener("click", function () {
+                    geoInfoWindow.open(map, geoMarker);
+                });
+                // sets and overrides the map centering location
+                map.panTo(pos);
+                map.setZoom(12);
+            },
+            function () {
+                handleLocationError(true, geoInfoWindow, map.getCenter());
+            }
+        );
     } else {
         // Browser doesn't support Geolocation
         handleLocationError(false, geoInfoWindow, map.getCenter());
@@ -511,8 +541,10 @@ function whereAmI(){
 
 function handleLocationError(browserHasGeolocation, geoInfoWindow, pos) {
     geoInfoWindow.setPosition(pos);
-    geoInfoWindow.setContent(browserHasGeolocation ?
-                          'Error: The Geolocation service failed.' :
-                          'Error: Your browser doesn\'t support geolocation.');
+    geoInfoWindow.setContent(
+        browserHasGeolocation
+            ? "Error: The Geolocation service failed."
+            : "Error: Your browser doesn't support geolocation."
+    );
     geoInfoWindow.open(map);
 }
