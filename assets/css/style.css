@@ -93,6 +93,9 @@ a:hover {
 #current-date {
     text-align: right;
 }
+.row.weather-mobile .col-4 {
+    padding: 0;
+}
 .city-name {
     text-align: center;
 }
@@ -115,7 +118,6 @@ a:hover {
 .less-weather-link {
     cursor: pointer;
     display: block;
-    padding: 10px 0 0;
     text-align: center;
 }
 /* More weather drop down */
@@ -414,6 +416,13 @@ button.del-btn {
 /* ---------------------------------- MEDIA SIZES --------------------*/
 @media screen and (min-width: 576px) {
     /* weather */
+    .row.weather-mobile .col-4 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .weather-icon img {
+        width: 50px;
+    }
     .temp {
         font-size: 3rem;
     }

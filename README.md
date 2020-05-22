@@ -204,6 +204,8 @@ Initially when emailing the notes, the html delete button I appended to each lis
 At first I wanted to just use Javascript to add and remove a class to show and hide the weather widget by using CSS animations to animate the height. But my weather widget is dynamic in height but you must set an explicit height in order to animate with CSS. You cannot use the height of the content (or auto). I researched this to be sure and found this (CSS Tricks article)[https://css-tricks.com/using-css-transitions-auto-dimensions/] about it.
 So I decided to just use the jQuery show, hide or toggle methods. This nearly caught me out though because I was initially only loading jQuery Slim at this point, which actually does not include certain effects and animations. So I had to update my jQuery to load the full version.
 
+
+
 ## Credits and References
 
 ### Design and Research

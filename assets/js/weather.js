@@ -105,14 +105,17 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <div class="row">
                                     <div class="col city-name">Weather for ${dubName}</div>
                                 </div>
-                                <div class="row divider-b pb-2">
-                                    <div class="col-5 weather-icon">
+                                <div class="row weather-mobile">
+                                    <div class="col-4 col-sm-5 weather-icon text-center">
                                         <img src="http://openweathermap.org/img/wn/${dubIcon}@2x.png" alt="weather icon" />
-                                        <div class="weather-text">${dubWeath}</div>
+                                        <div class="d-none d-sm-block">${dubWeath}</div>
                                     </div>
-                                    <div class="col-7">
+                                    <div class="col-4 weather-text d-sm-none">
+                                        <div class="pt-3 pl-1">${dubWeath}</div>
+                                    </div>
+                                    <div class="col-4 col-sm-7">
                                         <div class="temp">${dubTemp}&#8451;</div>
-                                        <div class="feels-like">Feels like ${feelsTemp}&#8451;</div>
+                                        <div class="feels-like d-none d-sm-block">Feels like ${feelsTemp}&#8451;</div>
                                     </div>
                                 </div>
                             </div>`
