@@ -52,6 +52,8 @@ This formed the basis of my wireframes, which were created in Balsamiq:
 - [Home page on mobile wireframe](assets/design/wireframes/homepage-mobile.png)
 - [Home page on mobile with widgets open wireframe](assets/design/wireframes/homepage-mobile-widgets-open.png)
 
+When I had the Weather widget and the notes list built and was testing on mobile I thought that the toggles to open the notes, the weather and the navigation menu were all to close together and crowding the top right of the screen. So I moved the weather widget left to give a bit more space between the toggles.
+
 ### Surface
 
 The Dublin flag colours are #000080 and #88B8FD. I used these on the colour generator [Coolor](https://coolors.co/) as the basis for determining the colour scheme. You can see the [colour scheme I chose generated from Coloors here](assets/design/visiting-dublin-colour-scheme.pdf). This is a very useful tool as it also generates different shades and temperatures of your 5 selected colours.
@@ -85,6 +87,27 @@ Font Families - Finding fonts like Libre Baskerville that have style variants is
  
 ### Existing Features
 
+#### Minor Features
+Expand the sections below for more info on details
+<details>
+  <summary><strong>Creating navbar X to close</strong></summary>
+  
+  To create the X that appears when the navbar is open, I first created an svg file from the bootstrap svg that was embedded as data:image. I edited this with Illustrator to create the X and then I had to copy the stroke styles for the path from the bootstrap svg so it was visible. 
+  Then i added the class 'collapsed' to the button.navbar-toggler element in the HTML, so it has this class by default on load (usually only added upon clicking  menu toggle the first time). I overrode the default background images for the toggle icon, and changed the image when the toggler does not have the class 'collapsed' on it.
+</details>
+
+<details>
+  <summary><strong>Skip to main content</strong></summary>
+
+ There is a 'Skip to main content' link just inside the body tag for accessibility for screenreaders. The main content is not usually the first thing on a web page. Keyboard and screen reader users generally must navigate a long list of navigation links, sub-lists of links, corporate icons, site searches, and other elements before ever arriving at the main content. This is then hidden from view with the bootstrap class 'sr-only', however when it receives focus from keyboard it becomes visible, by basically reversing the Bootstrap CSS properties on focus. This is based on accessibility recommendations from https://webaim.org/techniques/skipnav/. This can be checked by pressing tab when a pages loads.
+ </details>
+
+<details>
+  <summary><strong>Anchor scroll</strong></summary>
+
+One of the links in the nav is to the Recommendations section on the homepage. This links to an anchor point on the homepage. To get a nice scroll to the anchor point within then homepage, I used the css scroll-behaviour property based off [CSS Tricks](https://css-tricks.com/almanac/properties/s/scroll-behavior/). This property is not fully supported, particularly on Safari (both Mac and iPhone), but it will degrade gracefully and still jump to the anchor point on those devices.
+</details>
+
 ### Features to consider implementing in the future
 
 1. Ideally the user could click on a button from an info window to store the location to the list or type their own text.
@@ -114,6 +137,8 @@ I validated the HTML with the [W3 Validation Service](https://validator.w3.org/)
 I validated the CSS with the [W3 CSS Validation Service](http://www.css-validator.org/) for CSS Level 3 and...
 
 #### Javascript
+
+I validated my Javascript code while editing using ESLint extension for VS Code, and also in JSHint (JSLInt?)...
 
 ### Testing on Browsers, Screen sizes and Devices
 I tested the website on the following browsers and devices:

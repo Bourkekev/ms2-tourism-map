@@ -144,6 +144,21 @@ div#dublin-forecast-data {
 .navbar {
     padding: .5rem 0rem;
 }
+.navbar-light .navbar-toggler {
+    border-color: transparent;
+}
+/* Navbar close X icon */
+.navbar-dark .navbar-toggler.collapsed .navbar-toggler-icon,
+.navbar-light .navbar-toggler.collapsed .navbar-toggler-icon {
+    background-image: url(../images/bs-nav-icon-blue.svg);
+}
+.navbar-dark .navbar-toggler-icon,
+.navbar-light .navbar-toggler-icon {
+    background-image: url(../images/bs-nav-icon-blue-open.svg);
+}
+.navbar-toggler:focus {
+    outline: #2fc0f9 auto 5px;
+}
 /* Logo */
 .navbar-brand {
     font-family: 'Kalam', cursive;
