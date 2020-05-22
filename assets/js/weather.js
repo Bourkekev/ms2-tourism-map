@@ -1,14 +1,13 @@
 const dublinCity = 2964574;
-let city = "Dublin";
-let countryCode = "IE";
+// let city = "Dublin";
+// let countryCode = "IE";
 
 const apiKey = "4adecede8cc646766529fd7932ba0555";
 let tempUnits = "units=metric";
 let cityInput = document.getElementById("city");
 //set cityCountry to the inputted value
 let cityCountry = document.getElementById("city").value;
-// API url for Dublin by ID
-// const baseURLByID = `http://api.openweathermap.org/data/2.5/weather?id=${dublinCity}&${tempUnits}&appid=${apiKey}`;
+
 //API url forecast for Dublin by coordinates
 const baseURLByCoords = `https://api.openweathermap.org/data/2.5/onecall?lat=53.350140&lon=-6.264155&${tempUnits}&exclude=minutely,hourly&appid=4adecede8cc646766529fd7932ba0555`;
 
@@ -168,8 +167,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const months = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     let dateEl = document.getElementById("current-date");
     let now = new Date();
-    let formatted_date = now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();
-    dateEl.innerText = formatted_date;
+    let formatted_date = now.getDate() + ' ' + months[now.getMonth()] + ' <span class="d-none d-sm-inline">' + now.getFullYear() + '</span>';
+    dateEl.innerHTML = formatted_date;
  }
 
  /* jQuery */
