@@ -594,7 +594,7 @@ function initMap() {
     // set position for the new legend
     map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
 
-    // TEST OUT POLYGON
+    // Northside shopping POLYGON
     let shopArea = [
         { lat: 53.350621, lng: -6.254402 },
         { lat: 53.350805, lng: -6.254516 },
@@ -612,12 +612,29 @@ function initMap() {
         strokeOpacity: 0.8,
         strokeWeight: 1,
     });
-    // To use a POLYGON just use .Polygon in above example
+    
+    // Southside shopping POLYGON
+    let shopPolySouth = [
+        { lat: 53.342976, lng: -6.257750 },
+        { lat: 53.339518, lng: -6.258811 },
+        { lat: 53.339857, lng: -6.260678 },
+        { lat: 53.339558, lng: -6.261100 },
+        { lat: 53.340992, lng: -6.263386 },
+        { lat: 53.343883, lng: -6.260852 },
+    ];
+    shoppingAreaSouth = new google.maps.Polygon({
+        path: shopPolySouth,
+        strokeColor: "#0000FF",
+        strokeOpacity: 0.8,
+        strokeWeight: 1,
+    });
+    
     // call function to add line
     addPoly();
 
     // Add a listener for the click event.
-    shoppingAreaNorth.addListener("click", showArrays);
+    shoppingAreaNorth.addListener("click", northPolyContent);
+    shoppingAreaSouth.addListener("click", southPolyContent);
 
     infoWindow = new google.maps.InfoWindow({ maxWidth: 200 });
 
@@ -688,9 +705,18 @@ function initMap() {
 } // END INITMAP
 
 /** @this {google.maps.Polygon} */
-function showArrays(event) {
+function northPolyContent(event) {
     let contentString =
         "<h3>Shopping Area</h3><p>This area encompasses O' Connell Street and pedestrianised Henry Street areas.</p>";
+    // Replace the info window's content and position.
+    infoWindow.setContent(contentString);
+    infoWindow.setPosition(event.latLng);
+
+    infoWindow.open(map);
+}
+function southPolyContent(event) {
+    let contentString =
+        "<h3>Shopping Area</h3><p>This area encompasses pedestrianised Grafton Street and St. Stephen's Green shoppping areas.</p>";
     // Replace the info window's content and position.
     infoWindow.setContent(contentString);
     infoWindow.setPosition(event.latLng);
@@ -711,12 +737,14 @@ function toggleType(elm, event, type) {
 }
 
 function addPoly() {
-    // set the map to put polyline on
+    // set the map to put polygons on
     shoppingAreaNorth.setMap(map);
+    shoppingAreaSouth.setMap(map);
 }
 
 function removePoly() {
     shoppingAreaNorth.setMap(null);
+    shoppingAreaSouth.setMap(null);
 }
 function whereAmI() {
     // Try HTML5 geolocation. From Google documentation - https://developers.google.com/maps/documentation/javascript/geolocation
