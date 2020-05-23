@@ -459,6 +459,18 @@ button.del-btn {
 .carousel-control-next {
     right: -20px;
 }
+/* recommendation cards */
+    /* vertically align title as some are larger than others*/
+    .card-title-wrapper {
+        position: relative;
+        min-height: 80px;
+    }
+    .card-title {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 /* ---------------------------- FOOTER ------ */
 .footer {
     background-color: #192037;
@@ -521,6 +533,7 @@ button.del-btn {
         width: 60%;
         right: -57vw;
     }
+
 }
 /*------ Bootstraps Medium size ------*/
 @media screen and (min-width: 768px) {

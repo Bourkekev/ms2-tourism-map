@@ -235,9 +235,6 @@ function initMap() {
         strokeOpacity: 0.8,
         strokeWeight: 1,
     });
-    
-    // call function to add line
-    // addPoly();
 
     // Add a listener for the click event.
     shoppingAreaNorth.addListener("click", northPolyContent);
