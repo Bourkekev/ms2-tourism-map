@@ -96,10 +96,11 @@
         </section>
         <section id="map-outer">
             <div id="floating-panel">
-                <input class="form-control" onclick="removeLine();" type=button value="Hide shopping area">
-                <input class="form-control" onclick="addLine();" type=button value="Show shopping area">
+                <input class="form-control" onclick="removePoly();" type=button value="Hide shopping area">
+                <input class="form-control" onclick="addPoly();" type=button value="Show shopping area">
                 <input class="form-control" onclick="whereAmI();" type=button value="Where am I?">
             </div>
+            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
             <div id="map"></div>
             <div id="legend">
                 <h3>Filter Categories</h3>
@@ -328,7 +329,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzIGV-yMFW2sZbKjho3bgFebj1ZbzZ7AI&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzIGV-yMFW2sZbKjho3bgFebj1ZbzZ7AI&&libraries=places&callback=initMap"></script>
     <script src="assets/js/scripts.js"></script>
     <!-- email js -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
