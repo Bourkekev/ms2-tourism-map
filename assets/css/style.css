@@ -283,7 +283,7 @@ div#dublin-forecast-data {
 }
 /* MAP */
 #map {
-    min-height: 600px;
+    min-height: 700px;
     width: 100%;
 }
 #legend {
