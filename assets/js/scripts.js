@@ -394,7 +394,7 @@ function sendMail(notesForm) {
  *  MAPPING FUNCTIONS
  */
 
- //store markers here
+//store markers here
 let markers = [];
 
 function initMap() {
@@ -407,10 +407,10 @@ function initMap() {
         },
         mapTypeControl: false,
         zoomControlOptions: {
-            position: google.maps.ControlPosition.LEFT_TOP
+            position: google.maps.ControlPosition.LEFT_TOP,
         },
         streetViewControlOptions: {
-            position: google.maps.ControlPosition.TOP_LEFT
+            position: google.maps.ControlPosition.TOP_LEFT,
         },
     };
     //assign these variables values here
@@ -418,118 +418,127 @@ function initMap() {
     infoWindow = new google.maps.InfoWindow();
 
     // Category Icons
-        let categories = {
-          outdoors: {
-            name: 'Outdoors',
-            icon: 'assets/images/markers/outdoors-marker-icon.png'
-          },
-          beach: {
-            name: 'Beach',
-            icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-          },
-          bars: {
-            name: 'Bars',
-            icon: 'assets/images/markers/beer-marker-icon.png'
-          },
-          entertain: {
-            name: 'Entertainment',
-            icon: 'assets/images/markers/sports-marker-icon.png'
-          },
-          restaurant: {
-            name: 'Restaurants',
-            icon: 'assets/images/markers/restaurant-marker-icon.png'
-          },
-          museum: {
-            name: 'Museums',
-            icon: 'assets/images/markers/museum-marker-icon.png'
-          },
-          cultural: {
-            name: 'Cultural',
-            icon: 'assets/images/markers/historic-marker-icon.png'
-          }
-        };
+    let categories = {
+        outdoors: {
+            name: "Outdoors",
+            icon: "assets/images/markers/outdoors-marker-icon.png",
+        },
+        beach: {
+            name: "Beach",
+            icon:
+                "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        },
+        bars: {
+            name: "Bars",
+            icon: "assets/images/markers/beer-marker-icon.png",
+        },
+        entertain: {
+            name: "Entertainment",
+            icon: "assets/images/markers/sports-marker-icon.png",
+        },
+        restaurant: {
+            name: "Restaurants",
+            icon: "assets/images/markers/restaurant-marker-icon.png",
+        },
+        museum: {
+            name: "Museums",
+            icon: "assets/images/markers/museum-marker-icon.png",
+        },
+        cultural: {
+            name: "Cultural",
+            icon: "assets/images/markers/historic-marker-icon.png",
+        },
+    };
 
     // Put infoWindow content into variable
     let portoContent = `
         <h2>Velvet Strand</h2>
         <p>Portmarnock</p>
         <p><a href="https://www.visitdublin.com/see-do/details/portmarnock-the-velvet-strand-blue-flag-beach-2019" target="_blank">See more here</a></p>`;
-    
+
     // Put all addMarkers called into array instead of individual addMarker calls
     let locations = [
         {
             coords: { lat: 53.368697, lng: -6.1483245 },
-            content: "<h3>Bull Island</h3><p>Bull Island is a low lying, dune covered sand spit in Dublin Bay off the coast of the city’s north side. As a National Nature reserve it is a paradise for birdwatchers and wildlife enthusiasts, and a good place for walking.</p>",
-            type: 'outdoors'
+            content:
+                "<h3>Bull Island</h3><p>Bull Island is a low lying, dune covered sand spit in Dublin Bay off the coast of the city’s north side. As a National Nature reserve it is a paradise for birdwatchers and wildlife enthusiasts, and a good place for walking.</p>",
+            type: "outdoors",
         },
         {
             coords: { lat: 53.360065, lng: -6.325532 },
-            content: "<h3>Phoenix Park</h3><p>Enormous park that houses Dublin Zoo and the largest enclosed public park in any capital city in Europe.</p>",
-            type: 'outdoors'
+            content:
+                "<h3>Phoenix Park</h3><p>Enormous park that houses Dublin Zoo and the largest enclosed public park in any capital city in Europe.</p>",
+            type: "outdoors",
         },
         {
             coords: { lat: 53.372642, lng: -6.271671 },
-            content: "<h3>National Botanic Gardens</h3><p>Large area with naturalistic sections, formal gardens, an arboretum and a Victorian palm house.</p>",
-            type: 'outdoors'
+            content:
+                "<h3>National Botanic Gardens</h3><p>Large area with naturalistic sections, formal gardens, an arboretum and a Victorian palm house.</p>",
+            type: "outdoors",
         },
         {
             coords: { lat: 53.338183, lng: -6.259257 },
-            content: "<h3>St. Stephen's Green</h3><p>City centre park with ornamental lake, waterfall, sculptures and a children's playground.</p>",
-            type: 'outdoors'
+            content:
+                "<h3>St. Stephen's Green</h3><p>City centre park with ornamental lake, waterfall, sculptures and a children's playground.</p>",
+            type: "outdoors",
         },
         {
             coords: { lat: 53.4246, lng: -6.121 },
             content: portoContent,
-            type: 'beach'
+            type: "beach",
         },
         {
-            coords: { lat: 53.367980, lng: -6.145895 },
+            coords: { lat: 53.36798, lng: -6.145895 },
             content: "<h3>Dollymount Strand</h3>",
-            type: 'beach'
+            type: "beach",
         },
         {
             coords: { lat: 53.4509, lng: -6.1501 },
             content: "<h3>Malahide</h3><p>Malahide</p>",
-            type: 'bars'
+            type: "bars",
         },
         {
             coords: { lat: 53.335241, lng: -6.2285659 },
             content: "<h3>Aviva Stadium</h3><p>Howth</p>",
-            type: 'entertain'
+            type: "entertain",
         },
         {
-            coords: { lat: 53.354290, lng: -6.263879 },
-            content: "<h3>Chapter One</h3><p>Founded in 13th century, Malahide Castle is located off Dame Street.</p>",
-            type: 'restaurant'
+            coords: { lat: 53.35429, lng: -6.263879 },
+            content:
+                "<h3>Chapter One</h3><p>Founded in 13th century, Malahide Castle is located off Dame Street.</p>",
+            type: "restaurant",
         },
         {
             coords: { lat: 53.340009, lng: -6.258476 },
-            content: "<h3>The Greenhouse</h3><p>Fine dining on Dawson Street.</p>",
-            type: 'restaurant'
+            content:
+                "<h3>The Greenhouse</h3><p>Fine dining on Dawson Street.</p>",
+            type: "restaurant",
         },
         {
             coords: { lat: 53.340508, lng: -6.255047 },
-            content: "<h3>National Museum of Ireland - archaeology</h3><p>Founded in 13th century, Malahide Castle is located off Dame Street.</p>",
-            type: 'museum'
+            content:
+                "<h3>National Museum of Ireland - archaeology</h3><p>Founded in 13th century, Malahide Castle is located off Dame Street.</p>",
+            type: "museum",
         },
         {
             coords: { lat: 53.343225, lng: -6.267848 },
-            content: "<h3>Dublin Castle</h3><p>Founded in 13th century, Dublin Castle is located off Dame Street.</p>",
-            type: 'cultural'
+            content:
+                "<h3>Dublin Castle</h3><p>Founded in 13th century, Dublin Castle is located off Dame Street.</p>",
+            type: "cultural",
         },
         {
             coords: { lat: 53.444904, lng: -6.164135 },
-            content: "<h3>Malahide Castle</h3><p>Founded in 13th century, Malahide Castle is located off Dame Street.</p>",
-            type: 'cultural'
+            content:
+                "<h3>Malahide Castle</h3><p>Founded in 13th century, Malahide Castle is located off Dame Street.</p>",
+            type: "cultural",
         },
-        
     ];
 
     //loop through locations
     for (let i = 0; i < locations.length; i++) {
         addMarker(locations[i]);
     }
-    
+
     // Add Marker function
     function addMarker(props) {
         let marker = new google.maps.Marker({
@@ -549,7 +558,7 @@ function initMap() {
             //info window
             let myInfoWindow = new google.maps.InfoWindow({
                 content: props.content,
-                maxWidth: 200
+                maxWidth: 200,
             });
 
             // need to add listener to listen for that info window
@@ -560,24 +569,30 @@ function initMap() {
         // push to array
         markers.push({
             marker: marker,
-            type: props.type
+            type: props.type,
         });
     }
     console.log(markers);
     // Create the legend with categories, names and icons
-    let legend = document.getElementById('legend');
-        let i = 0;
-        for (let key in categories) {
-            let type = categories[key];
-            let name = type.name;
-            let icon = type.icon;
-            let div = document.createElement('div');
-            div.innerHTML = '<input checked="checked" type="checkbox" onchange="toggleType(this, event, \'' + locations[i].type + '\')"><img src="' + icon + '"> ' + name;
-            legend.appendChild(div);
-            i++;
-        }
-        // set position for the new legend
-        map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
+    let legend = document.getElementById("legend");
+    let i = 0;
+    for (let key in categories) {
+        let type = categories[key];
+        let name = type.name;
+        let icon = type.icon;
+        let div = document.createElement("div");
+        div.innerHTML =
+            '<input checked="checked" type="checkbox" onchange="toggleType(this, event, \'' +
+            locations[i].type +
+            '\')"><img src="' +
+            icon +
+            '"> ' +
+            name;
+        legend.appendChild(div);
+        i++;
+    }
+    // set position for the new legend
+    map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
 
     // TEST OUT POLYGON
     let shopArea = [
@@ -602,92 +617,94 @@ function initMap() {
     addPoly();
 
     // Add a listener for the click event.
-    shoppingAreaNorth.addListener('click', showArrays);
+    shoppingAreaNorth.addListener("click", showArrays);
 
-    infoWindow = new google.maps.InfoWindow({maxWidth: 200});
+    infoWindow = new google.maps.InfoWindow({ maxWidth: 200 });
 
     /**
- * Google Places
- */
-// Create the search box and link it to the UI element.
-let input = document.getElementById('pac-input');
-let searchBox = new google.maps.places.SearchBox(input);
-map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+     * Google Places
+     */
+    // Create the search box and link it to the UI element.
+    let input = document.getElementById("pac-input");
+    let searchBox = new google.maps.places.SearchBox(input);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-// Bias the SearchBox results towards current map's viewport.
-map.addListener('bounds_changed', function() {
-  searchBox.setBounds(map.getBounds());
-});
+    // Bias the SearchBox results towards current map's viewport.
+    map.addListener("bounds_changed", function () {
+        searchBox.setBounds(map.getBounds());
+    });
 
-let markers2 = [];
-// Listen for the event fired when the user selects a prediction and retrieve
-// more details for that place.
-searchBox.addListener('places_changed', function() {
-  let places = searchBox.getPlaces();
+    let markers2 = [];
+    // Listen for the event fired when the user selects a prediction and retrieve
+    // more details for that place.
+    searchBox.addListener("places_changed", function () {
+        let places = searchBox.getPlaces();
 
-  if (places.length == 0) {
-    return;
-  }
+        if (places.length == 0) {
+            return;
+        }
 
-  // Clear out the old markers.
-  markers2.forEach(function(marker) {
-    marker.setMap(null);
-  });
-  markers2 = [];
+        // Clear out the old markers.
+        markers2.forEach(function (marker) {
+            marker.setMap(null);
+        });
+        markers2 = [];
 
-  // For each place, get the icon, name and location.
-  let bounds = new google.maps.LatLngBounds();
-  places.forEach(function(place) {
-    if (!place.geometry) {
-      console.log("Returned place contains no geometry");
-      return;
-    }
-    let icon = {
-      url: place.icon,
-      size: new google.maps.Size(71, 71),
-      origin: new google.maps.Point(0, 0),
-      anchor: new google.maps.Point(17, 34),
-      scaledSize: new google.maps.Size(25, 25)
-    };
+        // For each place, get the icon, name and location.
+        let bounds = new google.maps.LatLngBounds();
+        places.forEach(function (place) {
+            if (!place.geometry) {
+                console.log("Returned place contains no geometry");
+                return;
+            }
+            let icon = {
+                url: place.icon,
+                size: new google.maps.Size(71, 71),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(25, 25),
+            };
 
-    // Create a marker for each place.
-    markers.push(new google.maps.Marker({
-      map: map,
-      icon: icon,
-      title: place.name,
-      position: place.geometry.location
-    }));
+            // Create a marker for each place.
+            markers.push(
+                new google.maps.Marker({
+                    map: map,
+                    icon: icon,
+                    title: place.name,
+                    position: place.geometry.location,
+                })
+            );
 
-    if (place.geometry.viewport) {
-      // Only geocodes have viewport.
-      bounds.union(place.geometry.viewport);
-    } else {
-      bounds.extend(place.geometry.location);
-    }
-  });
-  map.fitBounds(bounds);
-});
-
+            if (place.geometry.viewport) {
+                // Only geocodes have viewport.
+                bounds.union(place.geometry.viewport);
+            } else {
+                bounds.extend(place.geometry.location);
+            }
+        });
+        map.fitBounds(bounds);
+    });
+    /** END GOOGLE PLACES */
 } // END INITMAP
 
 /** @this {google.maps.Polygon} */
 function showArrays(event) {
-    
-    let contentString = '<h3>Shopping Area</h3><p>This area encompasses O\' Connell Street and pedestrianised Henry Street areas.</p>';
+    let contentString =
+        "<h3>Shopping Area</h3><p>This area encompasses O' Connell Street and pedestrianised Henry Street areas.</p>";
     // Replace the info window's content and position.
     infoWindow.setContent(contentString);
     infoWindow.setPosition(event.latLng);
 
     infoWindow.open(map);
-  }
+}
 
 /** @description toggles the type of map category
- * 
+ *
  */
 function toggleType(elm, event, type) {
     let on = elm.checked;
     for (let i = 0; i < markers.length; i++) {
-      if (markers[i].type == type) {
+        if (markers[i].type == type) {
             markers[i].marker.setMap(on ? map : null);
         }
     }
