@@ -130,7 +130,7 @@ function writeToDocument() {
 // Get date and Dublin weather on page load
 document.addEventListener("DOMContentLoaded", function () {
     //Comment out displayDubWeath function to disable api calls on page load
-    //displayDubWeath();
+    displayDubWeath();
     displayDate();
 });
 
@@ -666,7 +666,7 @@ function initMap() {
             };
 
             // Create a marker for each place.
-            markers.push(
+            markers2.push(
                 new google.maps.Marker({
                     map: map,
                     icon: icon,
