@@ -35,7 +35,7 @@ function initMap() {
         beach: {
             name: "Beach",
             icon:
-                "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+                "assets/images/markers/beachflag-marker-icon.png",
         },
         bars: {
             name: "Bars",
@@ -181,7 +181,7 @@ function initMap() {
             type: props.type,
         });
     }
-    console.log(markers);
+    
     // Create the legend with categories, names and icons
     let legend = document.getElementById("legend");
     for (let key in categories) {
@@ -237,7 +237,7 @@ function initMap() {
     });
     
     // call function to add line
-    addPoly();
+    // addPoly();
 
     // Add a listener for the click event.
     shoppingAreaNorth.addListener("click", northPolyContent);
@@ -251,7 +251,7 @@ function initMap() {
     // Create the search box and link it to the UI element.
     let input = document.getElementById("pac-input");
     let searchBox = new google.maps.places.SearchBox(input);
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    map.controls[google.maps.ControlPosition.TOP].push(input);
 
     // Bias the SearchBox results towards current map's viewport.
     map.addListener("bounds_changed", function () {

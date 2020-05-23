@@ -95,12 +95,20 @@
             </div>
         </section>
         <section id="map-outer">
-            <div id="floating-panel">
-                <input class="form-control" onclick="removePoly();" type=button value="Hide shopping area">
-                <input class="form-control" onclick="addPoly();" type=button value="Show shopping area">
-                <input class="form-control" onclick="whereAmI();" type=button value="Where am I?">
+            <div id="floating-panel" class="container map-off-canvas-buttons">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <input class="form-control btn btn-outline-info" onclick="removePoly();" type=button value="Hide shopping area">
+                    </div>
+                    <div class="col-sm-4">
+                        <input class="form-control btn btn-outline-info" onclick="addPoly();" type=button value="Show shopping area">
+                    </div>
+                    <div class="col-sm-4">
+                        <input class="form-control btn btn-outline-info" onclick="whereAmI();" type=button value="Where am I?">
+                    </div>
+                </div>
             </div>
-            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+            <input id="pac-input" class="controls" type="text" placeholder="Search for anywhere">
             <div id="map"></div>
             <div id="legend">
                 <h3>Filter Categories</h3>

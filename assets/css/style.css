@@ -294,15 +294,46 @@ div#dublin-forecast-data {
     margin: 10px;
     border: 1px solid #B95F89;
   }
-  #legend h3 {
+#legend h3 {
     color: #000080;
     text-transform: uppercase;
     font-size: 1.2rem;
-  }
-  #legend img {
+}
+#legend img {
     vertical-align: middle;
     margin: 0 10px;
-  }
+}
+/* Move map full screen button out from edge */
+button.gm-control-active.gm-fullscreen-control {
+    top: 30px!important;
+}
+/* Google places search bar */
+#infowindow-content .title {
+    font-weight: bold;
+}
+#pac-input {
+    background-color: #C4E0F9;
+    border: 2px solid #B95F89;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    margin-top: 5px;
+    padding: 5px 21px 5px 23px;
+    text-overflow: ellipsis;
+    width: 210px;
+}
+#pac-input:focus {
+    border-color: #2fc0f9;
+}
+/* dropdown container */
+#pac-container {
+    background-color: #C4E0F9;
+    padding-bottom: 12px;
+    margin-right: 12px;
+    margin-top:20px;
+}
+
 /* ----------------------------------  NOTE TAKING ---------------*/
 #take-notes,
 .take-notes-wrapper {
@@ -506,14 +537,26 @@ button.del-btn {
         right: -38vw;
     }
     /* Map */
+    /* map off canvas buttons */
+    .map-off-canvas-buttons {
+        margin-bottom: 25px;
+    }
     #legend {
         font-size: 1.4rem;
         padding: 2rem;
         margin: 2rem;
-      }
-      #legend h3 {
+    }
+    #legend h3 {
         font-size: 1.4rem;
-      }
+    }
+      /* Move map full screen button out from edge */
+    button.gm-control-active.gm-fullscreen-control {
+        right: 40px!important;
+        top: 30px!important;
+    }
+    #pac-input {
+        width: 400px;
+    }
 }
 /*------ Bootstraps Large size ------*/
 @media screen and (min-width: 992px) {
