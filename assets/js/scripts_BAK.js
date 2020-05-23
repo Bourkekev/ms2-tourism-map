@@ -449,8 +449,13 @@ function initMap() {
           }
         };
 
+    // Put infoWindow content into variable
+    let portoContent = `
+        <h2>Velvet Strand</h2>
+        <p>Portmarnock</p>
+        <p><a href="https://www.visitdublin.com/see-do/details/portmarnock-the-velvet-strand-blue-flag-beach-2019" target="_blank">See more here</a></p>`;
     
-    // Put locations into array instead of individual addMarker calls
+    // Put all addMarkers called into array instead of individual addMarker calls
     let locations = [
         {
             coords: { lat: 53.368697, lng: -6.1483245 },
@@ -474,7 +479,7 @@ function initMap() {
         },
         {
             coords: { lat: 53.4246, lng: -6.121 },
-            content: "<h3>Portmarnock - Velvet Strand</h3><p>City centre park with ornamental lake, waterfall, sculptures and a children's playground.</p>",
+            content: portoContent,
             type: 'beach'
         },
         {
@@ -520,21 +525,45 @@ function initMap() {
         
     ];
 
-    // Create markers.
-    locations.forEach(function(location) {
-        var marker = new google.maps.Marker({
-          position: location.coords,
-          icon: categories[location.type].icon,
-          map: map
+    //loop through locations
+    for (let i = 0; i < locations.length; i++) {
+        addMarker(locations[i]);
+    }
+    
+    // Add Marker function
+    function addMarker(props) {
+        let marker = new google.maps.Marker({
+            position: props.coords,
+            map: map,
+            icon: categories[props.type].icon,
         });
 
-        // push to markers array
+        // Test for custom icon image
+        // if (props.iconImage) {
+        //     // set icon image
+        //     marker.setIcon(props.iconImage);
+        // }
+
+        // Test for info window content. Test if true otherwise get info window with no info
+        if (props.content) {
+            //info window
+            let myInfoWindow = new google.maps.InfoWindow({
+                content: props.content,
+                maxWidth: 200
+            });
+
+            // need to add listener to listen for that info window
+            marker.addListener("click", function () {
+                myInfoWindow.open(map, marker);
+            });
+        }
+        // push to array
         markers.push({
             marker: marker,
-            type: location.type
+            type: props.type
         });
-      });
-      console.log(markers);
+    }
+
     // Create the legend with categories, names and icons
     let legend = document.getElementById('legend');
         let i = 0;
