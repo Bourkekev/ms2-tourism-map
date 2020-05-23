@@ -287,15 +287,17 @@ div#dublin-forecast-data {
     width: 100%;
 }
 #legend {
-    color: #88B8FD;
-    background: rgba(0, 0, 0, 0.75);
-    font-size: 13px;
-    padding: 25px;
-    margin: 25px;
+    color: #000080;
+    background: rgba(255, 255, 255, 0.75);
+    font-size: 1.3rem;
+    padding: 10px;
+    margin: 10px;
     border: 1px solid #88B8FD;
   }
   #legend h3 {
-    color: #88B8FD;
+    color: #000080;
+    text-transform: uppercase;
+    font-size: 1.2rem;
   }
   #legend img {
     vertical-align: middle;
@@ -464,6 +466,7 @@ button.del-btn {
     background: #2EC0F9;
 }
 /* ---------------------------------- MEDIA SIZES --------------------*/
+/*------ Bootstraps Small size ------*/
 @media screen and (min-width: 576px) {
     /* weather */
     .row.weather-mobile .col-4 {
@@ -488,6 +491,7 @@ button.del-btn {
         right: -57vw;
     }
 }
+/*------ Bootstraps Medium size ------*/
 @media screen and (min-width: 768px) {
     .navbar-brand {
         font-size: 3rem;
@@ -501,7 +505,17 @@ button.del-btn {
         width: 40%;
         right: -38vw;
     }
+    /* Map */
+    #legend {
+        font-size: 1.4rem;
+        padding: 2rem;
+        margin: 2rem;
+      }
+      #legend h3 {
+        font-size: 1.4rem;
+      }
 }
+/*------ Bootstraps Large size ------*/
 @media screen and (min-width: 992px) {
     /* Notes pop-out */
     #take-notes,

@@ -125,6 +125,8 @@ One of the links in the nav is to the Recommendations section on the homepage. T
 1. Ideally the user could click on a button from an info window to store the location to the list or type their own text.
 2. Have areas drawn on the map for shopping areas or socialising areas.
 3. You could incorporate a blog into the site with updates about an author or users' experiences of certain places of interest. This would add more genuineness and authority to the site.
+4. Map Marker Clustering.
+5. Google Maps Places search field.
 
 ## Testing
 
@@ -165,6 +167,8 @@ I tested the website on the following browsers and devices:
 - Chrome on Lenovo 10" Tablet, Android V6
 
 When I deployed the site to Github Pages and tested on an Android mobile the Get weather for another city function would not work. This worked fine on my localhost on computer, so I connected my Android phone to my desktop to do remote debugging, following [Google's instruction](https://developers.google.com/web/tools/chrome-devtools/remote-debugging). Then I could use my Dev Tools console and coud see the browser error. It was telling me that mixed content was loaded over HTTPS and that the XMLHttpRequest was blocked because it was bein requested over http. So I just had to check my writeToDocument function and change the API URL to use HTTPS. My localhost was not using https so I did not see this error until this point.
+
+I also realised it would be easier to develop locally and view the localhost site on my Android phone. I was able to set this up through Chrome Dev tools, again following [Google's instruction](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/local-server).
 
 Testing other devices - I ran the website through [Browser Stack](https://www.browserstack.com/) on a free account to test on real devices and screen sizes. I was able to live test the following devices:
  - Samsung Galaxy Tab, Chrome, 4, 10.1 in - 5.4 x 8.6in, Resolution 1280 x 800px
@@ -232,6 +236,8 @@ So I decided to just use the jQuery show, hide or toggle methods. This nearly ca
 
 ### Content
 
+ - Locational information content was gotten from Wikipedia and Google.
+ 
 ### Media
 - The photos and vectors (except logo) used in this site were obtained from:
 
@@ -240,6 +246,6 @@ So I decided to just use the jQuery show, hide or toggle methods. This nearly ca
  - The favicons were generated at https://realfavicongenerator.net/
 
  - Castle vectors - by <a href="https://www.vecteezy.com/free-vector/castle">Castle Vectors by Vecteezy</a>
- 
+
 ### Acknowledgements
 

@@ -405,6 +405,13 @@ function initMap() {
             lat: 53.347293,
             lng: -6.25897,
         },
+        mapTypeControl: false,
+        zoomControlOptions: {
+            position: google.maps.ControlPosition.LEFT_TOP
+        },
+        streetViewControlOptions: {
+            position: google.maps.ControlPosition.TOP_LEFT
+        },
     };
     //assign these variables values here
     map = new google.maps.Map(document.getElementById("map"), options);
@@ -414,19 +421,31 @@ function initMap() {
         let categories = {
           outdoors: {
             name: 'Outdoors',
+            icon: 'assets/images/markers/outdoors-marker-icon.png'
+          },
+          beach: {
+            name: 'Beach',
             icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
           },
           bars: {
             name: 'Bars',
-            icon: 'http://maps.google.com/mapfiles/kml/pal2/icon27.png'
+            icon: 'assets/images/markers/beer-marker-icon.png'
           },
           entertain: {
             name: 'Entertainment',
-            icon: 'http://maps.google.com/mapfiles/ms/micons/fishing.png'
+            icon: 'assets/images/markers/sports-marker-icon.png'
+          },
+          restaurant: {
+            name: 'Restaurants',
+            icon: 'assets/images/markers/restaurant-marker-icon.png'
+          },
+          museum: {
+            name: 'Museums',
+            icon: 'assets/images/markers/museum-marker-icon.png'
           },
           cultural: {
             name: 'Cultural',
-            icon: 'assets/images/markers/castle-blue-marker.png'
+            icon: 'assets/images/markers/historic-marker-icon.png'
           }
         };
 
@@ -439,18 +458,43 @@ function initMap() {
     // Put all addMarkers called into array instead of individual addMarker calls
     let locations = [
         {
-            coords: { lat: 53.4246, lng: -6.121 },
-            content: portoContent,
+            coords: { lat: 53.368697, lng: -6.1483245 },
+            content: "<h3>Bull Island</h3><p>Bull Island is a low lying, dune covered sand spit in Dublin Bay off the coast of the city’s north side. As a National Nature reserve it is a paradise for birdwatchers and wildlife enthusiasts, and a good place for walking.</p>",
             type: 'outdoors'
         },
         {
+            coords: { lat: 53.360065, lng: -6.325532 },
+            content: "<h3>Phoenix Park</h3><p>Enormous park that houses Dublin Zoo and the largest enclosed public park in any capital city in Europe.</p>",
+            type: 'outdoors'
+        },
+        {
+            coords: { lat: 53.372642, lng: -6.271671 },
+            content: "<h3>National Botanic Gardens</h3><p>Large area with naturalistic sections, formal gardens, an arboretum and a Victorian palm house.</p>",
+            type: 'outdoors'
+        },
+        {
+            coords: { lat: 53.338183, lng: -6.259257 },
+            content: "<h3>St. Stephen's Green</h3><p>City centre park with ornamental lake, waterfall, sculptures and a children's playground.</p>",
+            type: 'outdoors'
+        },
+        {
+            coords: { lat: 53.4246, lng: -6.121 },
+            content: portoContent,
+            type: 'beach'
+        },
+        {
+            coords: { lat: 53.367980, lng: -6.145895 },
+            content: "<h3>Dollymount Strand</h3>",
+            type: 'beach'
+        },
+        {
             coords: { lat: 53.4509, lng: -6.1501 },
-            content: "<h3>Party Village</h3><p>Malahide</p>",
+            content: "<h3>Malahide</h3><p>Malahide</p>",
             type: 'bars'
         },
         {
-            coords: { lat: 53.3786, lng: -6.057 },
-            content: "<h3>Fishing Village</h3><p>Howth</p>",
+            coords: { lat: 53.335241, lng: -6.2285659 },
+            content: "<h3>Aviva Stadium</h3><p>Howth</p>",
             type: 'entertain'
         },
         {
@@ -462,6 +506,17 @@ function initMap() {
             coords: { lat: 53.444904, lng: -6.164135 },
             content: "<h3>Malahide Castle</h3><p>Founded in 13th century, Malahide Castle is located off Dame Street.</p>",
             type: 'cultural'
+        },
+        
+        {
+            coords: { lat: 53.354290, lng: -6.263879 },
+            content: "<h3>Chapter One</h3><p>Founded in 13th century, Malahide Castle is located off Dame Street.</p>",
+            type: 'restaurant'
+        },
+        {
+            coords: { lat: 53.340508, lng: -6.255047 },
+            content: "<h3>National Museum of Ireland - archaeology</h3><p>Founded in 13th century, Malahide Castle is located off Dame Street.</p>",
+            type: 'museum'
         },
     ];
 
@@ -516,6 +571,7 @@ function initMap() {
             legend.appendChild(div);
             i++;
         }
+        // set position for the new legend
         map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
 
     // TEST OUT POLYGON
