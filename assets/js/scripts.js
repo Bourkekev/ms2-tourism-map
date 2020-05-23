@@ -575,7 +575,6 @@ function initMap() {
     console.log(markers);
     // Create the legend with categories, names and icons
     let legend = document.getElementById("legend");
-    let i = 0;
     for (let key in categories) {
         let type = categories[key];
         let name = type.name;
@@ -583,13 +582,12 @@ function initMap() {
         let div = document.createElement("div");
         div.innerHTML =
             '<input checked="checked" type="checkbox" onchange="toggleType(this, event, \'' +
-            locations[i].type +
+            key +
             '\')"><img src="' +
             icon +
             '"> ' +
             name;
         legend.appendChild(div);
-        i++;
     }
     // set position for the new legend
     map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
@@ -725,12 +723,15 @@ function southPolyContent(event) {
 }
 
 /** @description toggles the type of map category
- *
+ * @param 3 parameters sent in from checkbox; this(checkbox element), event, and categories key
  */
 function toggleType(elm, event, type) {
+    //on is checked
     let on = elm.checked;
     for (let i = 0; i < markers.length; i++) {
+        // if marker type same as categories key
         if (markers[i].type == type) {
+            //set marker on map if checkbox is true (or on), otherwise remove marker
             markers[i].marker.setMap(on ? map : null);
         }
     }
