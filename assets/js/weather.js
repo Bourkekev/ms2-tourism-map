@@ -51,7 +51,6 @@ function writeToDocument() {
     } else if (typeof cityCountry == "string") {
         baseURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityCountry}&${tempUnits}&appid=${apiKey}`;
         getData(function (data) {
-            //console.dir(data);
 
             let cityEl = document.getElementById("dynamic-weather-data");
             let cityName = data.name;
@@ -85,7 +84,7 @@ function writeToDocument() {
 // Get date and Dublin weather on page load
 document.addEventListener("DOMContentLoaded", function () {
     //Comment out displayDubWeath function to disable api calls on page load
-    displayDubWeath();
+    //displayDubWeath();
     displayDate();
 });
 

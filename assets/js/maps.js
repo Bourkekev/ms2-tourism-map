@@ -258,7 +258,7 @@ function initMap() {
         searchBox.setBounds(map.getBounds());
     });
 
-    let markers2 = [];
+    let placesMarkers = [];
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
     searchBox.addListener("places_changed", function () {
@@ -269,10 +269,10 @@ function initMap() {
         }
 
         // Clear out the old markers.
-        markers2.forEach(function (marker) {
+        placesMarkers.forEach(function (marker) {
             marker.setMap(null);
         });
-        markers2 = [];
+        placesMarkers = [];
 
         // For each place, get the icon, name and location.
         let bounds = new google.maps.LatLngBounds();
@@ -290,7 +290,7 @@ function initMap() {
             };
 
             // Create a marker for each place.
-            markers2.push(
+            placesMarkers.push(
                 new google.maps.Marker({
                     map: map,
                     icon: icon,

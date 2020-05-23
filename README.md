@@ -220,7 +220,10 @@ Initially when emailing the notes, the html delete button I appended to each lis
 At first I wanted to just use Javascript to add and remove a class to show and hide the weather widget by using CSS animations to animate the height. But my weather widget is dynamic in height but you must set an explicit height in order to animate with CSS. You cannot use the height of the content (or auto). I researched this to be sure and found this (CSS Tricks article)[https://css-tricks.com/using-css-transitions-auto-dimensions/] about it.
 So I decided to just use the jQuery show, hide or toggle methods. This nearly caught me out though because I was initially only loading jQuery Slim at this point, which actually does not include certain effects and animations. So I had to update my jQuery to load the full version.
 
+### Getting the Map Legend Checkboxes to work
 
+Using Google's API documentation I was able to get the custom icons legend on the map. But I wanted to be able to click these on and off by type so they are filterable. I had a lot of trouble getting the checkboxes to switch off the correct markers. For generating the checkboxes, I was following an example I found on Stackoverflow (See link below), but it turned out this did not work correctly, and checking off the categories was not turning off the correct markers. It was hard to debug as there were no errors. I went through the code checking the values I was taking from the category array, and the locations array but could not find the issue. Finally my mentor was able to walk me through the loop and arrays and what data was going where.
+Basically I was taking the 'type' from my locations array and assigning them to the checkboxes' onclick function, rather than getting the category type (or key).
 
 ## Credits and References
 
@@ -232,7 +235,9 @@ So I decided to just use the jQuery show, hide or toggle methods. This nearly ca
  - To check if input is all numbers I used this reference - https://www.w3resource.com/javascript/form/all-numbers.php
  - To convert unix timestap I referenced this article - https://coderrocketfuel.com/article/convert-a-unix-timestamp-to-a-date-in-vanilla-javascript
  - Regex generator to remove html from a string - Removing the html delete button from the emailed notes - http://regex.larsolavtorvik.com/
+ - To create checkboxes for my Map Legend I followed 2 parts of an example on [Stackoverflow[(https://stackoverflow.com/questions/26778164/simple-filter-in-legend-google-maps-api-v3). One was the for-in loop {for (var key in icons)}, and the other was the toggleType function.
 
+ - Google Places Searchbox - mostly all from Google's Places [API documentation](https://developers.google.com/maps/documentation/javascript/examples/places-searchbox)
 
 ### Content
 

@@ -288,11 +288,11 @@ div#dublin-forecast-data {
 }
 #legend {
     color: #000080;
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(136, 184, 253, .9);
     font-size: 1.3rem;
     padding: 10px;
     margin: 10px;
-    border: 1px solid #88B8FD;
+    border: 1px solid #B95F89;
   }
   #legend h3 {
     color: #000080;
