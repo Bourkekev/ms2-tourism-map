@@ -166,17 +166,292 @@
                 </div>
             </div>
         </section>
+        <!-- Historic & Cultural Recommendations -->
         <div class="container-fluid my-5 bg-light-blue">
             <div class="container pt-4">
                 <div class="row pt-5 text-center text-md-left">
                     <div class="col">
-                        <h3><img src="assets/images/markers/historic-marker-icon.png" alt="Historic Irish icon"/> Historic &amp; Cultural</h3>
+                        <h3><img src="assets/images/markers/historic-marker-icon.png" class="mr-3" alt="Historic Irish icon"/>Historic &amp; Cultural</h3>
+                    </div>
+                </div>
+                <!-- Mobile only -->
+                <div class="row d-md-none pt-5 pb-5">
+                    <div class="col-12 pt-0 pb-5">
+                        <!-- Cultural Recommendations carousel-->
+                        <div id="carouselCultural" class="carousel slide slide--testimonial" data-ride="carousel">
+                            <ol class="carousel-indicators d-md-none">
+                                <li data-target="#carouselCultural" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselCultural" data-slide-to="1"></li>
+                                <li data-target="#carouselCultural" data-slide-to="2"></li>
+                                <li data-target="#carouselCultural" data-slide-to="3"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <!-- BS Card -->
+                                    <div class="card text-center">
+                                        <img src="assets/images/dublin-castle-510x340.jpg" class="card-img-top" alt="Dublin Castle, Ireland">
+                                        <div class="card-body">
+                                            <div class="card-title-wrapper">
+                                                <h4 class="card-title content-heading">Dublin Castle</h4>
+                                            </div>
+                                            <p class="card-text">Founded in 13th century, Dublin Castle is a major Irish government complex, conference centre, and tourist attraction. It is located off Dame Street in Dublin.</p>
+                                            <a href="dublin-castle.html" class="btn btn-lg btn-primary">View more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <!-- BS Card -->
+                                    <div class="card text-center">
+                                        <img src="assets/images/epic-museum-510x340.jpg" class="card-img-top" title="Britishfinance / CC BY-SA/ See attributions at the bottom of the page" alt="EPIC Irish Emigration museum">
+                                        <div class="card-body">
+                                            <div class="card-title-wrapper">
+                                                <h4 class="card-title content-heading">EPIC The Irish Emigration Museum</h4>
+                                            </div>
+                                            <p class="card-text">The Irish Emigration Museum is located in Dublin's Docklands which covers the history of the Irish diaspora and emigration to other countries.</p>
+                                            <a href="epic.html" class="btn btn-lg btn-primary">View more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <!-- BS Card -->
+                                    <div class="card text-center">
+                                        <img src="assets/images/dublins-gpo-510x340.jpg" class="card-img-top" title="GrahamH / CC BY-SA/ See attributions at the bottom of the page" alt="Dublin GPO">
+                                        <div class="card-body">
+                                            <div class="card-title-wrapper">
+                                                <h4 class="card-title content-heading">GPO Witness History Visitor Centre</h4>
+                                            </div>
+                                            <p class="card-text">Award winning immersive & interactive must see in Dublin. Located in the historical GPO building on O' Connell St, this was the hub of the 1916 Easter Rising.</p>
+                                            <a href="gpo.html" class="btn btn-lg btn-primary">View more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <!-- BS Card -->
+                                    <div class="card">
+                                        <img src="assets/images/ardagh-chalice-510x340.jpg" class="card-img-top" title ="Kglavin / CC BY-SA/ See attributions at the bottom of the page" alt="Ardagh Chalice">
+                                        <div class="card-body">
+                                            <div class="card-title-wrapper">
+                                                <h4 class="card-title content-heading">National Museum of Ireland - Archaeology</h4>
+                                            </div>
+                                                <p class="card-text">This museum covers the history of Ireland from the Stone Age to the Late Middle Ages, and contains artefacts from the earliest period of human habitation in Ireland.</p>
+                                            <a href="museum-archaeology.html" class="btn btn-lg btn-primary">View more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- ./ carousel-inner -->
+                            <a class="carousel-control-prev" href="#carouselCultural" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselCultural" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div><!-- ./ carousel -->
+                    </div>
+                </div>
+                <!-- larger than mobile -->
+                <div class="row d-none d-md-flex pt-5 pb-5">
+                    <div class="col-md-6 col-lg-3 text-center py-2">
+                        <div class="card">
+                            <img src="assets/images/dublin-castle-510x340.jpg" class="card-img-top" alt="Dublin Castle, Ireland">
+                            <div class="card-body">
+                                <div class="card-title-wrapper">
+                                    <h4 class="card-title content-heading">Dublin Castle</h4>
+                                </div>
+                                <p class="card-text">Founded in 13th century, Dublin Castle is a major Irish government complex, conference centre, and tourist attraction. It is located off Dame Street in Dublin.</p>
+                                <a href="dublin-castle.html" class="btn btn-lg btn-primary">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center py-2">
+                        <div class="card">
+                            <img src="assets/images/epic-museum-510x340.jpg" class="card-img-top" title="Britishfinance / CC BY-SA/ See attributions at the bottom of the page" alt="EPIC Irish Emigration museum">
+                            <div class="card-body">
+                                <div class="card-title-wrapper">
+                                    <h4 class="card-title content-heading">EPIC The Irish Emigration Museum</h4>
+                                </div>
+                                <p class="card-text">The Irish Emigration Museum is located in Dublin's Docklands which covers the history of the Irish diaspora and emigration to other countries.</p>
+                                <a href="epic.html" class="btn btn-lg btn-primary">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center py-2">
+                        <div class="card">
+                            <img src="assets/images/dublins-gpo-510x340.jpg" class="card-img-top" title="GrahamH / CC BY-SA/ See attributions at the bottom of the page" alt="Dublin GPO">
+                            <div class="card-body">
+                                <div class="card-title-wrapper">
+                                    <h4 class="card-title content-heading">GPO Witness History Visitor Centre</h4>
+                                </div>
+                                <p class="card-text">Award winning immersive & interactive must see in Dublin. Located in the historical GPO building on O' Connell St, this was the hub of the 1916 Easter Rising.</p>
+                                <a href="gpo.html" class="btn btn-lg btn-primary">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center py-2">
+                        <div class="card">
+                            <img src="assets/images/ardagh-chalice-510x340.jpg" class="card-img-top" title ="Kglavin / CC BY-SA/ See attributions at the bottom of the page" alt="Ardagh Chalice">
+                            <div class="card-body">
+                                <div class="card-title-wrapper">
+                                    <h4 class="card-title content-heading">National Museum of Ireland - Archaeology</h4>
+                                </div>
+                                    <p class="card-text">This museum covers the history of Ireland from the Stone Age to the Late Middle Ages, and contains artefacts from the earliest period of human habitation in Ireland.</p>
+                                <a href="museum-archaeology.html" class="btn btn-lg btn-primary">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Entertainment & Sport -->
+        <div class="container-fluid my-5">
+            <div class="container pt-4">
+                <div class="row pt-5 text-center text-md-left">
+                    <div class="col">
+                        <h3><img src="assets/images/markers/sports-marker-icon.png" alt="Sport icon" class="mr-3" />Entertainment &amp; Sport</h3>
                     </div>
                 </div>
                 <!-- Mobile only -->
                 <div class="row d-md-none pt-5 pb-5">
                     <div class="col-12 pt-0 pb-5">
                         <!-- Cultural Recommendations -->
+                        <div id="carouselCultural" class="carousel slide slide--testimonial" data-ride="carousel">
+                            <ol class="carousel-indicators d-md-none">
+                                <li data-target="#carouselCultural" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselCultural" data-slide-to="1"></li>
+                                <li data-target="#carouselCultural" data-slide-to="2"></li>
+                                <li data-target="#carouselCultural" data-slide-to="3"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <!-- BS Card -->
+                                    <div class="card text-center">
+                                        <img src="assets/images/dublin-castle-510x340.jpg" class="card-img-top" alt="Dublin Castle, Ireland">
+                                        <div class="card-body">
+                                            <div class="card-title-wrapper">
+                                                <h4 class="card-title content-heading">Dublin Castle</h4>
+                                            </div>
+                                            <p class="card-text">Founded in 13th century, Dublin Castle is a major Irish government complex, conference centre, and tourist attraction. It is located off Dame Street in Dublin.</p>
+                                            <a href="dublin-castle.html" class="btn btn-lg btn-primary">View more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <!-- BS Card -->
+                                    <div class="card text-center">
+                                        <img src="assets/images/epic-museum-510x340.jpg" class="card-img-top" title="Britishfinance / CC BY-SA/ See attributions at the bottom of the page" alt="EPIC Irish Emigration museum">
+                                        <div class="card-body">
+                                            <div class="card-title-wrapper">
+                                                <h4 class="card-title content-heading">EPIC The Irish Emigration Museum</h4>
+                                            </div>
+                                            <p class="card-text">The Irish Emigration Museum is located in Dublin's Docklands which covers the history of the Irish diaspora and emigration to other countries.</p>
+                                            <a href="epic.html" class="btn btn-lg btn-primary">View more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <!-- BS Card -->
+                                    <div class="card text-center">
+                                        <img src="assets/images/dublins-gpo-510x340.jpg" class="card-img-top" title="GrahamH / CC BY-SA/ See attributions at the bottom of the page" alt="Dublin GPO">
+                                        <div class="card-body">
+                                            <div class="card-title-wrapper">
+                                                <h4 class="card-title content-heading">GPO Witness History Visitor Centre</h4>
+                                            </div>
+                                            <p class="card-text">Award winning immersive & interactive must see in Dublin. Located in the historical GPO building on O' Connell St, this was the hub of the 1916 Easter Rising.</p>
+                                            <a href="gpo.html" class="btn btn-lg btn-primary">View more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <!-- BS Card -->
+                                    <div class="card">
+                                        <img src="assets/images/ardagh-chalice-510x340.jpg" class="card-img-top" title ="Kglavin / CC BY-SA/ See attributions at the bottom of the page" alt="Ardagh Chalice">
+                                        <div class="card-body">
+                                            <div class="card-title-wrapper">
+                                                <h4 class="card-title content-heading">National Museum of Ireland - Archaeology</h4>
+                                            </div>
+                                                <p class="card-text">This museum covers the history of Ireland from the Stone Age to the Late Middle Ages, and contains artefacts from the earliest period of human habitation in Ireland.</p>
+                                            <a href="museum-archaeology.html" class="btn btn-lg btn-primary">View more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- ./ carousel-inner -->
+                            <a class="carousel-control-prev" href="#carouselCultural" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselCultural" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div><!-- ./ carousel -->
+                    </div>
+                </div>
+                <!-- larger than mobile -->
+                <div class="row d-none d-md-flex pt-5 pb-5">
+                    <div class="col-md-6 col-lg-3 text-center py-2">
+                        <div class="card">
+                            <img src="assets/images/dublin-castle-510x340.jpg" class="card-img-top" alt="Dublin Castle, Ireland">
+                            <div class="card-body">
+                                <div class="card-title-wrapper">
+                                    <h4 class="card-title content-heading">Dublin Castle</h4>
+                                </div>
+                                <p class="card-text">Founded in 13th century, Dublin Castle is a major Irish government complex, conference centre, and tourist attraction. It is located off Dame Street in Dublin.</p>
+                                <a href="dublin-castle.html" class="btn btn-lg btn-primary">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center py-2">
+                        <div class="card">
+                            <img src="assets/images/epic-museum-510x340.jpg" class="card-img-top" title="Britishfinance / CC BY-SA/ See attributions at the bottom of the page" alt="EPIC Irish Emigration museum">
+                            <div class="card-body">
+                                <div class="card-title-wrapper">
+                                    <h4 class="card-title content-heading">EPIC The Irish Emigration Museum</h4>
+                                </div>
+                                <p class="card-text">The Irish Emigration Museum is located in Dublin's Docklands which covers the history of the Irish diaspora and emigration to other countries.</p>
+                                <a href="epic.html" class="btn btn-lg btn-primary">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center py-2">
+                        <div class="card">
+                            <img src="assets/images/dublins-gpo-510x340.jpg" class="card-img-top" title="GrahamH / CC BY-SA/ See attributions at the bottom of the page" alt="Dublin GPO">
+                            <div class="card-body">
+                                <div class="card-title-wrapper">
+                                    <h4 class="card-title content-heading">GPO Witness History Visitor Centre</h4>
+                                </div>
+                                <p class="card-text">Award winning immersive & interactive must see in Dublin. Located in the historical GPO building on O' Connell St, this was the hub of the 1916 Easter Rising.</p>
+                                <a href="gpo.html" class="btn btn-lg btn-primary">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center py-2">
+                        <div class="card">
+                            <img src="assets/images/ardagh-chalice-510x340.jpg" class="card-img-top" title ="Kglavin / CC BY-SA/ See attributions at the bottom of the page" alt="Ardagh Chalice">
+                            <div class="card-body">
+                                <div class="card-title-wrapper">
+                                    <h4 class="card-title content-heading">National Museum of Ireland - Archaeology</h4>
+                                </div>
+                                    <p class="card-text">This museum covers the history of Ireland from the Stone Age to the Late Middle Ages, and contains artefacts from the earliest period of human habitation in Ireland.</p>
+                                <a href="museum-archaeology.html" class="btn btn-lg btn-primary">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Parks & Outdoor -->
+        <div class="container-fluid my-5 bg-light-blue">
+            <div class="container pt-4">
+                <div class="row pt-5 text-center text-md-left">
+                    <div class="col">
+                        <h3><img src="assets/images/markers/outdoors-marker-icon.png" alt="Outdoors icon" class="mr-3" />Parks &amp; Outdoor</h3>
+                    </div>
+                </div>
+                <!-- Mobile only -->
+                <div class="row d-md-none pt-5 pb-5">
+                    <div class="col-12 pt-0 pb-5">
+                        <!-- Parks & Outdoor carousel -->
                         <div id="carouselCultural" class="carousel slide slide--testimonial" data-ride="carousel">
                             <ol class="carousel-indicators d-md-none">
                                 <li data-target="#carouselCultural" data-slide-to="0" class="active"></li>
