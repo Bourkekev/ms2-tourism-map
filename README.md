@@ -1,13 +1,15 @@
 # Milestone 2 - Tourism Map - by Kevin Bourke
 This project is map of Dublin for visitors to recommend places to visit and show them locations on a map. This website could be of interest to and built with support of a government agency like Fáilte Ireland, which is the National Tourism Development Authority of Ireland. Failte Ireland supports the tourism industry, and works to implement positive and practical strategies that will benefit Irish tourism. While in it's current form this site is quite limited in terms of the locations recommended, and is more a proof of concept, but you could imagine how, with time, it could grow into something like [Visit Dublin](https://www.visitdublin.com/), and becomes a real resource for tourists and local people alike.
 
+## UX
+
+I wanted at the very least 3 main features for this site.
+
 There would be a separate listing of Activities (tourist - Castles, Galleries, Games like escape rooms, wall climbing), Events, Restaurants, Bars, Hotels. Different Icons would be used for different category of markers and I want users to be able to toggle map markers by category. The map will also show the Users current location (once they allow it), and I would like to be able to give directions from their location to a selected marker.
 
 There will be a small weather widget which gives the current weather and Users can also search for other cities weather.
 
 There will be a pull-out notepad for the user to save ideas of places to visit. They would be placed into a list and they can re-arrange them by dragging and dropping. I would like the possibility for the user to email this information to themselves as there is no database connected to store this information. 
-
-## UX
 
 ### User Stories
 
@@ -21,6 +23,7 @@ This section provides insight into the UX process, focusing on who this website 
  - As a visitor to Dublin, I may want to see what the weather is like, which would be important if I was walking or the place of interest was outdoors.
  - A a visitor to Dublin, I would like to see the weather forecast for the next couple of days, to help me determine a plan of action.
  - As a visitor to or user who lives in Dublin, it would be useful to be able to make a list of places of interest I would like to see, and arrange them in order of priority. Event thought the website will store the list it would be useful to be able to email this list to myself, so I could access this should I have no internet connection or the website is offline.
+ - Find As a visitor to or user who lives in Dublin, I would also like to be able to search for other amenities in my area.
 
 #### As a developer
 
@@ -36,17 +39,20 @@ I wanted to use as much native JavaScript as possible:
 
 The goals of this type of website are to:
 
+1. Give visitors to Dublin a useful guide that does not have an overwhelming list of things to see and do, but is more tailored and gives some recommended things to see in various categories.
 
 ### Scope
 
 This section determines what the users should be able to do on the website. Users should be able to:
 
 1. Find the location of places of interest.
-2. Find information aboput places of interest.
-3. Get a tailored, recommended list of places of interest and not just a typical Google maps application, which while extremely useful for navigation, does not offer personal recommmendations about certain places.
+2. Find information about places of interest.
+3. Get a tailored, recommended list of places of interest and not just a typical Google maps application, which while extremely useful for navigation, does not offer personal recommendations about certain places.
 4. Get the current weather for Dublin. As an added extra, I can check the weather in other cities.
 5. Get a weather forecast for the coming days.
-6. Create a list of places of interest that I am interest in visiting, and email them to myself for safe keeping.
+6. Create a list of places of interest that they are interest in visiting, and email them to themselves for safe keeping.
+7. Show their current location in relation to these recommended places.
+8. Use a search field to search for other amenities nearby.
 
 ### Structure
 
@@ -56,6 +62,14 @@ I wanted the Notes to be always onscreen even while scrolling so it was absolute
 
 I wanted the weather to be immediately visible yet not too big and so I wanted to hide some of the information and functionality when the page loads. It would then be expandable for more functionality.
 
+The recommended on the listings would then link to an information page for that particular location.
+
+Each page would be designed and developed for mobile first, so the layout in that small screen is very important.
+
+I created a [couple of sketches](assets/design/wireframes/notes-sketch-ideas.jpg) for my note taking section and got some inspiration for this from the likes of EverNote, and for my weather widget from various phone apps. 
+
+![Examples of weather and notes apps](assets/design/weather-note-apps.jpg "Examples of weather and notes apps").
+
 ### Skeleton
 
 This formed the basis of my wireframes, which were created in Balsamiq:
@@ -63,14 +77,16 @@ This formed the basis of my wireframes, which were created in Balsamiq:
 - [Home page on desktop with widgets open wireframe](assets/design/wireframes/homepage-desktop-widgets-open.jpg)
 - [Home page on mobile wireframe](assets/design/wireframes/homepage-mobile.png)
 - [Home page on mobile with widgets open wireframe](assets/design/wireframes/homepage-mobile-widgets-open.png)
+- [Location page on mobile wireframe](assets/design/wireframes/location-page-mobile.png)
+- [Location page on desktop wireframe](assets/design/wireframes/location-page-desktop.jpg)
 
-When I had the Weather widget and the notes list built and was testing on mobile I thought that the toggles to open the notes, the weather and the navigation menu were all to close together and crowding the top right of the screen. So I moved the weather widget left to give a bit more space between the toggles.
+When I had the Weather widget and the notes list built and was testing on mobile I thought that the toggles to open the notes, the weather and the navigation menu were all too close together and crowding the top right of the screen. So I moved the weather widget left to give a bit more space between the toggles.
 
 ### Surface
 
-The Dublin flag colours are #000080 and #88B8FD. I used these on the colour generator [Coolor](https://coolors.co/) as the basis for determining the colour scheme. You can see the [colour scheme I chose generated from Coloors here](assets/design/visiting-dublin-colour-scheme.pdf). This is a very useful tool as it also generates different shades and temperatures of your 5 selected colours.
+The Dublin flag colours are #000080 and #88B8FD. I used these on the colour generator [Coolor](https://coolors.co/) as the basis for determining the colour scheme. You can see the [colour scheme I chose generated from Coloors here](assets/design/visiting-dublin-colour-scheme.pdf). This is a very useful tool as it also generates different shades and temperatures of your 5 selected colours. I used these colours and a variety of shades depending on the situation.
 
-Font Families - Finding fonts like Libre Baskerville that have style variants is a clever way to create nuance without overcomplicating your designs. This typeface is a classic serif that is beautifully applied as a heading and easy-to-read body copy. Reference https://www.canva.com/learn/the-ultimate-guide-to-font-pairing/
+Font Families - Finding fonts like Libre Baskerville that have style variants is a clever way to create nuance without overcomplicating your designs. This typeface is a classic serif that is beautifully applied as a heading and easy-to-read body copy. For reference see https://www.canva.com/learn/the-ultimate-guide-to-font-pairing/
 
 ## Technologies Used
 
@@ -83,7 +99,8 @@ Font Families - Finding fonts like Libre Baskerville that have style variants is
 6. Google Fonts
 7. Google Maps API
 8. [OpenWeather Map API](https://openweathermap.org/api)
-9. [JQuery](https://jquery.com) - The project uses **JQuery** to simplify DOM manipulation. I used a very small jQuery script (global.js) to close the navbar when a sub menu item is clicked, because the sub menu items are only used for links to anchor points in the homepage.
+9. [JQuery](https://jquery.com) - The project uses **JQuery** to simplify DOM manipulation, and animation of certain elements.
+10. [EmailJS API](https://www.emailjs.com/)
 
 ### Tools Used
 1. [VS Code](https://code.visualstudio.com/) and [Brackets](http://brackets.io/) code editors.
@@ -91,13 +108,15 @@ Font Families - Finding fonts like Libre Baskerville that have style variants is
 3. [GitHub](https://github.com/) - Used a repository for the project files and previous versions. Also used to deploy the website.
 4. [Balsamiq](https://balsamiq.com/) - Used for creating wireframes for different variations and different screen sizes.
 5. I used Photoshop and Illustrator for image and svg manipulation.
-6. [TinyPNG](https://tinypng.com/) - To keep transparent png sizes to a minimum I used the online png compressing service [TinyPNG](https://tinypng.com/).
+6. [TinyPNG](https://tinypng.com/) - To keep transparent png sizes to a minimum I used the online png compressing service [TinyPNG](https://tinypng.com/), as well as the desktop application.
 7. [Coolor](https://coolors.co/) - Used top help determine the colour scheme.
 
 
 ## Features
  
 ### Existing Features
+
+
 
 #### Minor Features
 Expand the sections below for more info on details
@@ -122,12 +141,14 @@ One of the links in the nav is to the Recommendations section on the homepage. T
 
 ### Features to consider implementing in the future
 
-1. Ideally the user could click on a button from an info window to store the location to the list or type their own text.
-2. Have areas drawn on the map for shopping areas or socialising areas.
-3. You could incorporate a blog into the site with updates about an author or users' experiences of certain places of interest. This would add more genuineness and authority to the site.
+1. Ideally the user could click on a button from an info window and/or the location page to store the location to the list or type their own text.
+2. A blog could be incorporated into the site with updates about an author or users' experiences of certain places of interest. This would add more genuineness and authority to the site.
 4. Map Marker Clustering.
 5. Currently I just show the Recommended places carousel on mobile and hide it on desktop, and just show the grid on larger than mobile sizes. Ideally I would not want to be repeating these elements and would like to find a way to convert the carousel to this on larger screen sizes.
 6. My own photography. I would have loved to take photos from around Dublin city myself, so I could get exactly what I needed and not rely on stock images and crediting other people, but the virus pandemic did not permit me to do so.
+7. Directions from your location, would be an ideal addition to this website.
+8. A page with information about public transport, bikes, and car hire. You could even tap into Dublin Bus and Irish Rail's APIs for timetables and realtime information.
+9. If this was a real site (you need to registered travel agent) you could use something like https://www.viator.com/distribution-partners to list and purchase activities, like Visit Galway does on this page https://visitgalway.ie/tours-excursions/.
 
 ## Testing
 
@@ -238,6 +259,14 @@ Basically I was taking the 'type' from my locations array and assigning them to 
 ## Credits and References
 
 ### Design and Research
+ I took inspiration for this site from the following places:
+ - [Visit Dublin](https://www.visitdublin.com/)
+ - [Visit Berlin](https://www.visitberlin.de/en)
+ - [Visit Galway](https://visitgalway.ie/)
+ - [Evernote Mobile App](https://play.google.com/store/apps/details?id=com.evernote)
+ - [Samsung Weather App](https://samsung-weather.en.uptodown.com/android)
+ - [Weather Widgets](https://weatherwidget.io/)
+ - [Booked.net](https://www.booked.net/widgets/weather)
 
 ### Technical
  - For general references for Javascript methods I used my Code Institue notes, [MDN web docs](https://developer.mozilla.org/en-US/) and [w3schools](https://www.w3schools.com/js/default.asp).
@@ -246,7 +275,6 @@ Basically I was taking the 'type' from my locations array and assigning them to 
  - To convert unix timestap I referenced this article - https://coderrocketfuel.com/article/convert-a-unix-timestamp-to-a-date-in-vanilla-javascript
  - Regex generator to remove html from a string - Removing the html delete button from the emailed notes - http://regex.larsolavtorvik.com/
  - To create checkboxes for my Map Legend I followed 2 parts of an example on [Stackoverflow[(https://stackoverflow.com/questions/26778164/simple-filter-in-legend-google-maps-api-v3). One was the for-in loop {for (var key in icons)}, and the other was the toggleType function.
-
  - Google Places Searchbox - mostly all from Google's Places [API documentation](https://developers.google.com/maps/documentation/javascript/examples/places-searchbox)
 
 ### Content

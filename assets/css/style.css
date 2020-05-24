@@ -177,7 +177,7 @@ div#dublin-forecast-data {
     color: #b95f89;
 }
 .navbar-light .navbar-nav .active>.nav-link {
-    color: #407dbf;
+    color: #445E9C;
 }
 /* Navbar close X icon */
 .navbar-dark .navbar-toggler.collapsed .navbar-toggler-icon,
@@ -190,6 +190,14 @@ div#dublin-forecast-data {
 }
 .navbar-toggler:focus {
     outline: #2fc0f9 auto 5px;
+}
+.nav-link {
+    padding: 1rem 1.6rem;
+}
+.navbar-collapse {
+    border-top: 1px solid #c4e0f9;
+    margin-top: 10px;
+    text-align: center;
 }
 /* Logo */
 .navbar-brand {
@@ -363,7 +371,7 @@ button.gm-control-active.gm-fullscreen-control {
 #take-notes,
 .take-notes-wrapper {
     position: fixed;
-    top: 10vh;
+    top: 16vh;
     right: -75vw;
     z-index: 9999;
     width: 100%;
@@ -408,7 +416,7 @@ button.gm-control-active.gm-fullscreen-control {
     border-radius: 4px 0 0 4px;
     box-shadow: -3px 0px 3px 1px rgba(0, 0, 0, 0.3);
     width: 80%;
-    max-height: 80vh;
+    max-height: 75vh;
     overflow: scroll;
 }
 /* When take notes section opened */
@@ -592,6 +600,10 @@ button.del-btn {
 }
 /*------ Bootstraps Medium size ------*/
 @media screen and (min-width: 768px) {
+    .navbar-collapse {
+        border-top: none;
+        margin-top: 0;
+    }
     .jumbotron {
         background-image:url(../images//ha-penny-bridge-768x250.jpg);
         padding: 12rem 1rem;
