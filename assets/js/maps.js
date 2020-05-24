@@ -70,13 +70,13 @@ function initMap() {
         {
             coords: { lat: 53.360065, lng: -6.325532 },
             content:
-                '<h3>Phoenix Park</h3><img src="assets/images/phoenix-park-200x122.jpg" alt="Phoenix Park" /><p>Enormous park that houses Dublin Zoo and the largest enclosed public park in any capital city in Europe.</p>',
+                '<h3>Phoenix Park</h3><img src="assets/images/phoenix-park-200x122.jpg" alt="Phoenix Park" /><p>Enormous park that houses Dublin Zoo and is the largest enclosed public park in any capital city in Europe.</p>',
             type: "outdoors",
         },
         {
             coords: { lat: 53.372642, lng: -6.271671 },
             content:
-                "<h3>National Botanic Gardens</h3><p>An oasis of calm and beauty, and entry is free. A premier scientific institution, the gardens contain important collections of plant species and cultivars from all over the world</p>",
+                "<h3>National Botanic Gardens</h3><p>An oasis of calm and beauty, and entry is free. A premier scientific institution, the gardens contain important collections of plant species and cultivars from all over the world.</p>",
             type: "outdoors",
         },
         {

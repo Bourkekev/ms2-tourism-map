@@ -66,7 +66,7 @@ The recommended on the listings would then link to an information page for that 
 
 Each page would be designed and developed for mobile first, so the layout in that small screen is very important.
 
-I created a [couple of sketches](assets/design/wireframes/notes-sketch-ideas.jpg) for my note taking section and got some inspiration for this from the likes of EverNote, and for my weather widget from various phone apps. 
+I created a [couple of sketches](assets/design/wireframes/notes-sketch-ideas.jpg) for my note taking section and got some inspiration for this from the likes of EverNote, and for my weather widget from various phone apps. I had thought about making the notepad look like a real notepad with lines and spiral binding, but decided it was a bit of a dated style and wanted a cleaner look anyway.
 
 ![Examples of weather and notes apps](assets/design/weather-note-apps.jpg "Examples of weather and notes apps").
 
@@ -86,7 +86,7 @@ When I had the Weather widget and the notes list built and was testing on mobile
 
 The Dublin flag colours are #000080 and #88B8FD. I used these on the colour generator [Coolor](https://coolors.co/) as the basis for determining the colour scheme. You can see the [colour scheme I chose generated from Coloors here](assets/design/visiting-dublin-colour-scheme.pdf). This is a very useful tool as it also generates different shades and temperatures of your 5 selected colours. I used these colours and a variety of shades depending on the situation.
 
-Font Families - Finding fonts like Libre Baskerville that have style variants is a clever way to create nuance without overcomplicating your designs. This typeface is a classic serif that is beautifully applied as a heading and easy-to-read body copy. For reference see https://www.canva.com/learn/the-ultimate-guide-to-font-pairing/
+Font Families - Having read the following article I decide to keep it simple and just use 1 font family for both headings and body font. Finding fonts like Libre Baskerville that have style variants is a clever way to create nuance without overcomplicating your designs. This typeface is a classic serif that is beautifully applied as a heading and easy-to-read body copy. For reference see https://www.canva.com/learn/the-ultimate-guide-to-font-pairing/
 
 ## Technologies Used
 
@@ -280,7 +280,7 @@ Basically I was taking the 'type' from my locations array and assigning them to 
 ### Content
 
  - Locational information content was gotten from Wikipedia and Google, except if noted below.
- - Botanic Gardens info from [Botanic Gardens websit]e(http://botanicgardens.ie/)
+ - Botanic Gardens info from [Botanic Gardens website](http://botanicgardens.ie/)
  
 ### Media
 - The photos and vectors (except logo) used in this site were obtained from:
@@ -290,7 +290,8 @@ Basically I was taking the 'type' from my locations array and assigning them to 
 
  - The favicons were generated at https://realfavicongenerator.net/
 
- - Castle vectors - by <a href="https://www.vecteezy.com/free-vector/castle">Castle Vectors by Vecteezy</a>
+ For Creative Commons or other attributed images see https://bourkekev.github.io/ms2-tourism-map/image-accreditations.html
+
 
 ### Acknowledgements
 
