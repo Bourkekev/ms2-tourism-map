@@ -276,6 +276,7 @@ Basically I was taking the 'type' from my locations array and assigning them to 
  - Regex generator to remove html from a string - Removing the html delete button from the emailed notes - http://regex.larsolavtorvik.com/
  - To create checkboxes for my Map Legend I followed 2 parts of an example on [Stackoverflow[(https://stackoverflow.com/questions/26778164/simple-filter-in-legend-google-maps-api-v3). One was the for-in loop {for (var key in icons)}, and the other was the toggleType function.
  - Google Places Searchbox - mostly all from Google's Places [API documentation](https://developers.google.com/maps/documentation/javascript/examples/places-searchbox)
+ - I got some information about the Open WeatherMap API from this [Coding Train video](https://www.youtube.com/watch?v=ecT42O6I_WI), but in this tutorial he is using a Javascript library called P5 and is using it to draw shapes on a canvas dependin on the weather.
 
 ### Content
 
@@ -295,3 +296,5 @@ Basically I was taking the 'type' from my locations array and assigning them to 
 
 ### Acknowledgements
 
+ - Thanks to my mentor Anthony Ngene for his suggestions and his time.
+ - Thanks to those on Slack for reviewing my project and making suggestions.
