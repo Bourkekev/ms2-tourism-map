@@ -59,12 +59,6 @@ function initMap() {
         },
     };
 
-    // Put infoWindow content into variable
-    let portoContent = `
-        <h2>Velvet Strand</h2>
-        <p>Portmarnock</p>
-        <p><a href="https://www.visitdublin.com/see-do/details/portmarnock-the-velvet-strand-blue-flag-beach-2019" target="_blank">See more here</a></p>`;
-
     // Put all addMarkers called into array instead of individual addMarker calls
     let locations = [
         {
@@ -93,7 +87,7 @@ function initMap() {
         },
         {
             coords: { lat: 53.4246, lng: -6.121 },
-            content: portoContent,
+            content: '<h2>Velvet Strand</h2><p>Portmarnock</p><p><a href="https://www.visitdublin.com/see-do/details/portmarnock-the-velvet-strand-blue-flag-beach-2019" target="_blank">See more here</a></p>',
             type: "beach",
         },
         {
@@ -126,8 +120,8 @@ function initMap() {
         {
             coords: { lat: 53.340508, lng: -6.255047 },
             content:
-                "<h3>National Museum of Ireland - archaeology</h3><p>Founded in 13th century, Malahide Castle is located off Dame Street.</p>",
-            type: "museum",
+                "<h3>National Museum of Ireland - Archaeology</h3><p>Local archaeological finds from the Bronze Age, Vikings and Medieval times with some Egyptian items.</p>",
+            type: "cultural",
         },
         {
             coords: { lat: 53.343225, lng: -6.267848 },
@@ -136,9 +130,21 @@ function initMap() {
             type: "cultural",
         },
         {
+            coords: { lat: 53.348660, lng: -6.247859 },
+            content:
+                "<h3>EPIC The Irish Emigration Museum</h3><p>EPIC The Irish Emigration Museum is located in Dublin's Docklands which covers the history of the Irish diaspora and emigration to other countries.</p>",
+            type: "cultural",
+        },
+        {
             coords: { lat: 53.444904, lng: -6.164135 },
             content:
-                "<h3>Malahide Castle</h3><p>Founded in 13th century, Malahide Castle is located off Dame Street.</p>",
+                "<h3>Malahide Castle</h3><p>Malahide Castle, parts of which date to the 12th century, lies close to the village of Malahide, nine miles north of central Dublin in Ireland.</p>",
+            type: "cultural",
+        },
+        {
+            coords: { lat: 53.349579, lng: -6.260422 },
+            content:
+                "<h3>GPO Witness History Visitor Centre</h3><p>Award winning immersive & interactive must see in Dublin. Located in the historical GPO building on O' Connell St, this was the hub of the 1916 Easter Rising.</p>",
             type: "cultural",
         },
     ];

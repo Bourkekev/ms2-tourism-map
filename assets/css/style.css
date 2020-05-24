@@ -13,21 +13,19 @@ body {
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Libre Baskerville', cursive;
+    color: #97476B;
 }
 .h1, h1 {
     font-size: 4rem;
 }
 .h2, h2 {
     font-size: 2.8rem;
-    color: #97476B;
 }
 .h3, h3 {
     font-size: 2.4rem;
-    color: #97476B;
 }
 .h4, h4 {
     font-size: 2rem;
-    color: #97476B;
 }
 p.h4 {
     font-size: 1.4rem;
@@ -244,6 +242,9 @@ div#dublin-forecast-data {
     position: relative;
     z-index: 2;
 }
+.jumbotron h1 {
+    color: #fff;
+}
 /* Text styles */
 .display-4 {
     font-size: 2.5rem;
@@ -292,6 +293,11 @@ div#dublin-forecast-data {
 /* MAP */
 #map {
     min-height: 700px;
+    width: 100%;
+}
+#location-map {
+    border: 5px solid #2fc0f9;
+    min-height: 320px;
     width: 100%;
 }
 #legend {
@@ -494,6 +500,26 @@ button.del-btn {
     top: 50%;
     transform: translateY(-50%);
 }
+/*---------------------------- Location Pages ------*/
+.bg-wrapper {
+    background-image: url(../images/dublin-liffey-at-night-1920x1080.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg-overlay {
+    background: rgba(0, 0, 0, 0.2);
+}
+.location-page #maincontent {
+    background: #fff;
+    margin: 50px auto;
+}
+.location-page h1 {
+    text-align: left;
+    font-size: 2rem;
+}
+.location-page h1 img{
+    margin-right: 5px;
+}
 /* ---------------------------- FOOTER ------ */
 .footer {
     background-color: #192037;
@@ -612,6 +638,12 @@ button.del-btn {
     #pac-input {
         width: 400px;
     }
+    .location-page h1 {
+        font-size: 3rem;
+    }
+    .location-page h1 img{
+        margin-right: 15px;
+    }
 }
 /*------ Bootstraps Large size ------*/
 @media screen and (min-width: 992px) {
@@ -630,6 +662,13 @@ button.del-btn {
     .card-title-wrapper {
         min-height: 110px;
     }
+    #location-map {
+        min-height: 550px;
+    }
+    .location-page h1 {
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #ccc;
+    }
 }
 /*------ Bootstraps XLarge size ------*/
 @media screen and (min-width: 1200px) {
@@ -644,5 +683,8 @@ button.del-btn {
     /* vertically align title as some are larger than others*/
     .card-title-wrapper {
         min-height: 80px;
+    }
+    #location-map {
+        min-height: 650px;
     }
 }

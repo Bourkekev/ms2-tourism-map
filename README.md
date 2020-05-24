@@ -145,15 +145,24 @@ I was having an issue where the notes being sent by email were sometimes differe
 ### Validation
 
 #### HTML
-I validated the HTML with the [W3 Validation Service](https://validator.w3.org/). 
+I validated the HTML with the [W3 Validation Service](https://validator.w3.org/). It picked up a couple of stray closing tags I missed like `</i>`, and warned I need not use the type="text" attribute for javascripts.
 
 #### CSS
 
-I validated the CSS with the [W3 CSS Validation Service](http://www.css-validator.org/) for CSS Level 3 and...
+I validated the CSS with the [W3 CSS Validation Service](http://www.css-validator.org/) for CSS Level 3 and no errors were found.
 
 #### Javascript
 
-I validated my Javascript code while editing using ESLint extension for VS Code, and also in JSHint (JSLInt?)...
+I validated my Javascript code while editing using ESLint extension for VS Code, and also in JSHint. Most warnings were about let and const only available in ES6. The following were also noted and fixed:
+
+- In my **weather script** I found 2 unused variables dublinCity and writeToDocument. dublinCity was left over from when I thought it would be best to use the city ID, and writeToDocument is called in the index.html file. 
+
+- In my **jQuery** file there were no errors, but it mentioned $ was undefined, but that comes from jQuery.
+
+- In my **take notes** script it said there was an undefined variable emailjs but this comes from the emailjs script. There are four unused variables currentList, addToList, clearList, sendMail, but these are all called from the html files.
+
+-In my **map script** file it said there were 5 unused variables 	initMap,	toggleType,	addPoly,	removePoly,	whereAmI. These are called from the html file.
+It said the google, infoWindow and map variables are undefined but they come from Google maps. It also says shoppingAreaNorth is not defined but if I put 'let' where I define a new google.maps.Polygon then my polgon function breaks and console says it is not defined. I'm not fully sure what happening here.
 
 ### Testing on Browsers, Screen sizes and Devices
 I tested the website on the following browsers and devices:

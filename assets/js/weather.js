@@ -1,7 +1,6 @@
 /** -----------------------------------------------------------
  * WEATHER API FUNCTIONS
  */
-const dublinCity = 2964574;
 const apiKey = "4adecede8cc646766529fd7932ba0555";
 let tempUnits = "units=metric";
 let cityInput = document.getElementById("city");
