@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Favicons and Theme colour -->
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+        <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+        <link rel="mask-icon" href="assets/images/favicons/safari-pinned-tab.svg" color="#88b8fd">
+        <link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#2b5797">
+        <meta name="msapplication-config" content="assets/images/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#88b8fd">
+        <!-- styles and fonts -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Visiting Dublin - Milestone 2 by Kevin Bourke</title>
+    </head>
+<body>
+    <a href="#maincontent" class="screen-reader-link sr-only">Skip to main content</a>
+    <header class="full-width-header">
+        <div class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-9 col-sm-6 col-md-4 col-lg-3">
+                        <!-- weather widget -->
+                        <div class="dublin-weather-outer">
+                            <div id="dublin-weather-data"></div>
+                            <div id="see-more-weather" class="mt-lg-3"><a class="more-weather-link">View more &#9662;&#9662;&#9662;</a></div>
+                            <div id="more-weather">
+                                <div id="weather-widget" class="divider-t">
+                                    <div id="dublin-forecast-data"></div>
+                                    <div class="other-city divider-t mt-3 pt-3">
+                                        <h4 class="text-center pb-2">Check the weather in your city</h4>
+                                        <p class="tip" data-toggle="tooltip" data-html="true" title="Optionally, add a comma and country code after to specify the country (e.g. Dublin, IE)">
+                                            Search Tip ?
+                                        </p>
+                                        <form>
+                                            <input id="city" class="form-control" autocomplete="off" value="London">
+                                            <button type="button" class="btn btn-primary w-100" id="get-weather" onclick="writeToDocument()">Get Weather</button>
+                                        </form>
+                                        <div id="dynamic-weather-data" class="pt-3"></div>
+                                    </div>
+                                </div>
+                                <div id="see-less-weather"><a class="less-weather-link pt-0">View less &#9652;&#9652;&#9652;</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-sm-6 col-md-8 col-lg-9">
+                        <div id="current-date"></div>
+                    </div>
+                </div><!-- ./ row -->
+            </div><!-- ./ container-->
+        </div>
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light bg-white">
+                <a class="navbar-brand" href="#"><span class="logo-part1">Visiting </span><span class="logo-part2">Dublin</span></a>
+                <button class="navbar-toggler mr-4 mr-sm-0 collapsed" type="button" data-toggle="collapse" data-target="#navbarMainMenu" aria-controls="navbarMainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarMainMenu">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#recommendations">Our Recommendations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Getting around</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main id="maincontent" role="main">
+        <div class="container">
+            <div class="row py-5">
+                <div class="col">
+                    <p>Ardagh Chalice - <a href="https://commons.wikimedia.org/wiki/File:Ardagh_chalice.jpg" title="via Wikimedia Commons">Kglavin</a> / <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA</a></p>
+                    <p>Dublin's GPO - <a href="https://commons.wikimedia.org/wiki/File:GPO_Portico_-_Morning.jpg" title="via Wikimedia Commons">GrahamH</a> / <a href="https://creativecommons.org/licenses/by-sa/2.5">CC BY-SA</a></p>
+                    <p>Irish Emigration Museum - <a href="https://commons.wikimedia.org/wiki/File:EPIC_The_Irish_Emigration_Museum_I.jpg" title="via Wikimedia Commons">Britishfinance</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA</a></p>
+                    <p>Croke Park Image by <a href="https://pixabay.com/users/jmauremootoo-690583/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=928704">jmauremootoo</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=928704">Pixabay</a></p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer container-fluid mt-4 pt-4 pb-4">
+        <div class="container">
+            <div class="row text-center text-md-left">
+                <div class="col-sm-4">
+                    <p>&copy; 2020 Explore Dublin</p> 
+                </div>
+                <div class="col-sm-4">
+                    <p class="d-md-inline-block">Follow us:</p>
+                    <ul class="social-icons-list d-md-inline-block text-center text-md-left">
+                        <li>
+                            <a target="_blank" href="https://twitter.com/">
+                                <i class="fab fa-twitter fa-sm" aria-hidden="true"></i>
+                                <span class="sr-only">Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.linkedin.com/">
+                                <i class="fab fa-linkedin-in fa-sm" aria-hidden="true"></i>
+                                <span class="sr-only">LinkedIn</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.facebook.com/">
+                                <i class="fab fa-facebook-f fa-sm" aria-hidden="true"></i>
+                                <span class="sr-only">Facebook</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <img src="assets/images/ireland-failte-white-200x60.png" alt="Ireland Failte logo">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- copyright -->
+    <div class="full-width-copyright container-fluid">
+        <div class="container">
+            <div class="row text-center text-sm-left">
+                <div class="col">
+                    <p>Website by Kevin Bourke. For educational purposes only.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="assets/js/weather.js"></script>
+    <script src="assets/js/takeNotes.js"></script>
+    <script src="assets/js/global-jquery.js"></script>
+    <!-- email js -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("user_upu5oN7qoaZd5LQpk8rYy");
+
+        })();
+    </script>
+</body>
+</html>

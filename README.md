@@ -126,7 +126,8 @@ One of the links in the nav is to the Recommendations section on the homepage. T
 2. Have areas drawn on the map for shopping areas or socialising areas.
 3. You could incorporate a blog into the site with updates about an author or users' experiences of certain places of interest. This would add more genuineness and authority to the site.
 4. Map Marker Clustering.
-5. Google Maps Places search field.
+5. Currently I just show the Recommended places carousel on mobile and hide it on desktop, and just show the grid on larger than mobile sizes. Ideally I would not want to be repeating these elements and would like to find a way to convert the carousel to this on larger screen sizes.
+6. My own photography. I would have loved to take photos from around Dublin city myself, so I could get exactly what I needed and not rely on stock images and crediting other people, but the virus pandemic did not permit me to do so.
 
 ## Testing
 
@@ -241,11 +242,13 @@ Basically I was taking the 'type' from my locations array and assigning them to 
 
 ### Content
 
- - Locational information content was gotten from Wikipedia and Google.
+ - Locational information content was gotten from Wikipedia and Google, except if noted below.
+ - Botanic Gardens info from [Botanic Gardens websit]e(http://botanicgardens.ie/)
  
 ### Media
 - The photos and vectors (except logo) used in this site were obtained from:
 
+ - Ha'Penny Bridge - [Shutterstock](https://www.shutterstock.com/g/madrugadaverde)
  - Fictional Ireland Fáilte logo was designed on https://www.freelogodesign.org/
 
  - The favicons were generated at https://realfavicongenerator.net/

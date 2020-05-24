@@ -22,8 +22,15 @@ h1, h2, h3, h4, h5, h6 {
     color: #97476B;
 }
 .h3, h3 {
+    font-size: 2.4rem;
+    color: #97476B;
+}
+.h4, h4 {
     font-size: 2rem;
     color: #97476B;
+}
+p.h4 {
+    font-size: 1.4rem;
 }
 
 img {
@@ -215,12 +222,13 @@ div#dublin-forecast-data {
 }
 /* Jumbotron */
 .jumbotron {
-    background-image: url(../images/ha-penny-bridge-in-dublin-ireland.jpg);
+    background-image: url(../images/ha-penny-bridge-576x300.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     color: #ffffff;
     padding: 6rem 1rem;
     position: relative;
+    text-shadow: 1px 1px rgba(0, 0, 0, .5);
 }
 .jumbotron::before {
     content: "";
@@ -307,6 +315,17 @@ div#dublin-forecast-data {
 button.gm-control-active.gm-fullscreen-control {
     top: 30px!important;
 }
+/* map info-window*/
+.gm-style-iw.gm-style-iw-c {
+    text-align: center;
+}
+.gm-style-iw.gm-style-iw-c h3 {
+    font-size: 1.6rem;
+}
+.gm-style-iw.gm-style-iw-c img {
+    max-width: 100%;
+    margin: 5px 0;
+}
 /* Google places search bar */
 #infowindow-content .title {
     font-weight: bold;
@@ -347,22 +366,25 @@ button.gm-control-active.gm-fullscreen-control {
 
 /* Open the notes tab */
 .open-notes {
-    background: #fff;
-    border: 1px solid #407dbf;
+    background: #97476b;
+    border: 1px solid #74304d;
     border-radius: 4px 0 0 4px;
     box-shadow: -3px 0px 3px 1px rgba(0, 0, 0, 0.3);
+    color: #fff;
     cursor: pointer;
     font-size: 1.2rem;
     width: 21%;
     padding: .5rem;
     text-align: center;
-    top: 30vh;
+    top: 65vh;
     position: relative;
 }
 .open-notes::before {
     display: block;
     content: " ";
-    background: white;
+    background: #97476b;
+    border: 1px solid #73304d;
+    border-right-color: #97476b;
     box-shadow: -7px 0px 3px 0px rgba(0, 0, 0, 0.3);
     width: 15px;
     height: 15px;
@@ -449,6 +471,7 @@ button.del-btn {
 /* ------ BS Cards ------*/
 .card {
     background: #ccc;
+    border: 5px solid #2EC0F9;
 }
 .carousel-indicators {
     bottom: -40px;
@@ -460,21 +483,27 @@ button.del-btn {
     right: -20px;
 }
 /* recommendation cards */
-    /* vertically align title as some are larger than others*/
-    .card-title-wrapper {
-        position: relative;
-        min-height: 80px;
-    }
-    .card-title {
-        position: absolute;
-        width: 100%;
-        top: 50%;
-        transform: translateY(-50%);
-    }
+/* vertically align title as some are larger than others*/
+.card-title-wrapper {
+    position: relative;
+    min-height: 80px;
+}
+.card-title {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
 /* ---------------------------- FOOTER ------ */
 .footer {
     background-color: #192037;
     color:#fff;
+}
+.footer a {
+    color: #2ec0f9;
+}
+.img-credits {
+    font-size: 1rem;
 }
 .full-width-copyright {
     background: #00041B;
@@ -537,6 +566,16 @@ button.del-btn {
 }
 /*------ Bootstraps Medium size ------*/
 @media screen and (min-width: 768px) {
+    .jumbotron {
+        background-image:url(../images//ha-penny-bridge-768x250.jpg);
+        padding: 12rem 1rem;
+    }
+    p.h4 {
+        font-size: 2rem;
+    }
+    .lead {
+        font-size: 2.4rem;
+    }
     .navbar-brand {
         font-size: 3rem;
     }
@@ -548,6 +587,9 @@ button.del-btn {
     .take-notes-wrapper {
         width: 40%;
         right: -38vw;
+    }
+    .open-notes {
+        top: 30vh;
     }
     /* Map */
     /* map off canvas buttons */
@@ -573,10 +615,34 @@ button.del-btn {
 }
 /*------ Bootstraps Large size ------*/
 @media screen and (min-width: 992px) {
+    .jumbotron {
+        background-image:url(../images/ha-penny-bridge-1000x400.jpg);
+        padding: 15rem 1rem;
+    }
     /* Notes pop-out */
     #take-notes,
     .take-notes-wrapper {
         width: 30%;
         right: -28vw;
+    }
+    /* recommendation cards */
+    /* vertically align title as some are larger than others*/
+    .card-title-wrapper {
+        min-height: 110px;
+    }
+}
+/*------ Bootstraps XLarge size ------*/
+@media screen and (min-width: 1200px) {
+    .jumbotron {
+        background-image:url(../images/ha-penny-bridge-1920x600.jpg);
+        padding: 17rem 1rem;
+    }
+    .h1, h1 {
+        font-size: 5rem;
+    }
+    /* recommendation cards */
+    /* vertically align title as some are larger than others*/
+    .card-title-wrapper {
+        min-height: 80px;
     }
 }

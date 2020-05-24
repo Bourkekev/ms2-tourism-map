@@ -76,19 +76,19 @@ function initMap() {
         {
             coords: { lat: 53.360065, lng: -6.325532 },
             content:
-                "<h3>Phoenix Park</h3><p>Enormous park that houses Dublin Zoo and the largest enclosed public park in any capital city in Europe.</p>",
+                '<h3>Phoenix Park</h3><img src="assets/images/phoenix-park-200x122.jpg" alt="Phoenix Park" /><p>Enormous park that houses Dublin Zoo and the largest enclosed public park in any capital city in Europe.</p>',
             type: "outdoors",
         },
         {
             coords: { lat: 53.372642, lng: -6.271671 },
             content:
-                "<h3>National Botanic Gardens</h3><p>Large area with naturalistic sections, formal gardens, an arboretum and a Victorian palm house.</p>",
+                "<h3>National Botanic Gardens</h3><p>An oasis of calm and beauty, and entry is free. A premier scientific institution, the gardens contain important collections of plant species and cultivars from all over the world</p>",
             type: "outdoors",
         },
         {
             coords: { lat: 53.338183, lng: -6.259257 },
             content:
-                "<h3>St. Stephen's Green</h3><p>City centre park with ornamental lake, waterfall, sculptures and a children's playground.</p>",
+                '<h3>St. Stephen\'s Green</h3><img src="assets/images/st-stephens-green-200x133.jpg" alt="St. Stephen\'s Green" /><p>City centre park with ornamental lake, waterfall, sculptures and a children\'s playground.</p>',
             type: "outdoors",
         },
         {
@@ -132,7 +132,7 @@ function initMap() {
         {
             coords: { lat: 53.343225, lng: -6.267848 },
             content:
-                "<h3>Dublin Castle</h3><p>Founded in 13th century, Dublin Castle is located off Dame Street.</p>",
+                '<h3>Dublin Castle</h3><img src="assets/images/dublin-castle-200x133.jpg" alt="Dublin Castle" /><p>Founded in 13th century, Dublin Castle is located off Dame Street.</p>',
             type: "cultural",
         },
         {
@@ -311,7 +311,7 @@ function initMap() {
 /** @this {google.maps.Polygon} */
 function northPolyContent(event) {
     let contentString =
-        "<h3>Shopping Area</h3><p>This area encompasses O' Connell Street and pedestrianised Henry Street areas.</p>";
+        '<h3>Shopping Area</h3><img src="assets/images/henry-st-and-spire.jpg" alt="Henry Street shopping" /><p>This area encompasses O\' Connell Street and pedestrianised Henry Street areas.</p>';
     // Replace the info window's content and position.
     infoWindow.setContent(contentString);
     infoWindow.setPosition(event.latLng);
@@ -320,7 +320,7 @@ function northPolyContent(event) {
 }
 function southPolyContent(event) {
     let contentString =
-        "<h3>Shopping Area</h3><p>This area encompasses pedestrianised Grafton Street and St. Stephen's Green shoppping areas.</p>";
+        '<h3>Shopping Area</h3><img src="assets/images/grafton-st-dublin-shopping.jpg" alt="Grafton Street shopping" /><p>This area encompasses pedestrianised Grafton Street and St. Stephen\'s Green shopping areas.</p>';
     // Replace the info window's content and position.
     infoWindow.setContent(contentString);
     infoWindow.setPosition(event.latLng);
