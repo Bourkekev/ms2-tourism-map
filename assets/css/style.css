@@ -324,6 +324,7 @@ div#dublin-forecast-data {
 #legend img {
     vertical-align: middle;
     margin: 0 10px;
+    width: 25px;
 }
 /* Move map full screen button out from edge */
 button.gm-control-active.gm-fullscreen-control {
@@ -641,6 +642,9 @@ button.del-btn {
     }
     #legend h3 {
         font-size: 1.4rem;
+    }
+    #legend img {
+        width: auto;
     }
       /* Move map full screen button out from edge */
     button.gm-control-active.gm-fullscreen-control {
