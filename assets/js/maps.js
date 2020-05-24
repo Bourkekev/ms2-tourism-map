@@ -102,7 +102,22 @@ function initMap() {
         },
         {
             coords: { lat: 53.335241, lng: -6.2285659 },
-            content: "<h3>Aviva Stadium</h3><p>Howth</p>",
+            content: "<h3>Aviva Stadium</h3><p>Aviva Stadium prides itself on being a unique world class international stadium - an outstanding venue for football, rugby, concerts and conferences.</p>",
+            type: "entertain",
+        },
+        {
+            coords: { lat: 53.3606718, lng: -6.2515338 },
+            content: "<h3>Croke Park Stadium</h3><p>As the home of Ireland's largest sporting, the GAA - Croke Park has played host to iconic moments in Irish sport & history and to major international events.</p>",
+            type: "entertain",
+        },
+        {
+            coords: { lat: 53.3418652, lng: -6.2867874 },
+            content: "<h3>Guinness Storehouse</h3><p>Guinness Storehouse is a tourist attraction at St. James's Gate Brewery in Dublin, Ireland. Since opening in 2000, it has received over twenty million visitors.</p>",
+            type: "entertain",
+        },
+        {
+            coords: { lat: 53.348260, lng: -6.277255 },
+            content: "<h3>Jameson Distillery Tour</h3><p>Expert guides tell the story of Jameson in a recreated distillery scene with tastings and dining.</p>",
             type: "entertain",
         },
         {
