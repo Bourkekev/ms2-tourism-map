@@ -87,7 +87,7 @@ function initMap() {
         },
         {
             coords: { lat: 53.4246, lng: -6.121 },
-            content: '<h2>Velvet Strand</h2><p>Portmarnock</p><p><a href="https://www.visitdublin.com/see-do/details/portmarnock-the-velvet-strand-blue-flag-beach-2019" target="_blank">See more here</a></p>',
+            content: '<h2>Velvet Strand</h2><p>Portmarnock or (Velvet Strand) is a Sandy beach located near Portmarnock in County Dublin. A Blue Flag Award beach, Portmarnock has water quality and some of the best facilities in Republic of Ireland.</p>',
             type: "beach",
         },
         {
@@ -97,7 +97,7 @@ function initMap() {
         },
         {
             coords: { lat: 53.4509, lng: -6.1501 },
-            content: "<h3>Malahide</h3><p>Malahide</p>",
+            content: "<h3>Malahide</h3><p>With traditional shop fronts, colourful hanging flower baskets and a gorgeous view of Dublin Bay, picturesque Malahide is a homely village that retains its historic character. Visit the medieval castle, stroll to the marina and down to the beach, before discovering the town’s charming cafés, bars and chic boutiques.</p>",
             type: "bars",
         },
         {

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Favicons and Theme colour -->
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+        <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+        <link rel="mask-icon" href="assets/images/favicons/safari-pinned-tab.svg" color="#88b8fd">
+        <link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#2b5797">
+        <meta name="msapplication-config" content="assets/images/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#88b8fd">
+        <!-- styles and fonts -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Aviva Stadium - Visiting Dublin - Milestone 2 by Kevin Bourke</title>
+    </head>
+<body class="location-page">
+    <div class="bg-wrapper">
+        <div class="bg-overlay">
+            <a href="#maincontent" class="screen-reader-link sr-only">Skip to main content</a>
+            <header class="full-width-header">
+                <div class="topbar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-9 col-sm-6 col-md-4 col-lg-3">
+                                <!-- weather widget -->
+                                <div class="dublin-weather-outer">
+                                    <div id="dublin-weather-data"></div>
+                                    <div id="see-more-weather" class="mt-lg-3"><a class="more-weather-link">View more &#9662;&#9662;&#9662;</a></div>
+                                    <div id="more-weather">
+                                        <div id="weather-widget" class="divider-t">
+                                            <div id="dublin-forecast-data"></div>
+                                            <div class="other-city divider-t mt-3 pt-3">
+                                                <h4 class="text-center pb-2">Check the weather in your city</h4>
+                                                <p class="tip" data-toggle="tooltip" data-html="true" title="Optionally, add a comma and country code after to specify the country (e.g. Dublin, IE)">
+                                                    Search Tip ?
+                                                </p>
+                                                <form>
+                                                    <input id="city" class="form-control" autocomplete="off" value="London">
+                                                    <button type="button" class="btn btn-primary w-100" id="get-weather" onclick="writeToDocument()">Get Weather</button>
+                                                </form>
+                                                <div id="dynamic-weather-data" class="pt-3"></div>
+                                            </div>
+                                        </div>
+                                        <div id="see-less-weather"><a class="less-weather-link pt-0">View less &#9652;&#9652;&#9652;</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-6 col-md-8 col-lg-9">
+                                <div id="current-date"></div>
+                            </div>
+                        </div><!-- ./ row -->
+                    </div><!-- ./ container-->
+                </div>
+                <div class="container">
+                    <nav class="navbar navbar-expand-md navbar-light bg-white">
+                        <a class="navbar-brand" href="index.html"><span class="logo-part1">Visiting </span><span class="logo-part2">Dublin</span></a>
+                        <button class="navbar-toggler mr-4 mr-sm-0 collapsed" type="button" data-toggle="collapse" data-target="#navbarMainMenu" aria-controls="navbarMainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        
+                        <div class="collapse navbar-collapse" id="navbarMainMenu">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.html#recommendations">Our Recommendations</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Getting around</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <!--main content-->
+            <main id="maincontent" class="container">
+                <div class="row py-5 text-center">
+                    <div class="col">
+                        <h1><img src="assets/images/markers/sports-marker-icon.png" alt="Parks icon"/>Aviva Stadium</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 pb-5 order-1 order-lg-2">
+                        <div id="location-map"></div>
+                    </div>
+                    <div class="col-lg-6 order-2 order-lg-1">
+                        <img src="assets/images/aviva-stadium-768x512.jpg" class="card-img-top" alt="Aviva Stadium">
+                        <div class="location-desc py-5">
+                            <p>Aviva Stadium prides itself on being a unique world class international stadium - an outstanding venue for football, rugby, concerts and conferences, providing a top class experience for customers, players, coaches, media, commercial partners and staff.</p>
+                            <p>On our tour you will follow in the footsteps of some of the greatest sports and entertainment figures of all time. The Aviva tour will capture your imagination as you experience the great history that this stadium has absorbed through its development from Lansdowne Road.  You will be guided through the overarching tunnels which echo the constant presence this landmark has had on the sporting soul of our wonderful capital city since 1872. <a href="https://www.avivastadium.ie/tours" target="_blank">For tours see here.</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Take notes section -->
+                <section id="take-notes">
+                    <div class="open-notes">Open notes</div>
+                    <div class="take-notes-wrapper">
+                        <div class="container p-3">
+                            <div class="row pt-3 pb-5 divider-b">
+                                <div class="col">
+                                    <h2>My To-See List</h2>
+                                    <p>Add notes to this list</p>
+                                    <div id="note-input-wrapper">
+                                        <input type="text" id="note-input" class="form-control" placeholder="Type note here...">
+                                    </div>
+                                    <button type=button id="submit-note" class="btn btn-primary" onclick="addToList()">+ Add note <i class="fas fa-pencil-alt"></i></button>
+                                </div>
+                            </div>
+                            <div class="row pt-5 pb-3">
+                                <div class="col">
+                                    <!-- list here -->
+                                    <h3 class="mb-4">Your Notes</h3>
+                                    <ul id="notes-list"></ul>
+                                </div>
+                            </div>
+                            <div class="row pt-3 pb-5 divider-b">
+                                <div class="col">
+                                    <button type=button id="clear-list" class="btn btn-danger" onclick="clearList()">- Delete notes <i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </div>
+                            <div class="row pt-5 pb-3">
+                                <div class="col">
+                                    <h3>Email these notes to yourself</h3>
+                                    <p>For safe keeping you can email this list to your email address.</p>
+                                    <form onsubmit="return sendMail(this);">
+                                        <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Type your email here..." required />
+                                        <button type="submit" id="submit-notes" class="btn btn-secondary">Send by email <i class="fas fa-paper-plane"></i></button>
+                                    </form>
+                                    <!-- this will show response -->
+                                    <div id="response"></div>
+                                    <div id="note-send-debug"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main><!-- /.container -->
+            <!-- footer -->
+            <footer class="footer container-fluid mt-4 pt-4 pb-4">
+                <div class="container">
+                    <div class="row text-center text-md-left">
+                        <div class="col-sm-4">
+                            <p>&copy; 2020 Explore Dublin</p>
+                            <p class="img-credits"><a href="image-accreditations.html" target="_blank">For image accreditations see this page</a></p> 
+                        </div>
+                        <div class="col-sm-4">
+                            <p class="d-md-inline-block">Follow us:</p>
+                            <ul class="social-icons-list d-md-inline-block text-center text-md-left">
+                                <li>
+                                    <a target="_blank" href="https://twitter.com/">
+                                        <i class="fab fa-twitter fa-sm" aria-hidden="true"></i>
+                                        <span class="sr-only">Twitter</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://www.linkedin.com/">
+                                        <i class="fab fa-linkedin-in fa-sm" aria-hidden="true"></i>
+                                        <span class="sr-only">LinkedIn</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://www.facebook.com/">
+                                        <i class="fab fa-facebook-f fa-sm" aria-hidden="true"></i>
+                                        <span class="sr-only">Facebook</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="assets/images/ireland-failte-white-200x60.png" alt="Ireland Failte logo">
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- copyright -->
+            <div class="full-width-copyright container-fluid">
+                <div class="container">
+                    <div class="row text-center text-sm-left">
+                        <div class="col">
+                            <p>Website by Kevin Bourke. For educational purposes only.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- ./ background wrapper-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script>
+        // location marker for this location
+        let thisLocation = {lat: 53.335241, lng: -6.2285659, title: 'Aviva Stadium'}
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzIGV-yMFW2sZbKjho3bgFebj1ZbzZ7AI&callback=initMap"></script>
+    <script src="assets/js/weather.js"></script>
+    <script src="assets/js/location-map.js"></script>
+    <script src="assets/js/takeNotes.js"></script>
+    <script src="assets/js/global-jquery.js"></script>
+    <!-- email js -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("user_upu5oN7qoaZd5LQpk8rYy");
+
+        })();
+    </script>
+</body>
+</html>
