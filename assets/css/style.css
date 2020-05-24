@@ -326,6 +326,9 @@ div#dublin-forecast-data {
     margin: 0 10px;
     width: 25px;
 }
+#legend input[type="checkbox"] {
+    margin-bottom: 10px;
+}
 /* Move map full screen button out from edge */
 button.gm-control-active.gm-fullscreen-control {
     top: 30px!important;
@@ -496,6 +499,16 @@ button.del-btn {
 }
 .carousel-control-next {
     right: -20px;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    height: 30px;
+    width: 30px;
+}
+.carousel-indicators li {
+    height: 6px;
+    margin-right: 7px;
+    margin-left: 7px;
 }
 /* recommendation cards */
 /* vertically align title as some are larger than others*/
@@ -684,6 +697,14 @@ button.del-btn {
     .location-page h1 {
         padding-bottom: 1.5rem;
         border-bottom: 1px solid #ccc;
+    }
+    #legend input[type="checkbox"] {
+        margin-bottom: 0;
+    }
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        height: 20px;
+        width: 20px;
     }
 }
 /*------ Bootstraps XLarge size ------*/
