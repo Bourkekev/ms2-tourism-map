@@ -189,7 +189,7 @@ It said the google, infoWindow and map variables are undefined but they come fro
 Similarly in my location-map script it said about the undefined Google map variables and the thisLocation variable which is declared on the individual location html page.
 
 ### Testing on Browsers, Screen sizes and Devices
-I tested the website on the following browsers and devices:
+As well as testing with Dev Tools responsive views, I tested the website on the following browsers and devices:
 - Chrome on PC and Mac
 - Firefox on PC and Mac
 - Safari on Mac
@@ -207,13 +207,15 @@ I also realised it would be easier to develop locally and view the localhost sit
 
 When Testing on Safari on Mac I discovered that the 'Where am I' button/function would not work. I was getting an error "Access to geolocation was blocked over secure connection with mixed content to https://bourkekev.github.io.". When I checked the padlock it was saying it was not secure, so there was mixed http and https content. I searched my files and found that the weather api was calling icons from http only (src="https://openweathermap.org/img/wn/${forecastIcon2}@2x.png"). I changed to https and then Safari asked for my permission to locate me and it worked.
 
-Testing other devices - I ran the website through [Browser Stack](https://www.browserstack.com/) on a free account to test on real devices and screen sizes. This is not so easy on the free (test) plan as it only gives you 1 minute per device. I was able to live test the following devices:
+Testing other devices - I ran the website through [Browser Stack](https://www.browserstack.com/) on a free account to test on real devices and screen sizes. This is not so easy on the free (test) plan as it only gives you 1 minute per device, and it's not so easy to zoom as on an actual device in your hand. I was able to live test the following devices:
  - Samsung Galaxy S20, Chrome.
- - iPhone 6S Plus, Safari, 4.7 in - 2.3 x 4.1 in, Resolution 750 x 1334px, Viewport 375 x 667 dp
- iPad 7th
- - iPad Air 2, iOS v8, Safari, Resolution 9.7 in - 5.8 x 7.8in, Viewport 768 x 1024 dp
+ - iPhone 6S Plus, Safari.
+ - iPad 7th, Safari.
+ - iPad Air 2, Safari
  
 They worked fine apart from iPad Air 2, which seemed to break the Bootstrap grid. Some research indicated that the CSS flex property was not supported on iOS v8. Considering iOS 8 was out in 2014, this is probably not much of an issue now. Apple would usually push updated to devices over the years. Ref - https://github.com/twbs/bootstrap/issues/24012
+
+A small thing on the iPhone 6s Plus, when using the notes the tab was almost off the screen at the bottom. So i adjusted the distance from the top to bring it back up a bit.
 
 ## Deployment
 
