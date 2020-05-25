@@ -284,8 +284,7 @@ Basically I was taking the 'type' from my locations array and assigning them to 
 
 ### Content
 
- - Locational information content was gotten from Wikipedia and Google, except if noted below.
- - Botanic Gardens info from [Botanic Gardens website](http://botanicgardens.ie/)
+ - Locational information content was obtained from Wikipedia and Google, and from the specific locations own website.
  
 ### Media
 - The photos and vectors (except logo) used in this site were obtained from:
