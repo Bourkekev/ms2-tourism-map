@@ -227,8 +227,8 @@ To host on GitHub pages you must follow these steps:
 To run locally, you can clone this repository directly into the editor of your choice by pasting `git clone https://github.com/Bourkekev/ms2-tourism-map.git` into your terminal. To cut ties with this GitHub repository, type `git remote rm origin` into the terminal.
 
 ### My own domain
-I also uploaded the files for my site (except git folders or files) to a sub folder on my own domain via FTP. This can be viewed at http://kevinbourke.ie/ms1-music-school/.
-I created a robots.txt file in my domain root and added `Disallow: /ms1-music-school/` to prevent search engines indexing this site.
+I also uploaded the files for my site (except git folders or files) to a sub folder on my own domain via FTP. This can be viewed at http://kevinbourke.ie/ms2-tourism-map/.
+I created a robots.txt file in my domain root and added `Disallow: /ms2-tourism-map/` to prevent search engines indexing this site.
 
 ## Issues I had to overcome
 
