@@ -107,6 +107,31 @@ function initMap() {
             type: "bars",
         },
         {
+            coords: { lat: 53.345630, lng: -6.261970 },
+            content: "<h3>The Auld Dubliner</h3><p>An oasis of quiet in busy Temple Bar, this pub serves Irish food with traditional music upstairs.</p>",
+            type: "bars",
+        },
+        {
+            coords: { lat: 53.344438, lng: -6.263391 },
+            content: "<h3>The Foggy Dew</h3><p>Victorian pub with etched glass, basic furniture, Sunday folk sessions and late Saturday opening.</p>",
+            type: "bars",
+        },
+        {
+            coords: { lat: 53.346132, lng: -6.257080 },
+            content: "<h3>Chaplins Bar</h3><p>Victorian pub with etched glass, basic furniture, Sunday folk sessions and late Saturday opening.</p>",
+            type: "bars",
+        },
+        {
+            coords: { lat: 53.347474, lng: -6.260229 },
+            content: "<h3>O'Connell's Bar</h3><p>Live music and great atmosphere.</p>",
+            type: "bars",
+        },
+        {
+            coords: { lat: 53.350104, lng: -6.251060 },
+            content: "<h3>Bew Dock</h3><p>Craft beers on tap from all around the country.</p>",
+            type: "bars",
+        },
+        {
             coords: { lat: 53.335241, lng: -6.2285659 },
             content: "<h3>Aviva Stadium</h3><p>Aviva Stadium prides itself on being a unique world class international stadium - an outstanding venue for football, rugby, concerts and conferences.</p>",
             type: "entertain",
