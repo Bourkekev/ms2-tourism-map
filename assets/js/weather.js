@@ -63,7 +63,7 @@ function writeToDocument() {
                                     </div>
                                     <div class="row divider-b pb-2">
                                         <div class="col-6 weather-icon pl-1">
-                                            <img src="http://openweathermap.org/img/wn/${weathIcon}@2x.png" alt="weather icon" />
+                                            <img src="https://openweathermap.org/img/wn/${weathIcon}@2x.png" alt="weather icon" />
                                             <div class="weather-text">${cityWeath}</div>
                                         </div>
                                         <div class="col-6 px-2">
@@ -103,7 +103,7 @@ function displayDubWeath() {
                                 </div>
                                 <div class="row weather-mobile">
                                     <div class="col-4 col-sm-5 weather-icon text-center">
-                                        <img src="http://openweathermap.org/img/wn/${dubIcon}@2x.png" alt="weather icon" />
+                                        <img src="https://openweathermap.org/img/wn/${dubIcon}@2x.png" alt="weather icon" />
                                         <div class="d-none d-sm-block">${dubWeath}</div>
                                     </div>
                                     <div class="col-4 weather-text d-sm-none">
@@ -137,7 +137,7 @@ function displayDubWeath() {
                                         <span>Tomorrow</span>
                                     </div>
                                     <div class="col-2 forecast-icon">
-                                        <img src="http://openweathermap.org/img/wn/${forecastIcon}@2x.png" alt="weather icon" />
+                                        <img src="https://openweathermap.org/img/wn/${forecastIcon}@2x.png" alt="weather icon" />
                                     </div>
                                     <div class="col-4 weather-text forecast">
                                         ${forecastWeath}
@@ -151,7 +151,7 @@ function displayDubWeath() {
                                         <span>${humanDateFormat}</span>
                                     </div>
                                     <div class="col-2 forecast-icon">
-                                        <img src="http://openweathermap.org/img/wn/${forecastIcon2}@2x.png" alt="weather icon" />
+                                        <img src="https://openweathermap.org/img/wn/${forecastIcon2}@2x.png" alt="weather icon" />
                                     </div>
                                     <div class="col-4 weather-text forecast">
                                         ${forecastWeath2}
