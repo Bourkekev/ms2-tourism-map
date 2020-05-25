@@ -1,9 +1,5 @@
 
-/** -----------------------------------------------------------
- *  MAPPING FUNCTIONS
- */
-
-//store markers here
+//store markers here for legend toggle
 let markers = [];
 
 function initMap() {
@@ -92,7 +88,12 @@ function initMap() {
         },
         {
             coords: { lat: 53.36798, lng: -6.145895 },
-            content: "<h3>Dollymount Strand</h3>",
+            content: "<h3>Dollymount Strand</h3><p>Located a 15-minute drive north of the city centre lies one Europe’s best kitesurfing spots. Dollymount strand is a long golden beach with shallow, relatively flat water and reliable winds.</p>",
+            type: "beach",
+        },
+        {
+            coords: { lat: 53.255361, lng: -6.112318 },
+            content: "<h3>Killiney Strand</h3><p>Lengthy beach for swimming, fishing & scenic walks with views of distant mountains.</p>",
             type: "beach",
         },
         {
@@ -161,6 +162,30 @@ function initMap() {
             content:
                 "<h3>GPO Witness History Visitor Centre</h3><p>Award winning immersive & interactive must see in Dublin. Located in the historical GPO building on O' Connell St, this was the hub of the 1916 Easter Rising.</p>",
             type: "cultural",
+        },
+        {
+            coords: { lat: 53.348793, lng: -6.287418 },
+            content:
+                "<h3>National Museum of Ireland - Decorative Arts & History</h3><p>Located at the former Collins Barracks in the Arbour Hill it covers Archaeology, Decorative Arts, Folk &amp; Country Life, &amp; Natural History.</p>",
+            type: "museum",
+        },
+        {
+            coords: { lat: 53.340857, lng: -6.252296 },
+            content:
+                "<h3>National Gallery of Ireland</h3><p>Grand collection of European art spanning the 14th to the 20th-century covering all major schools.</p>",
+            type: "museum",
+        },
+        {
+            coords: { lat: 53.339868, lng: -6.253489 },
+            content:
+                "<h3>National Museum of Ireland - Natural History</h3><p>Housing a wide-ranging zoological collection of more than 10,000 exhibits, visitors can explore Irish mammals, birds, fish and insects, as well as from around the world.</p>",
+            type: "museum",
+        },
+        {
+            coords: { lat: 53.342519, lng: -6.299901 },
+            content:
+                "<h3>Irish Museum of Modern Art</h3><p>The Irish Museum of Modern Art also known as IMMA, is Ireland's leading national institution for the collection and presentation of modern and contemporary art.</p>",
+            type: "museum",
         },
     ];
 

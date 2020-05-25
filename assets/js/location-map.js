@@ -1,11 +1,11 @@
-/* Single location map */
+/* Single location map. thisLocation is declared on each individual location page */
 function initMap() {
     //map options
     let options = {
         zoom: 15,
         center: {
             lat: thisLocation.lat,
-            lng: thisLocation.lng,
+            lng: thisLocation.lng
         },
         mapTypeControl: false,
         zoomControlOptions: {

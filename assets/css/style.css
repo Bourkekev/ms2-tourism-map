@@ -634,6 +634,9 @@ button.del-btn {
         font-size: 2rem;
     }
     .lead {
+        font-size: 2rem;
+    }
+    .jumbotron .lead {
         font-size: 3.4rem;
     }
     .navbar-brand {

@@ -144,12 +144,13 @@ One of the links in the nav is to the Recommendations section on the homepage. T
 1. Ideally the user could click on a button from an info window and/or the location page to store the location to the list or type their own text.
 2. A blog could be incorporated into the site with updates about an author or users' experiences of certain places of interest. This would add more genuineness and authority to the site.
 4. Map Marker Clustering.
-5. Currently I just show the Recommended places carousel on mobile and hide it on desktop, and just show the grid on larger than mobile sizes. Ideally I would not want to be repeating these elements and would like to find a way to convert the carousel to this on larger screen sizes.
+5. Currently I just show the Recommended places carousel on mobile and hide it on desktop, and just show the grid on larger than mobile sizes. Ideally I would not want to be repeating these elements and would like to find a way to convert the carousel to this on larger screen sizes. This is does not seem to be supported out of the box by Bootstrap, where you can go from a carousel with 4 items to 1 on a mobile screen.
 6. My own photography. I would have loved to take photos from around Dublin city myself, so I could get exactly what I needed and not rely on stock images and crediting other people, but the virus pandemic did not permit me to do so.
 7. Directions from your location, would be an ideal addition to this website.
 9. Adding a toggle on the weather widget to change between celcuis and fahrenheit, for our American friends.
 8. A page with information about public transport, bikes, and car hire. You could even tap into Dublin Bus and Irish Rail's APIs for timetables and realtime information.
 9. If this was a real site (you need to registered travel agent) you could use something like https://www.viator.com/distribution-partners to list and purchase activities, like Visit Galway does on this page https://visitgalway.ie/tours-excursions/.
+10. Add more markers and recommended locations. The list could be never-ending if you get into adding things like restaurants and bars.
 
 ## Testing
 
@@ -185,6 +186,7 @@ I validated my Javascript code while editing using ESLint extension for VS Code,
 
 -In my **map script** file it said there were 5 unused variables 	initMap,	toggleType,	addPoly,	removePoly,	whereAmI. These are called from the html file.
 It said the google, infoWindow and map variables are undefined but they come from Google maps. It also says shoppingAreaNorth is not defined but if I put 'let' where I define a new google.maps.Polygon then my polgon function breaks and console says it is not defined. I'm not fully sure what happening here.
+Similarly in my location-map script it said about the undefined Google map variables and the thisLocation variable which is declared on the individual location html page.
 
 ### Testing on Browsers, Screen sizes and Devices
 I tested the website on the following browsers and devices:
