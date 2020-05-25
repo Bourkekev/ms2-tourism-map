@@ -1,6 +1,8 @@
 # Milestone 2 - Tourism Map - by Kevin Bourke
 This project is map of Dublin for visitors to recommend places to visit and show them locations on a map. This website could be of interest to and built with support of a government agency like Fáilte Ireland, which is the National Tourism Development Authority of Ireland. Failte Ireland supports the tourism industry, and works to implement positive and practical strategies that will benefit Irish tourism. While in it's current form this site is quite limited in terms of the locations recommended, and is more a proof of concept, but you could imagine how, with time, it could grow into something like [Visit Dublin](https://www.visitdublin.com/), and becomes a real resource for tourists and local people alike.
 
+![Responsiveness on multiple devices](assets/images/welcome-to-dublin.png "Responsiveness on multiple devices").
+
 ## UX
 
 I wanted at the very least 3 main features for this site.
