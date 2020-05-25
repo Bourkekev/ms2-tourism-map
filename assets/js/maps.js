@@ -179,6 +179,24 @@ function initMap() {
             type: "restaurant",
         },
         {
+            coords: { lat: 53.340009, lng: -6.258476 },
+            content:
+                "<h3>Toscana Italian Restaurant</h3><p>Simply elegant dining room for Italian dishes prepared using ingredients from own farmhouse garden.</p>",
+            type: "restaurant",
+        },
+        {
+            coords: { lat: 53.343795, lng: -6.262285 },
+            content:
+                "<h3>Pichet</h3><p>Trendy French/Mediterranean bistro with plush blue chairs and white interior plus terrace and cafe.</p>",
+            type: "restaurant",
+        },
+        {
+            coords: { lat: 53.334798, lng: -6.254473 },
+            content:
+                "<h3>Dax Restaurant</h3><p>Georgian rooms with original features for crisp white tablecloths, gourmet dining and French wines.</p>",
+            type: "restaurant",
+        },
+        {
             coords: { lat: 53.340508, lng: -6.255047 },
             content:
                 "<h3>National Museum of Ireland - Archaeology</h3><p>Local archaeological finds from the Bronze Age, Vikings and Medieval times with some Egyptian items.</p>",
