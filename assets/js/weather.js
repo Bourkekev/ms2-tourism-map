@@ -83,7 +83,7 @@ function writeToDocument() {
 // Get date and Dublin weather on page load
 document.addEventListener("DOMContentLoaded", function () {
     //Comment out displayDubWeath function to disable api calls on page load
-    //displayDubWeath();
+    displayDubWeath();
     displayDate();
 });
 
