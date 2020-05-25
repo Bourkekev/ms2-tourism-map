@@ -217,6 +217,13 @@ They worked fine apart from iPad Air 2, which seemed to break the Bootstrap grid
 
 A small thing on the iPhone 6s Plus, when using the notes the tab was almost off the screen at the bottom. So i adjusted the distance from the top to bring it back up a bit.
 
+### How to test
+
+There are 4 main features to test on this site. 
+1 - **Check the current weather**, weather forecast for Dublin and check weather in another city. Don't put anything in the other city field or put in a number and it should alert you that this is not a valid input.
+2 - **Test the Note taking function.** Tap the floating 'Open Notes' tab to open the notpad. Fill in the field and press 'Enter' or press the 'Add note' button. Aso try with nothing in the field, and it should warn that the input is empty. Add a number of notes. Delete using the X to the right of each item or click 'Delete Notes' to delete them all. With notes in the list, you can email them to yourself.
+3 - **Using the map.** The map loads with custom recommended locations. Click on a location for information in an Info Window. Use the category legend on the left to identify and turn on and off marker categories. Above the map there are 3 buttons. You can **click on shopping areas** to view areas highlighted (You need to have the map centered near the city center to see this in action). Click on the shape for information about that area. Click on **'Where am I?'** and the device should ask you to allow access t your location. After a few seconds the map should center on your location. Then **viewing each location** shows a map for just that particular location.
+
 ## Deployment
 
 ### GitHub Pages
