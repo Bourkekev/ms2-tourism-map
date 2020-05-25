@@ -718,6 +718,12 @@ button.del-btn {
 }
 /*------ Bootstraps Large size ------*/
 @media screen and (min-width: 992px) {
+    .logo-part1 {
+        font-size: 2rem;
+    }
+    .logo-part2 {
+        font-size: 4rem;
+    }
     .jumbotron {
         background-image:url(../images/ha-penny-bridge-1000x400.jpg);
         padding: 15rem 1rem;
@@ -751,6 +757,12 @@ button.del-btn {
 }
 /*------ Bootstraps XLarge size ------*/
 @media screen and (min-width: 1200px) {
+    .logo-part1 {
+        font-size: 3rem;
+    }
+    .logo-part2 {
+        font-size: 5rem;
+    }
     .jumbotron {
         background-image:url(../images/ha-penny-bridge-1920x600.jpg);
         padding: 17rem 1rem;
