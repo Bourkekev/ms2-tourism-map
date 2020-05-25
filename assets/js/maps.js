@@ -5,7 +5,7 @@ let markers = [];
 function initMap() {
     //map options
     let options = {
-        zoom: 14,
+        zoom: 13,
         center: {
             lat: 53.347293,
             lng: -6.25897,

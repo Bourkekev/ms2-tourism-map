@@ -163,7 +163,10 @@ div#dublin-forecast-data {
 #see-less-weather {
     padding: 15px;
 }
-
+.other-city > h4 {
+    color: #000080;
+    font-size: 1.6rem;
+}
 /* Navbar */
 .navbar {
     padding: .5rem 0rem;
@@ -625,6 +628,10 @@ button.del-btn {
     .navbar-collapse {
         border-top: none;
         margin-top: 0;
+    }
+    .navbar-expand-md .navbar-nav .nav-link {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
     }
     .jumbotron {
         background-image:url(../images//ha-penny-bridge-768x250.jpg);
