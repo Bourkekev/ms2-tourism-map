@@ -118,7 +118,7 @@ function initMap() {
         },
         {
             coords: { lat: 53.346132, lng: -6.257080 },
-            content: "<h3>Chaplins Bar</h3><p>Victorian pub with etched glass, basic furniture, Sunday folk sessions and late Saturday opening.</p>",
+            content: "<h3>Chaplins Bar</h3><p>Small old style bar. Great pints and toasted sandwiches.</p>",
             type: "bars",
         },
         {
@@ -128,7 +128,22 @@ function initMap() {
         },
         {
             coords: { lat: 53.350104, lng: -6.251060 },
-            content: "<h3>Bew Dock</h3><p>Craft beers on tap from all around the country.</p>",
+            content: "<h3>Brew Dock</h3><p>Craft beers on tap from all around the country.</p>",
+            type: "bars",
+        },
+        {
+            coords: { lat: 53.341807, lng: -6.265175 },
+            content: "<h3>The Long Hall</h3><p>Traditional pub decorated with filigree-edged mirrors, polished dark wood and traditional snugs.</p>",
+            type: "bars",
+        },
+        {
+            coords: { lat: 53.342840, lng: -6.260288 },
+            content: "<h3>Mary's Bar</h3><p>Small old school pub. Yes they sell hardware.</p>",
+            type: "bars",
+        },
+        {
+            coords: { lat: 53.341807, lng: -6.265175 },
+            content: "<h3>The Long Hall</h3><p>Traditional pub decorated with filigree-edged mirrors, polished dark wood and traditional snugs.</p>",
             type: "bars",
         },
         {
