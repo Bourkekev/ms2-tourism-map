@@ -66,7 +66,6 @@ function writeToDocument(testValue) {
         alert("Nothing submitted");
     }
     else if(typeof(cityCountry)=="string"){
-        console.log(typeof(cityCountry));
         return cityCountry;
         baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${cityCountry}&${tempUnits}&appid=${apiKey}`;
         getData( function(data) {
@@ -80,9 +79,6 @@ function writeToDocument(testValue) {
             document.getElementById("dynamic-weather-data").innerHTML = "<p>Weather for " + data.name + ", " + data.sys.country + ": " + data.weather[0].main + "</p>";
             document.getElementById("dynamic-weather-data").innerHTML += "<p>Temperature is: " + data.main.temp + " Celcius</p>";
             
-            //document.getElementById("weather-data").innerHTML = "Temperature is: " + data.main.temp;
-            //console.dir(data);
-            console.log(typeof(cityCountry));
             return cityCountry;
         });
     } else if (typeof(cityCountry)=="number"){

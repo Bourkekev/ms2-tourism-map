@@ -265,12 +265,6 @@ function initMap() {
             icon: categories[props.type].icon,
         });
 
-        // Test for custom icon image
-        // if (props.iconImage) {
-        //     // set icon image
-        //     marker.setIcon(props.iconImage);
-        // }
-
         // Test for info window content. Test if true otherwise get info window with no info
         if (props.content) {
             //info window
@@ -384,7 +378,7 @@ function initMap() {
         let bounds = new google.maps.LatLngBounds();
         places.forEach(function (place) {
             if (!place.geometry) {
-                console.log("Returned place contains no geometry");
+                
                 return;
             }
             let icon = {

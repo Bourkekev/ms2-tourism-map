@@ -74,7 +74,6 @@ function addToList() {
  */
 document.querySelector("body").addEventListener("click", function (event) {
     if (event.target.className === "del-btn") {
-        //console.log(event.target.parentNode);
         //delete parent node(the li)
         event.target.parentNode.remove();
         //update the local storage with new list
@@ -93,7 +92,7 @@ function clearList() {
             list.removeChild(list.childNodes[0]);
         }
     } else {
-        console.log("do not delete storage");
+
     }
 }
 /** @description sends the stored notes to the inputted email
@@ -121,20 +120,14 @@ function sendMail(notesForm) {
         notes_summary: sendList,
     };
 
-    // debug : send list back to DOM
-    // let debugEl = document.getElementById("note-send-debug");
-    // if (sendList){
-    //     debugEl.innerHTML = sendList;
-    // }
-
     let responseEl = document.querySelector("#response");
     emailjs.send("gmail", "template_tourism_notes", templateParams).then(
         function (response) {
-            console.log("SUCCESS!", response.status, response.text);
+            //console.log("SUCCESS!", response.status, response.text);
             responseEl.innerText = "Notes emailed successfully.";
         },
         function (error) {
-            console.log("FAILED...", error);
+            //console.log("FAILED...", error);
             responseEl.innerText = "Note sending failed.";
         }
     );
