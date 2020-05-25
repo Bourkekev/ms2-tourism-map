@@ -147,6 +147,7 @@ One of the links in the nav is to the Recommendations section on the homepage. T
 5. Currently I just show the Recommended places carousel on mobile and hide it on desktop, and just show the grid on larger than mobile sizes. Ideally I would not want to be repeating these elements and would like to find a way to convert the carousel to this on larger screen sizes.
 6. My own photography. I would have loved to take photos from around Dublin city myself, so I could get exactly what I needed and not rely on stock images and crediting other people, but the virus pandemic did not permit me to do so.
 7. Directions from your location, would be an ideal addition to this website.
+9. Adding a toggle on the weather widget to change between celcuis and fahrenheit, for our American friends.
 8. A page with information about public transport, bikes, and car hire. You could even tap into Dublin Bus and Irish Rail's APIs for timetables and realtime information.
 9. If this was a real site (you need to registered travel agent) you could use something like https://www.viator.com/distribution-partners to list and purchase activities, like Visit Galway does on this page https://visitgalway.ie/tours-excursions/.
 

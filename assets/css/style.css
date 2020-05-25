@@ -508,9 +508,15 @@ button.del-btn {
     width: 30px;
 }
 .carousel-indicators li {
+    background-color: #9E9E9E;
     height: 6px;
     margin-right: 7px;
     margin-left: 7px;
+}
+/* change carousel arrow colours */
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    filter: invert(0.5);
 }
 /* recommendation cards */
 /* vertically align title as some are larger than others*/
