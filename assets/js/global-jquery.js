@@ -9,9 +9,19 @@ $(document).ready(function () {
     //show more weather widget
     $(".more-weather-link").click(function () {
         $("#more-weather").slideToggle(300);
+        if ($('.view-more-text').text() == "View more") {
+            $('.view-more-text').text("View less");
+        } else {
+            $('.view-more-text').text("View more");
+        }
     });
     $(".less-weather-link").click(function () {
         $("#more-weather").slideToggle(300);
+        if ($('.view-more-text').text() == "View less") {
+            $('.view-more-text').text("View more");
+        } else {
+            $('.view-more-text').text("View less");
+        }
     });
     /**
      * Opens the take notes section and changes text depending on text
