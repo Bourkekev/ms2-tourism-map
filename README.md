@@ -211,6 +211,7 @@ They worked fine apart from iPad Air 2, which seemed to break the Bootstrap grid
 ## Deployment
 
 ### GitHub Pages
+First just a note on GitHub pages, often when I first load the site on GitHub pages it does not load the map. A reload of the page and it works fine.
 This site is hosted using GitHub pages, deployed directly from the master branch of GitHub. The deployed site will update automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, the landing page must be named `index.html`.
 You can view the deployed site at https://bourkekev.github.io/ms2-tourism-map/
 
