@@ -207,7 +207,7 @@ When I deployed the site to Github Pages and tested on an Android mobile the Get
 
 I also realised it would be easier to develop locally and view the localhost site on my Android phone. I was able to set this up through Chrome Dev tools, again following [Google's instruction](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/local-server).
 
-When Testing on Safari on Mac I discovered that the 'Where am I' button/function would not work. I was getting an error "Access to geolocation was blocked over secure connection with mixed content to https://bourkekev.github.io.". When I checked the padlock it was saying it was not secure, so there was mixed http and https content. I searched my files and found that the weather api was calling icons from http only (src="https://openweathermap.org/img/wn/${forecastIcon2}@2x.png"). I changed to https and then Safari asked for my permission to locate me and it worked.
+When Testing on Safari on Mac I discovered that the 'Where am I' button/function would not work. I was getting an error "Access to geolocation was blocked over secure connection with mixed content to `https://bourkekev.github.io`". When I checked the padlock it was saying it was not secure, so there was mixed http and https content. I searched my files and found that the weather api was calling icons from http only (`src="https://openweathermap.org/img/wn/${forecastIcon2}@2x.png"`). I changed to https and then Safari asked for my permission to locate me and it worked.
 
 Testing other devices - I ran the website through [Browser Stack](https://www.browserstack.com/) on a free account to test on real devices and screen sizes. This is not so easy on the free (test) plan as it only gives you 1 minute per device, and it's not so easy to zoom as on an actual device in your hand. I was able to live test the following devices:
  - Samsung Galaxy S20, Chrome.
@@ -221,13 +221,17 @@ A small thing on the iPhone 6s Plus, when using the notes the tab was almost off
 
 ### How to test
 
-There are 4 main features to test on this site. 
+There are 5 main features to test on this site. 
 
 1 - **Check the current weather**, weather forecast for Dublin and check weather in another city. Don't put anything in the other city field or put in a number and it should alert you that this is not a valid input.
 
 2 - **Test the Note taking function.** Tap the floating 'Open Notes' tab to open the notpad. Fill in the field and press 'Enter' or press the 'Add note' button. Aso try with nothing in the field, and it should warn that the input is empty. Add a number of notes. Delete using the X to the right of each item or click 'Delete Notes' to delete them all. With notes in the list, you can email them to yourself.
 
-3 - **Using the map.** The map loads with custom recommended locations. Click on a location for information in an Info Window. Use the category legend on the left to identify and turn on and off marker categories. Above the map there are 3 buttons. You can **click on shopping areas** to view areas highlighted (You need to have the map centered near the city center to see this in action). Click on the shape for information about that area. Click on **'Where am I?'** and the device should ask you to allow access t your location. After a few seconds the map should center on your location. Then **viewing each location** shows a map for just that particular location.
+3 - **Using the map.** The map loads with custom recommended locations. Click on a location for information in an Info Window. Use the category legend on the left to identify and turn on and off marker categories. Above the map there are 3 buttons. You can **click on shopping areas** to view areas highlighted (You need to have the map centered near the city center to see this in action). Click on the shape for information about that area. 
+
+4 - **Find your location.** Click on **'Where am I?'** and the device should ask you to allow access to your location. After a few seconds the map should center on your location. Then **viewing each location** shows a map for just that particular location.
+
+5 - **Use google search bar** to search for anywhere or anything and the results will display in the map. Foe example, type 'trains' into the search field and train stations will be displayed.
 
 ## Deployment
 
@@ -298,7 +302,7 @@ Basically I was taking the 'type' from my locations array and assigning them to 
  - Regex generator to remove html from a string - Removing the html delete button from the emailed notes - http://regex.larsolavtorvik.com/
  - To create checkboxes for my Map Legend I followed 2 parts of an example on [Stackoverflow[(https://stackoverflow.com/questions/26778164/simple-filter-in-legend-google-maps-api-v3). One was the for-in loop {for (var key in icons)}, and the other was the toggleType function.
  - Google Places Searchbox - mostly all from Google's Places [API documentation](https://developers.google.com/maps/documentation/javascript/examples/places-searchbox)
- - I got some information about the Open WeatherMap API from this [Coding Train video](https://www.youtube.com/watch?v=ecT42O6I_WI), but in this tutorial he is using a Javascript library called P5 and is using it to draw shapes on a canvas dependin on the weather.
+ - I got some information about the Open WeatherMap API from this [Coding Train video](https://www.youtube.com/watch?v=ecT42O6I_WI), but in this tutorial he is using a Javascript library called P5 and is using it to draw shapes on a canvas depending on the weather.
 
 ### Content
 
@@ -307,7 +311,8 @@ Basically I was taking the 'type' from my locations array and assigning them to 
 ### Media
 - The photos and vectors (except logo) used in this site were obtained from:
 
- - Ha'Penny Bridge - [Shutterstock](https://www.shutterstock.com/g/madrugadaverde)
+ - Ha'Penny Bridge, and night photo of Dublin city - [Shutterstock](https://www.shutterstock.com/g/madrugadaverde)
+
  - Fictional Ireland Fáilte logo was designed on https://www.freelogodesign.org/
 
  - The favicons were generated at https://realfavicongenerator.net/
