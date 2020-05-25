@@ -194,19 +194,23 @@ I tested the website on the following browsers and devices:
 - Firefox on PC and Mac
 - Safari on Mac
 - Microsoft Edge V44
-- Microsoft Internet Explorer V11
 - Chrome on Samsung Galaxy S8, Android V9
 - Firefox on Samsung Galaxy S8
 - Native Browser on Samsung Galaxy S8
 - Chrome on Lenovo 10" Tablet, Android V6
 
+They all worked fine with slight variations on the 'Where am I' functionality. The native Samsung Browser seems to need your GPS location turned on, whereas Chrome on Galaxy S8 asks to turn it on.
+
 When I deployed the site to Github Pages and tested on an Android mobile the Get weather for another city function would not work. This worked fine on my localhost on computer, so I connected my Android phone to my desktop to do remote debugging, following [Google's instruction](https://developers.google.com/web/tools/chrome-devtools/remote-debugging). Then I could use my Dev Tools console and coud see the browser error. It was telling me that mixed content was loaded over HTTPS and that the XMLHttpRequest was blocked because it was bein requested over http. So I just had to check my writeToDocument function and change the API URL to use HTTPS. My localhost was not using https so I did not see this error until this point.
 
 I also realised it would be easier to develop locally and view the localhost site on my Android phone. I was able to set this up through Chrome Dev tools, again following [Google's instruction](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/local-server).
 
-Testing other devices - I ran the website through [Browser Stack](https://www.browserstack.com/) on a free account to test on real devices and screen sizes. I was able to live test the following devices:
- - Samsung Galaxy Tab, Chrome, 4, 10.1 in - 5.4 x 8.6in, Resolution 1280 x 800px
- - iPhone 6S, Safari, 4.7 in - 2.3 x 4.1 in, Resolution 750 x 1334px, Viewport 375 x 667 dp
+When Testing on Safari on Mac I discovered that the 'Where am I' button/function would not work. I was getting an error "Access to geolocation was blocked over secure connection with mixed content to https://bourkekev.github.io.". When I checked the padlock it was saying it was not secure, so there was mixed http and https content. I searched my files and found that the weather api was calling icons from http only (src="https://openweathermap.org/img/wn/${forecastIcon2}@2x.png"). I changed to https and then Safari asked for my permission to locate me and it worked.
+
+Testing other devices - I ran the website through [Browser Stack](https://www.browserstack.com/) on a free account to test on real devices and screen sizes. This is not so easy on the free (test) plan as it only gives you 1 minute per device. I was able to live test the following devices:
+ - Samsung Galaxy S20, Chrome.
+ - iPhone 6S Plus, Safari, 4.7 in - 2.3 x 4.1 in, Resolution 750 x 1334px, Viewport 375 x 667 dp
+ iPad 7th
  - iPad Air 2, iOS v8, Safari, Resolution 9.7 in - 5.8 x 7.8in, Viewport 768 x 1024 dp
  
 They worked fine apart from iPad Air 2, which seemed to break the Bootstrap grid. Some research indicated that the CSS flex property was not supported on iOS v8. Considering iOS 8 was out in 2014, this is probably not much of an issue now. Apple would usually push updated to devices over the years. Ref - https://github.com/twbs/bootstrap/issues/24012

@@ -394,7 +394,7 @@ button.gm-control-active.gm-fullscreen-control {
 #take-notes,
 .take-notes-wrapper {
     position: fixed;
-    top: 28vh;
+    top: 26vh;
     right: -75vw;
     z-index: 9999;
     width: 100%;
@@ -416,7 +416,7 @@ button.gm-control-active.gm-fullscreen-control {
     width: 21%;
     padding: .5rem;
     text-align: center;
-    top: 58vh;
+    top: 50vh;
     position: relative;
 }
 .open-notes::before {
