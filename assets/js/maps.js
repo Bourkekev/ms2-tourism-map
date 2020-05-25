@@ -102,6 +102,11 @@ function initMap() {
             type: "bars",
         },
         {
+            coords: { lat: 53.345881, lng: -6.259605 },
+            content: "<h3>The Palace Bar</h3><p>Victorian bar with stained glass skylight and timeless ambiance for hosting Irish music sessions.</p>",
+            type: "bars",
+        },
+        {
             coords: { lat: 53.335241, lng: -6.2285659 },
             content: "<h3>Aviva Stadium</h3><p>Aviva Stadium prides itself on being a unique world class international stadium - an outstanding venue for football, rugby, concerts and conferences.</p>",
             type: "entertain",
